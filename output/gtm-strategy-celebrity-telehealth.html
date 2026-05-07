@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kindred — 45-Day GTM Strategy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#080808;
+  --surface:#111111;
+  --surface2:#1a1a1a;
+  --gold:#C9A84C;
+  --red:#E63946;
+  --green:#2DC653;
+  --text:#F0EDE8;
+  --muted:#888888;
+  --border:#222222;
+  --purple:#9B59B6;
+  --amber:#F39C12;
+  --fuchsia:#E91E8C;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(8,8,8,0.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-logo{font-family:'Bebas Neue',cursive;font-size:1.5rem;color:var(--gold);letter-spacing:0.05em;white-space:nowrap}
+.nav-links{display:flex;gap:1.5rem;list-style:none;overflow-x:auto;scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);text-decoration:none;white-space:nowrap;transition:color 0.2s}
+.nav-links a:hover{color:var(--gold)}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:6rem 4rem 4rem;background:radial-gradient(ellipse at 70% 30%, rgba(201,168,76,0.06) 0%, transparent 60%),var(--bg);position:relative;overflow:hidden}
+#hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(255,255,255,0.012) 79px,rgba(255,255,255,0.012) 80px);pointer-events:none}
+.hero-overline{font-family:'Space Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--gold);margin-bottom:1.5rem}
+.hero-headline{font-family:'Bebas Neue',cursive;font-size:clamp(4rem,10vw,9rem);line-height:0.92;color:var(--text);letter-spacing:0.02em;margin-bottom:1.5rem;max-width:900px}
+.hero-sub{font-size:clamp(1rem,2vw,1.4rem);color:var(--muted);font-weight:300;margin-bottom:3rem;max-width:600px;line-height:1.4}
+.hero-stats{display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:4rem}
+.stat-card{border:1px solid var(--gold);padding:1.5rem 2rem;min-width:180px}
+.stat-card .stat-num{font-family:'Bebas Neue',cursive;font-size:2.8rem;color:var(--gold);line-height:1;display:block}
+.stat-card .stat-label{font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);margin-top:0.4rem;display:block}
+.scroll-indicator{font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--muted);display:flex;align-items:center;gap:0.75rem}
+.scroll-indicator::after{content:'';display:block;width:40px;height:1px;background:var(--muted)}
+
+/* SECTIONS */
+section{padding:5rem 4rem;border-bottom:1px solid var(--border);scroll-margin-top:56px}
+.section-label{font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--gold);margin-bottom:1rem;display:block}
+.section-title{font-family:'Bebas Neue',cursive;font-size:clamp(2.5rem,5vw,4rem);color:var(--text);line-height:1;margin-bottom:2rem;letter-spacing:0.02em}
+.subsection-title{font-family:'Bebas Neue',cursive;font-size:clamp(1.5rem,3vw,2.2rem);color:var(--text);margin:2.5rem 0 1rem;letter-spacing:0.02em}
+
+/* CARDS */
+.card{background:var(--surface);border:1px solid var(--border);padding:2rem;margin-bottom:1.5rem}
+.card-gold-left{border-left:3px solid var(--gold)}
+
+/* CALLOUT BOXES */
+.callout-red{background:rgba(230,57,70,0.08);border:1px solid var(--red);border-left:4px solid var(--red);padding:1.5rem 2rem;margin:1.5rem 0}
+.callout-gold{background:rgba(201,168,76,0.06);border:1px solid var(--gold);border-left:4px solid var(--gold);padding:1.5rem 2rem;margin:1.5rem 0}
+.callout-green{background:rgba(45,198,83,0.06);border:1px solid var(--green);border-left:4px solid var(--green);padding:1.5rem 2rem;margin:1.5rem 0}
+.callout-num{font-family:'Bebas Neue',cursive;font-size:3rem;color:var(--red);line-height:1;margin-bottom:0.25rem}
+
+/* CODE BLOCK */
+.code-block{font-family:'Space Mono',monospace;font-size:0.78rem;background:#0d0d0d;border:1px solid var(--gold);padding:1.5rem;margin:1.5rem 0;color:var(--text);line-height:1.8;white-space:pre-wrap;word-break:break-word}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:1.5rem 0;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:0.85rem}
+thead tr{background:var(--surface2)}
+thead th{font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);padding:0.85rem 1rem;text-align:left;border-bottom:1px solid var(--gold);white-space:nowrap}
+tbody tr{border-bottom:1px solid var(--border);transition:background 0.15s}
+tbody tr:hover{background:rgba(255,255,255,0.02)}
+tbody tr:nth-child(even){background:rgba(255,255,255,0.015)}
+tbody tr:nth-child(even):hover{background:rgba(255,255,255,0.03)}
+td{padding:0.85rem 1rem;vertical-align:top;color:var(--text);line-height:1.5}
+td strong{color:var(--gold)}
+
+/* BADGES */
+.badge{display:inline-block;font-family:'Space Mono',monospace;font-size:0.6rem;font-weight:700;padding:0.2rem 0.5rem;letter-spacing:0.08em;border-radius:2px}
+.badge-h{background:rgba(230,57,70,0.2);color:#ff6b76;border:1px solid rgba(230,57,70,0.4)}
+.badge-m{background:rgba(243,156,18,0.2);color:#f39c12;border:1px solid rgba(243,156,18,0.4)}
+.badge-l{background:rgba(45,198,83,0.2);color:#2DC653;border:1px solid rgba(45,198,83,0.4)}
+.badge-go{background:rgba(45,198,83,0.15);color:var(--green);border:1px solid var(--green);font-size:0.55rem;padding:0.15rem 0.5rem;letter-spacing:0.1em;margin-left:0.75rem;vertical-align:middle}
+
+/* BRAND VALUES */
+.brand-values{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:1.5rem 0}
+.brand-value{background:var(--surface2);border-top:2px solid var(--gold);padding:1.5rem;transition:transform 0.2s}
+.brand-value:hover{transform:translateY(-2px)}
+.brand-value h4{font-family:'Bebas Neue',cursive;font-size:1.4rem;color:var(--gold);margin-bottom:0.5rem;letter-spacing:0.05em}
+.brand-value p{font-size:0.82rem;color:var(--muted);line-height:1.5}
+
+/* PRICING CARDS */
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin:1.5rem 0}
+.pricing-card{background:var(--surface);border:1px solid var(--border);padding:2rem;position:relative;transition:transform 0.2s}
+.pricing-card.featured{border-color:var(--gold);transform:translateY(-6px);background:var(--surface2)}
+.pricing-card .tier-label{font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--muted);margin-bottom:0.5rem}
+.pricing-card h3{font-family:'Bebas Neue',cursive;font-size:2rem;color:var(--text);margin-bottom:0.5rem;letter-spacing:0.05em}
+.pricing-card .price{font-family:'Bebas Neue',cursive;font-size:3rem;color:var(--gold);line-height:1}
+.pricing-card .price-period{font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--muted)}
+.pricing-card .tier-desc{font-size:0.82rem;color:var(--muted);margin-top:1rem;line-height:1.5}
+.pricing-card .tier-target{font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--gold);margin-top:1rem;text-transform:uppercase;letter-spacing:0.1em}
+.featured-badge{position:absolute;top:-1px;right:1.5rem;background:var(--gold);color:#000;font-family:'Space Mono',monospace;font-size:0.55rem;padding:0.25rem 0.75rem;text-transform:uppercase;letter-spacing:0.1em}
+
+/* CELEBRITY CARDS */
+.celeb-card{background:var(--surface);padding:2.5rem;margin-bottom:2rem;position:relative;overflow:hidden}
+.celeb-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:4px}
+.celeb-ye::before{background:var(--purple)}
+.celeb-lebron::before{background:var(--amber)}
+.celeb-rihanna::before{background:var(--fuchsia)}
+.celeb-cardi::before{background:var(--red)}
+.celeb-card .celeb-name{font-family:'Bebas Neue',cursive;font-size:clamp(2.5rem,6vw,4.5rem);line-height:0.95;margin-bottom:0.25rem;letter-spacing:0.02em}
+.celeb-ye .celeb-name{color:var(--purple)}
+.celeb-lebron .celeb-name{color:var(--amber)}
+.celeb-rihanna .celeb-name{color:var(--fuchsia)}
+.celeb-cardi .celeb-name{color:var(--red)}
+.celeb-card .celeb-positioning{font-style:italic;color:var(--muted);font-size:1rem;margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+.celeb-section{margin-bottom:1.25rem}
+.celeb-section-label{font-family:'Space Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);margin-bottom:0.4rem;display:block}
+.celeb-section p{font-size:0.88rem;color:var(--text);line-height:1.6}
+.celeb-activation{background:rgba(255,255,255,0.03);border:1px solid var(--border);padding:1.25rem 1.5rem;margin-top:1rem}
+.celeb-activation-label{font-family:'Space Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--gold);margin-bottom:0.5rem;display:block}
+
+/* WEEK HEADERS */
+.week-header{display:flex;align-items:center;margin-bottom:1rem;margin-top:2.5rem}
+.week-num{font-family:'Bebas Neue',cursive;font-size:2.5rem;color:var(--gold);line-height:1;margin-right:1rem}
+.week-title{font-family:'Bebas Neue',cursive;font-size:1.8rem;color:var(--text);letter-spacing:0.02em}
+
+/* RULE OF 40 TIMELINE */
+.r40-timeline{position:relative;margin:2rem 0 3rem;padding:3rem 0 2rem}
+.r40-line{position:absolute;top:50%;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--border),var(--gold),var(--green));transform:translateY(-50%)}
+.r40-milestones{display:flex;justify-content:space-between;position:relative}
+.r40-milestone{display:flex;flex-direction:column;align-items:center;width:25%}
+.r40-dot{width:14px;height:14px;border-radius:50%;background:var(--gold);border:2px solid var(--bg);position:relative;z-index:1;margin:0 auto 0.75rem}
+.r40-milestone:last-child .r40-dot{background:var(--green)}
+.r40-milestone-label{font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);text-align:center;margin-bottom:0.4rem}
+.r40-milestone-desc{font-size:0.75rem;color:var(--text);text-align:center;line-height:1.4;max-width:120px;margin:0 auto}
+
+/* PHYGITAL FUNNEL */
+.funnel{display:flex;flex-direction:column;align-items:center;gap:0;margin:2rem auto;max-width:500px}
+.funnel-step{background:var(--surface2);border:1px solid var(--border);padding:0.85rem 2rem;width:100%;text-align:center;font-family:'Space Mono',monospace;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text);position:relative;transition:background 0.2s}
+.funnel-step:hover{background:rgba(201,168,76,0.05)}
+.funnel-step.top{border-top-color:var(--gold)}
+.funnel-arrow{width:2px;height:28px;background:var(--gold);margin:0 auto;position:relative;display:flex;justify-content:center}
+.funnel-arrow::after{content:'';position:absolute;bottom:-1px;left:50%;transform:translateX(-50%);border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid var(--gold)}
+
+/* QUADRANT CHART */
+.quadrant-wrap{position:relative;width:100%;max-width:560px;margin:2rem auto;aspect-ratio:1;border:1px solid var(--border)}
+.q-axis-h{position:absolute;top:50%;left:0;right:0;height:1px;background:var(--border);transform:translateY(-50%)}
+.q-axis-v{position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--border);transform:translateX(-50%)}
+.q-label{position:absolute;font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted)}
+.q-label.top{top:0.5rem;left:50%;transform:translateX(-50%)}
+.q-label.bottom{bottom:0.5rem;left:50%;transform:translateX(-50%)}
+.q-label.left{left:0.5rem;top:50%;transform:translateY(-50%) rotate(-90deg);transform-origin:center}
+.q-label.right{right:0.5rem;top:50%;transform:translateY(-50%) rotate(90deg);transform-origin:center}
+.q-player{position:absolute;font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--muted);text-align:center;transform:translate(-50%,-50%)}
+.q-player.star{color:var(--gold);font-size:0.75rem;font-weight:700;background:rgba(201,168,76,0.1);border:1px solid var(--gold);padding:0.3rem 0.6rem}
+
+/* TRUST TRANSFER */
+.trust-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin:1.5rem 0;counter-reset:trust-step}
+.trust-step{background:var(--surface2);padding:1.5rem;border-top:2px solid var(--border);counter-increment:trust-step;position:relative}
+.trust-step::before{content:counter(trust-step);font-family:'Bebas Neue',cursive;font-size:3rem;color:var(--gold);opacity:0.4;position:absolute;top:0.5rem;right:1rem;line-height:1}
+.trust-step h4{font-family:'Space Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);margin-bottom:0.5rem}
+.trust-step p{font-size:0.82rem;color:var(--muted);line-height:1.5;position:relative;z-index:1}
+
+/* COMMUNITY SPLIT CARDS */
+.split-cards{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:1.5rem 0}
+.split-card{background:var(--surface2);border:1px solid var(--border);padding:2rem}
+.split-pct{font-family:'Bebas Neue',cursive;font-size:5rem;color:var(--gold);line-height:1;margin-bottom:0.25rem}
+.split-label{font-family:'Space Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--text);margin-bottom:1rem;display:block}
+.split-desc{font-size:0.82rem;color:var(--muted);line-height:1.5}
+
+/* REGULATORY SECTION */
+#part5{background:rgba(230,57,70,0.015)}
+
+/* EQUITY TABLE */
+.eq-table thead th:first-child{color:var(--text)}
+
+/* INVESTOR CARDS */
+.investor-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0}
+.investor-card{background:var(--surface2);border:1px solid var(--border);padding:1.25rem 1.5rem}
+.investor-card h4{font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--gold);margin-bottom:0.4rem}
+.investor-card p{font-size:0.78rem;color:var(--muted);line-height:1.4}
+
+/* NAMING TABLE */
+.naming-rec{color:var(--gold);font-weight:600}
+
+/* FOOTER */
+footer{padding:3rem 4rem;text-align:center}
+footer p{font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--muted)}
+
+/* LISTS */
+ul.styled{list-style:none;padding:0;margin:1rem 0}
+ul.styled li{padding:0.5rem 0 0.5rem 1.5rem;border-bottom:1px solid rgba(34,34,34,0.5);font-size:0.88rem;color:var(--text);position:relative;line-height:1.5}
+ul.styled li::before{content:'—';position:absolute;left:0;color:var(--gold)}
+ul.styled li:last-child{border-bottom:none}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav{padding:0 1rem}
+  .nav-logo{font-size:1.2rem}
+  .nav-links{gap:1rem}
+  #hero{padding:5rem 1.5rem 3rem}
+  section{padding:3rem 1.5rem}
+  .hero-stats{flex-direction:column}
+  .stat-card{min-width:unset;width:100%}
+  .split-cards{grid-template-columns:1fr}
+  .investor-grid{grid-template-columns:1fr}
+  .trust-steps{grid-template-columns:1fr}
+  .brand-values{grid-template-columns:1fr 1fr}
+  .pricing-grid{grid-template-columns:1fr}
+  .pricing-card.featured{transform:none}
+  .r40-milestone-desc{max-width:80px;font-size:0.65rem}
+  .quadrant-wrap{max-width:100%}
+  footer{padding:2rem 1.5rem}
+}
+@media(max-width:480px){
+  .brand-values{grid-template-columns:1fr}
+  .section-title{font-size:2rem}
+  .celeb-card{padding:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">KINDRED™</div>
+  <ul class="nav-links">
+    <li><a href="#naming">Brand Name</a></li>
+    <li><a href="#exec-summary">Exec Summary</a></li>
+    <li><a href="#part1">Part 1</a></li>
+    <li><a href="#part2">Part 2</a></li>
+    <li><a href="#part3">Part 3</a></li>
+    <li><a href="#part4">Part 4</a></li>
+    <li><a href="#part5">Part 5</a></li>
+    <li><a href="#part6">Part 6</a></li>
+    <li><a href="#part7">Part 7</a></li>
+    <li><a href="#appendix">Appendix</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-overline">Confidential — Executive Draft &nbsp;|&nbsp; May 2026</div>
+  <h1 class="hero-headline">45-Day<br>Go-To-Market<br>Strategy</h1>
+  <p class="hero-sub">Celebrity-Owned Telehealth Joint Venture × OpenLoop Health</p>
+  <div class="hero-stats">
+    <div class="stat-card">
+      <span class="stat-num">$156.3B</span>
+      <span class="stat-label">Telehealth market by 2035</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num">20,000+</span>
+      <span class="stat-label">OpenLoop clinicians, 50 states</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num">2,000</span>
+      <span class="stat-label">Activated patients — Day 45 target</span>
+    </div>
+  </div>
+  <div class="scroll-indicator">Scroll to explore</div>
+</section>
+
+<!-- BRAND NAMING FRAMEWORK -->
+<section id="naming" style="background:var(--surface)">
+  <span class="section-label">Brand Identity</span>
+  <h2 class="section-title">The Name: Kindred</h2>
+  <p style="font-size:0.95rem;color:var(--muted);line-height:1.8;max-width:760px;margin-bottom:3rem">Selected from 15 strategic name concepts across 3 directional clusters — evaluated against four simultaneous requirements: cultural trust signal, clinical/payer credibility, FDA/FTC regulatory safety, and celebrity equity-holder pride. The naming brief is from the Brand Naming Report (May 2026, Confidential).</p>
+
+  <!-- 4 Requirements -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-bottom:3rem">
+    <div style="border:1px solid var(--border);padding:1.5rem">
+      <div style="font-family:'Bebas Neue',cursive;font-size:2rem;color:var(--gold);line-height:1;margin-bottom:0.5rem">01</div>
+      <div style="font-size:0.88rem;color:var(--text);line-height:1.6">Signal trust to underserved Black, Hispanic, and rural communities</div>
+    </div>
+    <div style="border:1px solid var(--border);padding:1.5rem">
+      <div style="font-family:'Bebas Neue',cursive;font-size:2rem;color:var(--gold);line-height:1;margin-bottom:0.5rem">02</div>
+      <div style="font-size:0.88rem;color:var(--text);line-height:1.6">Hold credibility in clinical, payer, and regulatory contexts</div>
+    </div>
+    <div style="border:1px solid var(--border);padding:1.5rem">
+      <div style="font-family:'Bebas Neue',cursive;font-size:2rem;color:var(--gold);line-height:1;margin-bottom:0.5rem">03</div>
+      <div style="font-size:0.88rem;color:var(--text);line-height:1.6">Survive FDA/FTC scrutiny — no implied clinical claims or superiority language</div>
+    </div>
+    <div style="border:1px solid var(--border);padding:1.5rem">
+      <div style="font-family:'Bebas Neue',cursive;font-size:2rem;color:var(--gold);line-height:1;margin-bottom:0.5rem">04</div>
+      <div style="font-size:0.88rem;color:var(--text);line-height:1.6">Give celebrity equity holders something they are proud to attach their name to</div>
+    </div>
+  </div>
+
+  <!-- 3 Directions -->
+  <h3 class="subsection-title">3 Strategic Directions</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-bottom:3rem">
+
+    <!-- Direction 01: Evolutionary -->
+    <div style="border:1px solid var(--border);padding:1.75rem">
+      <div style="background:rgba(201,168,76,0.08);border:1px solid var(--gold);padding:0.6rem 1rem;margin-bottom:1.25rem;display:flex;align-items:center;justify-content:space-between">
+        <span style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted)">Direction 01</span>
+        <span style="font-family:'Bebas Neue',cursive;font-size:1.1rem;color:var(--gold);letter-spacing:0.08em">Evolutionary</span>
+      </div>
+      <div style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--muted);margin-bottom:1rem">Trust-building · Community-first · Accessible</div>
+      <div style="display:flex;flex-direction:column;gap:0.75rem">
+        <div style="border-left:2px solid var(--border);padding-left:0.75rem"><strong style="color:var(--text);font-size:0.88rem">Hearth Health</strong><span style="font-size:0.78rem;color:var(--muted);display:block;margin-top:0.2rem">Warmth, home, safety — resonant across maternal, chronic, and behavioral health</span></div>
+        <div style="border-left:2px solid var(--border);padding-left:0.75rem"><strong style="color:var(--text);font-size:0.88rem">Commonground</strong><span style="font-size:0.78rem;color:var(--muted);display:block;margin-top:0.2rem">Shared humanity and community ownership in one word</span></div>
+        <div style="border-left:2px solid var(--border);padding-left:0.75rem"><strong style="color:var(--text);font-size:0.88rem">Proxima</strong><span style="font-size:0.78rem;color:var(--muted);display:block;margin-top:0.2rem">Latin for "nearest" — premium without elitism; works in English and Spanish</span></div>
+        <div style="border-left:2px solid var(--border);padding-left:0.75rem"><strong style="color:var(--text);font-size:0.88rem">Wellroot</strong><span style="font-size:0.78rem;color:var(--muted);display:block;margin-top:0.2rem">Roots metaphor connects wellness to culture, ancestry, and belonging</span></div>
+        <div style="border-left:2px solid var(--border);padding-left:0.75rem"><strong style="color:var(--text);font-size:0.88rem">Villagecare</strong><span style="font-size:0.78rem;color:var(--muted);display:block;margin-top:0.2rem">Reclaims "it takes a village" as health equity infrastructure</span></div>
+      </div>
+    </div>
+
+    <!-- Direction 02: Disruptive -->
+    <div style="border:1px solid var(--gold);padding:1.75rem;position:relative">
+      <div style="position:absolute;top:-1px;right:1.5rem;background:var(--gold);padding:0.2rem 0.75rem;font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.15em;color:#080808">Selected</div>
+      <div style="background:rgba(201,168,76,0.08);border:1px solid var(--gold);padding:0.6rem 1rem;margin-bottom:1.25rem;display:flex;align-items:center;justify-content:space-between">
+        <span style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted)">Direction 02</span>
+        <span style="font-family:'Bebas Neue',cursive;font-size:1.1rem;color:var(--gold);letter-spacing:0.08em">Disruptive</span>
+      </div>
+      <div style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--muted);margin-bottom:1rem">Identity-driven · Cultural signal · Status + Access</div>
+      <div style="display:flex;flex-direction:column;gap:0.75rem">
+        <div style="border-left:2px solid var(--border);padding-left:0.75rem"><strong style="color:var(--text);font-size:0.88rem">Sovereign Health</strong><span style="font-size:0.78rem;color:var(--muted);display:block;margin-top:0.2rem">Ownership, autonomy, self-determination — healthcare as reclamation</span></div>
+        <div style="border-left:2px solid var(--border);padding-left:0.75rem"><strong style="color:var(--text);font-size:0.88rem">Meridian</strong><span style="font-size:0.78rem;color:var(--muted);display:block;margin-top:0.2rem">Point of convergence — celebrity, community, clinical excellence</span></div>
+        <div style="border-left:2px solid var(--border);padding-left:0.75rem"><strong style="color:var(--text);font-size:0.88rem">Kinfolk Health</strong><span style="font-size:0.78rem;color:var(--muted);display:block;margin-top:0.2rem">Kin + folk — belonging without exclusion; de-stigmatizes care-seeking</span></div>
+        <div style="border-left:2px solid var(--border);padding-left:0.75rem"><strong style="color:var(--text);font-size:0.88rem">Anchor</strong><span style="font-size:0.78rem;color:var(--muted);display:block;margin-top:0.2rem">Stability, security, permanence. Counters systemic abandonment narrative</span></div>
+        <div style="border-left:2px solid var(--gold);padding-left:0.75rem;background:rgba(201,168,76,0.05)"><strong style="color:var(--gold);font-size:0.9rem">Kindred ★</strong><span style="font-size:0.78rem;color:var(--muted);display:block;margin-top:0.2rem">Shared blood, shared community, shared stake. <em>Selected.</em></span></div>
+      </div>
+    </div>
+
+    <!-- Direction 03: Category-Breaking -->
+    <div style="border:1px solid var(--border);padding:1.75rem">
+      <div style="background:rgba(201,168,76,0.08);border:1px solid var(--gold);padding:0.6rem 1rem;margin-bottom:1.25rem;display:flex;align-items:center;justify-content:space-between">
+        <span style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted)">Direction 03</span>
+        <span style="font-family:'Bebas Neue',cursive;font-size:1.1rem;color:var(--gold);letter-spacing:0.08em">Category-Breaking</span>
+      </div>
+      <div style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--muted);margin-bottom:1rem">Culture-shaping · Ownership economy · Future-facing</div>
+      <div style="display:flex;flex-direction:column;gap:0.75rem">
+        <div style="border-left:2px solid var(--border);padding-left:0.75rem"><strong style="color:var(--text);font-size:0.88rem">The Collective</strong><span style="font-size:0.78rem;color:var(--muted);display:block;margin-top:0.2rem">Direct Tidal parallel — group ownership and community architecture</span></div>
+        <div style="border-left:2px solid var(--border);padding-left:0.75rem"><strong style="color:var(--text);font-size:0.88rem">Covenant Health</strong><span style="font-size:0.78rem;color:var(--muted);display:block;margin-top:0.2rem">A binding promise — resonant in Black church culture and Hispanic family values</span></div>
+        <div style="border-left:2px solid var(--border);padding-left:0.75rem"><strong style="color:var(--text);font-size:0.88rem">Origin Health</strong><span style="font-size:0.78rem;color:var(--muted);display:block;margin-top:0.2rem">Connects health to identity, lineage, and culture — scalable internationally</span></div>
+        <div style="border-left:2px solid var(--border);padding-left:0.75rem"><strong style="color:var(--text);font-size:0.88rem">Founding Health</strong><span style="font-size:0.78rem;color:var(--muted);display:block;margin-top:0.2rem">"We founded this for you" — ties celebrity narrative to patient narrative</span></div>
+        <div style="border-left:2px solid var(--border);padding-left:0.75rem"><strong style="color:var(--text);font-size:0.88rem">Vested</strong><span style="font-size:0.78rem;color:var(--muted);display:block;margin-top:0.2rem">Double meaning: financially vested equity + emotionally vested care</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Risk callout from PDF -->
+  <div class="callout-red">
+    <div style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--red);margin-bottom:0.5rem">Naming Risk — Red Flag</div>
+    <p style="font-size:0.88rem;line-height:1.8">Whatever name is finalized — it must not inadvertently imply clinical claims or superiority to FDA-approved treatments. Given the regulatory climate post-2026 enforcement surge (30 warning letters in March 2026 alone), anything that sounds like "we cure" or "we guarantee" is a liability magnet. <strong>Kindred</strong> signals community, access, and ownership — not clinical promises. That is the right lane. Every celebrity owner's social content must carry FTC-compliant ownership disclosures. The brand is legally responsible for any claim its equity holders make on its behalf.</p>
+  </div>
+
+  <!-- Next Steps from PDF -->
+  <h3 class="subsection-title" style="margin-top:2.5rem">Naming Next Steps (Pre-Launch)</h3>
+  <div style="display:flex;flex-direction:column;gap:0.75rem">
+    <div style="display:flex;gap:1rem;align-items:flex-start;padding:1rem;border:1px solid var(--border)">
+      <div style="font-family:'Bebas Neue',cursive;font-size:1.8rem;color:var(--gold);line-height:1;min-width:40px">1</div>
+      <div><strong style="color:var(--text)">Brand Identity Development</strong><p style="font-size:0.85rem;color:var(--muted);margin-top:0.25rem;line-height:1.6">Positioning statement, tagline system, tone architecture, and visual territory for Kindred. The name is the seed — the identity is the ecosystem.</p></div>
+    </div>
+    <div style="display:flex;gap:1rem;align-items:flex-start;padding:1rem;border:1px solid var(--border)">
+      <div style="font-family:'Bebas Neue',cursive;font-size:1.8rem;color:var(--gold);line-height:1;min-width:40px">2</div>
+      <div><strong style="color:var(--text)">Trademark &amp; IP Clearance</strong><p style="font-size:0.85rem;color:var(--muted);margin-top:0.25rem;line-height:1.6">Run USPTO searches across all 15 names before any investment in creative. Several have strong trademark potential; some may face conflicts in healthcare classifications.</p></div>
+    </div>
+    <div style="display:flex;gap:1rem;align-items:flex-start;padding:1rem;border:1px solid var(--border)">
+      <div style="font-family:'Bebas Neue',cursive;font-size:1.8rem;color:var(--gold);line-height:1;min-width:40px">3</div>
+      <div><strong style="color:var(--text)">Cultural Validation</strong><p style="font-size:0.85rem;color:var(--muted);margin-top:0.25rem;line-height:1.6">Qualitative testing with Black, Hispanic, and rural community members — not focus groups, genuine ethnographic work. The trust gap is real; name validation should mirror that rigor.</p></div>
+    </div>
+    <div style="display:flex;gap:1rem;align-items:flex-start;padding:1rem;border:1px solid var(--border)">
+      <div style="font-family:'Bebas Neue',cursive;font-size:1.8rem;color:var(--gold);line-height:1;min-width:40px">4</div>
+      <div><strong style="color:var(--text)">Regulatory Pre-Clearance</strong><p style="font-size:0.85rem;color:var(--muted);margin-top:0.25rem;line-height:1.6">Engage healthcare regulatory counsel to review the final name and any descriptive taglines before public launch. FDA and FTC are actively monitoring this space.</p></div>
+    </div>
+    <div style="display:flex;gap:1rem;align-items:flex-start;padding:1rem;border:1px solid var(--border)">
+      <div style="font-family:'Bebas Neue',cursive;font-size:1.8rem;color:var(--gold);line-height:1;min-width:40px">5</div>
+      <div><strong style="color:var(--text)">OpenLoop Partnership Alignment</strong><p style="font-size:0.85rem;color:var(--muted);margin-top:0.25rem;line-height:1.6">OpenLoop's brand equity and white-label positioning must be factored into co-branding decisions. The 50/50 structure means both brands need to be architecturally compatible.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXECUTIVE SUMMARY -->
+<section id="exec-summary">
+  <span class="section-label">Executive Summary</span>
+  <h2 class="section-title">The Thesis</h2>
+
+  <div class="card card-gold-left">
+    <p style="margin-bottom:1.25rem;font-size:0.95rem;line-height:1.8"><strong style="color:var(--gold)">Company Thesis:</strong> This joint venture pairs the most trusted cultural voices in Black and Latino America with the most battle-tested white-label telehealth infrastructure on the market — OpenLoop Health — to build the first celebrity-equity-owned, community-anchored telehealth network designed specifically for underserved patients who have historically been ignored by mainstream healthcare brands.</p>
+
+    <p style="margin-bottom:1.25rem;font-size:0.95rem;line-height:1.8"><strong style="color:var(--gold)">The Cultural Opportunity:</strong> 21% of Black adults and 18% of Hispanic adults turn to social media influencers for health information, versus 12% of White adults. That is not a bug in the system — it is the system telling us where trust actually lives. When you align clinical infrastructure with the cultural credibility of Ye, LeBron, Rihanna, and Cardi B — artists whose audiences <em>already</em> make health decisions based on their signal — you are not running a marketing campaign. You are engineering a trust transfer at scale.</p>
+
+    <p style="font-size:0.95rem;line-height:1.8"><strong style="color:var(--gold)">Why Now (2026 Market Timing):</strong></p>
+    <ul class="styled" style="margin-top:0.75rem">
+      <li>The telehealth market hits $22.8B in 2024 and is tracking toward $156.3B by 2035 (19.15% CAGR)</li>
+      <li>GLP-1 is the fastest-growing telehealth category</li>
+      <li>The SPEAK Act (February 2026) now mandates language access in telehealth — opening a legally-privileged lane for LEP-first brands</li>
+      <li>The MAHA initiative redirects federal dollars toward chronic disease prevention</li>
+      <li>Competitors Hims &amp; Hers are down 47% YoY under FDA pressure; WeightWatchers filed for bankruptcy</li>
+      <li>The category is reshuffling in real time. First-mover cultural positioning advantage closes within 18 months</li>
+    </ul>
+  </div>
+
+  <div class="callout-red">
+    <div style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--red);margin-bottom:0.5rem">North Star Metric</div>
+    <p style="font-size:1rem;line-height:1.7;color:var(--text)"><strong>2,000 activated patients</strong> across all four sub-brands, with LeBron sub-brand achieving 500 patients in beta by Day 35 and full ecosystem live by Day 45. Secondary north star: <strong>zero FTC enforcement actions or FDA warning letters</strong> in the launch window.</p>
+  </div>
+</section>
+
+<!-- PART 1 -->
+<section id="part1">
+  <span class="section-label">Part 1</span>
+  <h2 class="section-title">Company + JV Architecture</h2>
+
+  <!-- 1.1 Brand Positioning -->
+  <h3 class="subsection-title">1.1 Parent Company Brand Positioning</h3>
+
+  <!-- Naming Framework Banner -->
+  <div style="background:var(--surface2);border:1px solid var(--border);border-top:3px solid var(--gold);padding:2rem;margin-bottom:1.5rem">
+    <div style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--gold);margin-bottom:0.75rem">Brand Naming — Executive Short List (May 2026)</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:1.5rem">
+      <div style="border:1px solid var(--border);padding:1.25rem;border-left:3px solid var(--gold)">
+        <div style="font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);margin-bottom:0.4rem">Disruptive</div>
+        <div style="font-family:'Bebas Neue',cursive;font-size:1.6rem;color:var(--gold);letter-spacing:0.04em">Kindred ★</div>
+        <div style="font-size:0.8rem;color:var(--muted);margin-top:0.4rem;line-height:1.5">Shared blood, shared community, shared stake. Strongest emotional memorability. Direct parallel to Tidal family narrative.</div>
+      </div>
+      <div style="border:1px solid var(--border);padding:1.25rem;border-left:3px solid var(--muted);opacity:0.7">
+        <div style="font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);margin-bottom:0.4rem">Disruptive</div>
+        <div style="font-family:'Bebas Neue',cursive;font-size:1.6rem;color:var(--text);letter-spacing:0.04em">Sovereign Health</div>
+        <div style="font-size:0.8rem;color:var(--muted);margin-top:0.4rem;line-height:1.5">Ownership, autonomy, self-determination. Healthcare as reclamation. Premium positioning without lifestyle dilution.</div>
+      </div>
+      <div style="border:1px solid var(--border);padding:1.25rem;border-left:3px solid var(--muted);opacity:0.7">
+        <div style="font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);margin-bottom:0.4rem">Category-Breaking</div>
+        <div style="font-family:'Bebas Neue',cursive;font-size:1.6rem;color:var(--text);letter-spacing:0.04em">Vested</div>
+        <div style="font-size:0.8rem;color:var(--muted);margin-top:0.4rem;line-height:1.5">Financially vested (equity holders) + emotionally vested (providers). Tells the whole ownership story in one word.</div>
+      </div>
+    </div>
+    <p style="font-size:0.78rem;color:var(--muted);font-style:italic;line-height:1.6">From 15 strategic concepts across 3 directional clusters — Evolutionary, Disruptive, and Category-Breaking. Full naming framework sourced from Brand Naming Report (May 2026, Confidential). USPTO trademark search required immediately across all three finalists.</p>
+  </div>
+
+  <div class="card card-gold-left">
+    <p style="font-size:1.2rem;margin-bottom:0.75rem"><strong style="color:var(--gold)">Selected Brand Name:</strong> <strong style="font-family:'Bebas Neue',cursive;font-size:1.5rem;letter-spacing:0.04em">KINDRED™</strong></p>
+    <p style="font-size:0.9rem;color:var(--muted);margin:1rem 0;line-height:1.7"><strong style="color:var(--text)">Brand Rationale:</strong> Shared blood, shared community, shared stake. One word that holds the entire ownership thesis without needing to explain it. For the communities this company was built to serve — Black, Hispanic, rural — kinship is not a metaphor, it is the mechanism of survival. The celebrity owners are not outsiders with a check. They are family with skin in the game. Kindred is the first healthcare brand whose name is simultaneously a promise to patients and a structural description of the ownership model.</p>
+    <p style="font-style:italic;color:var(--text);font-size:0.95rem;border-left:2px solid var(--gold);padding-left:1rem">Healthcare owned by the culture, for the culture — where clinical excellence and community belonging are the same thing.</p>
+    <div style="display:flex;gap:1.5rem;margin-top:1.25rem;flex-wrap:wrap">
+      <div style="font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--gold)">✓ Works across all target demographics</div>
+      <div style="font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--gold)">✓ Regulatory-safe — zero clinical claims</div>
+      <div style="font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--gold)">✓ Platform + media expandable</div>
+      <div style="font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--gold)">✓ Parallel to Tidal ownership narrative</div>
+    </div>
+  </div>
+
+  <h4 style="font-family:'Space Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);margin:1.5rem 0 1rem">Brand Values Architecture</h4>
+  <div class="brand-values">
+    <div class="brand-value">
+      <h4>Unfiltered</h4>
+      <p>No clinical condescension. Plain language. Authentic voices.</p>
+    </div>
+    <div class="brand-value">
+      <h4>Earned</h4>
+      <p>Every health claim is substantiated. Trust is built, not bought.</p>
+    </div>
+    <div class="brand-value">
+      <h4>Collective</h4>
+      <p>Ownership is shared. Health outcomes are shared.</p>
+    </div>
+    <div class="brand-value">
+      <h4>Persistent</h4>
+      <p>Chronic conditions require long-term relationships, not one-time transactions.</p>
+    </div>
+  </div>
+
+  <!-- 1.2 JV Structure -->
+  <h3 class="subsection-title">1.2 JV Structure Recommendation</h3>
+  <div class="callout-gold">
+    <strong>Recommendation:</strong> Option A (Capitalized JV) with Option B provisions for individual sub-brand SPVs.
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Factor</th>
+          <th>Option A — 50/50 Capitalized JV</th>
+          <th>Option B — 60/40 Asset Light</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>OpenLoop incentive alignment</td><td>Maximum — they hold equity risk</td><td>Moderate — fee-for-service dynamic</td></tr>
+        <tr><td>Celebrity negotiating position</td><td>Stronger with parity structure</td><td>Easier initial close</td></tr>
+        <tr><td>Speed to Series A</td><td>Cleaner cap table story</td><td>More complex with external funding</td></tr>
+        <tr><td>Operational risk sharing</td><td>Shared — reduces celebrity exposure</td><td>Celebrity-side bears more</td></tr>
+        <tr><td>Brand integrity</td><td>OpenLoop has skin in cultural outcomes</td><td>Potential misalignment</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:0.85rem;color:var(--muted);line-height:1.7;margin-top:1rem">Option A gives OpenLoop maximum incentive to perform — they do not get paid for infrastructure delivery, they get paid when the business wins. That alignment matters when you are asking a clinical network to integrate with a celebrity brand ecosystem where reputational and operational risk are co-mingled. Option B provisions are preserved for <em>individual celebrity sub-brand SPVs</em> that bring in external micro-investors (per the Midi Health $63M Series B SPV model).</p>
+
+  <!-- 1.3 OpenLoop -->
+  <h3 class="subsection-title">1.3 OpenLoop as "Invisible Infrastructure"</h3>
+  <p style="font-size:0.9rem;color:var(--muted);line-height:1.7;margin-bottom:1rem">OpenLoop is the engine. Kindred is the dashboard. The patient never sees OpenLoop — they see Cardi B's sub-brand, or LeBron's. This is the strategic advantage.</p>
+  <div class="card">
+    <div style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);margin-bottom:0.75rem">Why "Invisible" is the right architecture</div>
+    <ul class="styled">
+      <li>Patients in underserved communities have documented distrust of institutional healthcare brands. A "Powered by OpenLoop" badge on a patient intake form is a liability, not an asset, in this demographic context.</li>
+      <li>OpenLoop's January 2026 data breach is a known event. Burying OpenLoop's brand in the B2B layer — while aggressively communicating Kindred's patient data commitments at the consumer layer — is the cleanest trust recovery strategy.</li>
+      <li>Celebrity brand integrity depends on the consumer believing the experience is <em>theirs</em>, not a white-labeled product. OpenLoop's white-label architecture was purpose-built for exactly this scenario — they power 170+ organizations invisibly today.</li>
+    </ul>
+  </div>
+  <div class="card" style="margin-top:1rem">
+    <div style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--gold);margin-bottom:0.75rem">OpenLoop Infrastructure Assets Being Activated</div>
+    <ul class="styled">
+      <li>20,000+ clinicians; 50-state coverage; 30+ digital health specialties</li>
+      <li>NCQA-accredited Credentialing Verification Organization</li>
+      <li>600+ payer plans covering ~250 million patient lives (Medicare and Medicaid included)</li>
+      <li>100+ AI clinical pathways — vetted protocols deployed immediately</li>
+      <li>Season Health acquisition (2026) — enables GLP-1 + nutrition bundling for weight loss sub-brands</li>
+      <li>7-week average onboarding time from contract to go-live</li>
+      <li>Revenue cycle management handled end-to-end</li>
+    </ul>
+  </div>
+
+  <!-- 1.4 Revenue Model -->
+  <h3 class="subsection-title">1.4 Revenue Model</h3>
+  <h4 style="font-family:'Space Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);margin-bottom:1rem">Three-Tier Subscription Architecture</h4>
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <div class="tier-label">Tier 1</div>
+      <h3>Community</h3>
+      <div class="price">$29</div>
+      <div class="price-period">/month</div>
+      <div class="tier-desc">1 async consult/mo, messaging, prescription routing</div>
+      <div class="tier-target">Uninsured / cash-pay · LEP patients</div>
+    </div>
+    <div class="pricing-card featured">
+      <div class="featured-badge">Most Popular</div>
+      <div class="tier-label">Tier 2</div>
+      <h3>Care</h3>
+      <div class="price">$79</div>
+      <div class="price-period">/month</div>
+      <div class="tier-desc">2 video visits/mo, care coordination, RPM onboarding</div>
+      <div class="tier-target">Dual-eligible Medicare/Medicaid · Working class</div>
+    </div>
+    <div class="pricing-card">
+      <div class="tier-label">Tier 3</div>
+      <h3>Premium</h3>
+      <div class="price">$199</div>
+      <div class="price-period">/month</div>
+      <div class="tier-desc">Unlimited visits, GLP-1 management, nutrition via Season Health, hormone panel</div>
+      <div class="tier-target">Employer-insured · Wellness-motivated</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:1rem">
+    <div style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--gold);margin-bottom:0.75rem">Payer Reimbursement Strategy</div>
+    <ul class="styled">
+      <li>Payer enrollment initiation on Day 1 (60-120 day processing lead time — enrollment delay is revenue delay)</li>
+      <li>Cash-pay bridge strategy: Community and Care tiers are deliberately priced to be viable pre-payer enrollment</li>
+      <li>Target payer mix at 90 days: 40% cash-pay, 35% commercial payer, 25% Medicare/Medicaid</li>
+      <li>Dual-eligible population (22.0% telehealth utilization — 2x general Medicare average) is an immediate high-value target via OpenLoop's existing 600+ payer network</li>
+    </ul>
+  </div>
+
+  <!-- 1.5 Equity Structure -->
+  <h3 class="subsection-title">1.5 Equity Structure: Collective Ownership Framework</h3>
+  <div class="table-wrap">
+    <table class="eq-table">
+      <thead>
+        <tr>
+          <th>Stakeholder</th>
+          <th>Equity %</th>
+          <th>Mechanism</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Celebrity Collective (4 artists)</strong></td><td style="color:var(--gold);font-family:'Space Mono',monospace">24% total (6% each)</td><td>Direct equity in parent JV entity</td></tr>
+        <tr><td><strong>Lead Celebrity (Board Seat Holder)</strong></td><td style="color:var(--gold);font-family:'Space Mono',monospace">+2% additional (TBD)</td><td>Governance premium</td></tr>
+        <tr><td><strong>OpenLoop Health</strong></td><td style="color:var(--gold);font-family:'Space Mono',monospace">50%</td><td>JV founding position</td></tr>
+        <tr><td><strong>Parent Company / Management</strong></td><td style="color:var(--gold);font-family:'Space Mono',monospace">24%</td><td>Operational equity + future employee pool</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card" style="margin-top:1.5rem">
+    <div style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--gold);margin-bottom:0.75rem">Wellness Commitment Triggers</div>
+    <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.75rem">Equity vests quarterly, contingent on:</p>
+    <ul class="styled">
+      <li>Minimum content contribution (defined per artist — see Part 2)</li>
+      <li>No material FTC violation attributable to artist's content</li>
+      <li>No active criminal charges during vesting period</li>
+      <li>Active participation in 1 community health event per quarter</li>
+    </ul>
+  </div>
+
+  <div class="card" style="margin-top:1rem">
+    <div style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--red);margin-bottom:0.75rem">Controversy Clause</div>
+    <p style="font-size:0.85rem;color:var(--muted);line-height:1.7">Any artist equity is subject to suspension (not forfeiture) for 90 days upon initiation of a material controversy event (defined as sustained negative media coverage &gt;72 hours or regulatory investigation). Board votes within 7 days on suspension activation. Equity buy-back mechanism triggers at 180 days if controversy is unresolved.</p>
+  </div>
+
+  <div class="card" style="margin-top:1rem">
+    <div style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);margin-bottom:0.5rem">SPV Layer (Future Rounds)</div>
+    <p style="font-size:0.85rem;color:var(--muted);line-height:1.7">A Special Purpose Vehicle allows additional celebrity micro-investors (5 or more at $500K-$2M each) without disrupting the core cap table. Reference: Midi Health SPV structure ($63M Series B).</p>
+  </div>
+</section>
+
+<!-- PART 2 -->
+<section id="part2">
+  <span class="section-label">Part 2</span>
+  <h2 class="section-title">Celebrity Sub-Brand Playbook</h2>
+
+  <!-- YE -->
+  <div class="celeb-card celeb-ye">
+    <div style="font-family:'Space Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--purple);margin-bottom:0.5rem">2.1 &nbsp;·&nbsp; Ye (Kanye West)</div>
+    <div class="celeb-name">YZY MIND™</div>
+    <p class="celeb-positioning">"The mental health brand that doesn't ask you to be someone else — because you're already enough."</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem">
+      <div class="celeb-section">
+        <span class="celeb-section-label">Target Audience</span>
+        <p>Black males ages 18-35; creative professionals; Yeezy loyalists; men who have publicly or privately resisted mental health treatment due to stigma. Psychographic: "I'm not weak, I just carry a lot."</p>
+      </div>
+      <div class="celeb-section">
+        <span class="celeb-section-label">Hero Health Category</span>
+        <p>Behavioral &amp; Mental Health — telepsychiatry, therapy access, medication-assisted care</p>
+        <span class="celeb-section-label" style="margin-top:0.75rem">Secondary Categories</span>
+        <p>Sleep health, stress management, men's primary care</p>
+      </div>
+    </div>
+
+    <div class="celeb-section">
+      <span class="celeb-section-label">Content &amp; Trust Strategy</span>
+      <p>Ye's relationship with mental health is not a liability — it is the most authentic credential in this category. His public experience with bipolar disorder diagnosis, creative episodes, and public scrutiny creates a permission structure to talk about mental health that no other celebrity can claim. Content strategy centers on <em>destigmatization through creative expression</em> — music, art, visual drops that reframe mental health as a creative practice, not a clinical intervention. Clinician intro content features Black male psychiatrists who speak Ye's language, not institutional language.</p>
+    </div>
+
+    <div class="celeb-section" style="background:rgba(155,89,182,0.06);border:1px solid rgba(155,89,182,0.2);padding:1rem;margin:1rem 0">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem">
+        <span class="celeb-section-label" style="margin-bottom:0">Cultural Risk Assessment</span>
+        <span class="badge badge-h">HIGH</span>
+      </div>
+      <p>Kanye West is the highest-controversy asset in this portfolio. Risk vectors: antisemitic statements (2022-2024 public record), erratic public behavior, history of non-compliant conduct with business partners, and existing reputational rehabilitation uncertainty. The "Yeezy Health" concept has been floated in market research but has no established brand equity.</p>
+    </div>
+
+    <div class="celeb-section">
+      <span class="celeb-section-label">Mitigation Protocol</span>
+      <ul class="styled">
+        <li>YZY MIND launches <em>last</em> in the 45-day sequence (Day 43-45), after infrastructure is proven</li>
+        <li>No Ye likeness in clinical or claims-bearing content — creative direction only</li>
+        <li>Separate content compliance review layer (48-hour hold on all Ye-adjacent posts)</li>
+        <li>Legal team pre-clears all Ye statements before they are amplified by brand channels</li>
+        <li>Controversy clause with 30-day trigger (shortened from standard 90-day due to elevated risk profile)</li>
+        <li>Brand architecture allows YZY MIND to operate independently — full brand quarantine is possible without shutting down other sub-brands</li>
+      </ul>
+    </div>
+
+    <div class="celeb-section">
+      <span class="celeb-section-label">Equity Commitment Terms</span>
+      <p>6% equity; vesting contingent on quarterly "Wellness Drop" content (audio, visual, or written piece centered on mental health); 1 community mental health activation per quarter. No press requirement — Ye's content is his equity contribution.</p>
+    </div>
+
+    <div class="celeb-activation">
+      <span class="celeb-activation-label">Launch Activation Concept — Day 43-45</span>
+      <p style="font-size:0.88rem;color:var(--text);line-height:1.6">A private, invite-only listening session / mental health conversation — not a concert, not a press event. 50 Black men from Ye's creative community, 5 Black psychiatrists, no cameras except one documentary crew under NDA. The film drops 30 days later as the launch asset.</p>
+    </div>
+  </div>
+
+  <!-- LEBRON -->
+  <div class="celeb-card celeb-lebron">
+    <div style="font-family:'Space Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--amber);margin-bottom:0.5rem">2.2 &nbsp;·&nbsp; LeBron James</div>
+    <div class="celeb-name">CROWN HEALTH™</div>
+    <p class="celeb-positioning">"Built for people who perform at their highest level — and everyone who's trying to."</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem">
+      <div class="celeb-section">
+        <span class="celeb-section-label">Target Audience</span>
+        <p>Black males 25-50; fathers; athletes (amateur to elite); men who see health as performance optimization, not medical weakness. Secondary: Black families through LeBron's family-brand equity. Psychographic: "I invest in everything I do."</p>
+      </div>
+      <div class="celeb-section">
+        <span class="celeb-section-label">Hero Health Category</span>
+        <p>Medical Weight Management + Men's Primary Care — GLP-1 management, metabolic health, performance labs</p>
+        <span class="celeb-section-label" style="margin-top:0.75rem">Secondary Categories</span>
+        <p>Pediatric behavioral health, cardiovascular health, RPM for chronic disease management</p>
+      </div>
+    </div>
+
+    <div class="celeb-section">
+      <span class="celeb-section-label">Content &amp; Trust Strategy</span>
+      <p>LeBron is the most institutionally credible asset in this portfolio. SpringHill Company, Uninterrupted, Liverpool FC ownership, Klutch Sports — he has demonstrated that he can build businesses, not just endorse them. Content strategy: <em>LeBron as patient zero</em> — transparent documentation of his own health optimization journey (labs, nutrition, sleep, performance metrics). Clinician collaboration with sports medicine and performance health specialists. Uninterrupted distribution channel for long-form health content reaches the exact demographic (Black professional men 25-50) that is most underserved and most monetizable.</p>
+    </div>
+
+    <div class="celeb-section" style="background:rgba(45,198,83,0.04);border:1px solid rgba(45,198,83,0.15);padding:1rem;margin:1rem 0">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem">
+        <span class="celeb-section-label" style="margin-bottom:0">Cultural Risk Assessment</span>
+        <span class="badge badge-l">LOW</span>
+      </div>
+      <p>LeBron is the most brand-safe asset in this portfolio. Primary risks: NBA association (healthcare marketing rules during season), potential FTC scrutiny on equity-ownership disclosure (he is an owner, not an endorser — the disclosure language must be precise), and audience expectation gap (his fans expect elite athlete content; clinical primary care may feel ordinary).</p>
+    </div>
+
+    <div class="celeb-section">
+      <span class="celeb-section-label">Mitigation Protocol</span>
+      <ul class="styled">
+        <li>FTC disclosure language: "LeBron James is a co-owner of CROWN HEALTH and receives equity compensation" — required on all commercial content</li>
+        <li>Content strategy bridges performance and primary care through "longevity" framing — elite athletes age, and LeBron has already signaled longevity interest publicly</li>
+        <li>NBA compliance review of all in-season content activations</li>
+      </ul>
+    </div>
+
+    <div class="celeb-section">
+      <span class="celeb-section-label">Equity Commitment Terms</span>
+      <p>6% equity (+2% board seat premium if LeBron elected Lead Celebrity — recommended). Wellness Commitment: 2 long-form content pieces per quarter via Uninterrupted, 1 Klutch Sports network activation per quarter, 1 community health event in Akron or LA annually.</p>
+    </div>
+
+    <div class="celeb-activation">
+      <span class="celeb-activation-label">Launch Activation Concept — Day 29-35</span>
+      <p style="font-size:0.88rem;color:var(--text);line-height:1.6">"The Crown Lab" — LeBron releases a full health panel (blood work, metabolic markers, sleep data) on Uninterrupted, then books a telehealth consult with a CROWN HEALTH clinician on camera. No scripted dialogue. Real intake. Real results. It becomes the brand's origin story.</p>
+    </div>
+  </div>
+
+  <!-- RIHANNA -->
+  <div class="celeb-card celeb-rihanna">
+    <div style="font-family:'Space Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--fuchsia);margin-bottom:0.5rem">2.3 &nbsp;·&nbsp; Rihanna</div>
+    <div class="celeb-name">FENTY WELLNESS™</div>
+    <p class="celeb-positioning">"Your body, your terms — healthcare as luxurious as the life you're building."</p>
+    <p style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--muted);margin-bottom:1.5rem">Subject to Fenty brand licensing agreement — alternative: RHENNA HEALTH</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem">
+      <div class="celeb-section">
+        <span class="celeb-section-label">Target Audience</span>
+        <p>Black and Caribbean diaspora women ages 22-45; Fenty Beauty loyalists; Gen Z and millennial women who have disposable income and high standards for brand experience; new and expecting mothers; women navigating hormone health. Psychographic: "I don't settle. Why would I settle for my healthcare?"</p>
+      </div>
+      <div class="celeb-section">
+        <span class="celeb-section-label">Hero Health Category</span>
+        <p>Women's Health — hormone therapy, maternal/reproductive health, GLP-1 weight management, dermatology</p>
+        <span class="celeb-section-label" style="margin-top:0.75rem">Secondary Categories</span>
+        <p>Mental health, sexual health, nutrition via Season Health integration</p>
+      </div>
+    </div>
+
+    <div class="celeb-section">
+      <span class="celeb-section-label">Content &amp; Trust Strategy</span>
+      <p>Rihanna's authenticity in the women's health space is commercially proven — Fenty Beauty redefined beauty standards for women of color; Savage X Fenty redefined intimacy and body image. The content play is the natural extension: what does it mean to take care of a body that the culture has told you is too much, not enough, or only valuable for others? Clinicians featured are Black and Caribbean female OB/GYNs and endocrinologists. Content is editorial-quality — think <em>Vogue</em> meets <em>WebMD</em>, produced to Fenty aesthetic standards.</p>
+    </div>
+
+    <div class="celeb-section" style="background:rgba(243,156,18,0.04);border:1px solid rgba(243,156,18,0.15);padding:1rem;margin:1rem 0">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem">
+        <span class="celeb-section-label" style="margin-bottom:0">Cultural Risk Assessment</span>
+        <span class="badge badge-m">LOW-MEDIUM</span>
+      </div>
+      <p>Rihanna's primary risk is brand overextension — Fenty is already a beauty and fashion empire. Healthcare is a significant pivot, and if FENTY WELLNESS underperforms clinically, it reflects on the Fenty masterbrand. Secondary risk: pregnancy/maternal health content requires extreme clinical accuracy — any claim that touches prenatal care, fetal health, or medication during pregnancy is subject to heightened FDA scrutiny.</p>
+    </div>
+
+    <div class="celeb-section">
+      <span class="celeb-section-label">Mitigation Protocol</span>
+      <ul class="styled">
+        <li>If Fenty brand licensing is not executed by Day 14, launch under RHENNA HEALTH — do not delay sub-brand launch waiting on IP negotiation</li>
+        <li>Maternal health content requires double review by OB/GYN and compliance officer before posting</li>
+        <li>Separate content audit for any GLP-1 content (FDA March 2026 warning letter context — see Part 5)</li>
+      </ul>
+    </div>
+
+    <div class="celeb-section">
+      <span class="celeb-section-label">Equity Commitment Terms</span>
+      <p>6% equity. Wellness Commitment: quarterly Fenty Beauty / Fenty Wellness cross-promotion (co-branded "wellness drop"), 1 IRL community health event per year in a diaspora-dense market (Miami, NYC, London), content parity with Savage X Fenty social frequency.</p>
+    </div>
+
+    <div class="celeb-activation">
+      <span class="celeb-activation-label">Launch Activation Concept — Day 37-39</span>
+      <p style="font-size:0.88rem;color:var(--text);line-height:1.6">"The Fenty Check" — a digital campaign that reframes the annual physical as a luxury ritual. Rihanna documents her first FENTY WELLNESS telehealth consultation. Campaign visual language is shot to Fenty Beauty editorial standards. Launch in partnership with a Black Women's Health Imperative affiliate event.</p>
+    </div>
+  </div>
+
+  <!-- CARDI B -->
+  <div class="celeb-card celeb-cardi">
+    <div style="font-family:'Space Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--red);margin-bottom:0.5rem">2.4 &nbsp;·&nbsp; Cardi B</div>
+    <div class="celeb-name">BARDI CARE™</div>
+    <p class="celeb-positioning">"No gatekeeping. No judgment. Just real healthcare for real people."</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem">
+      <div class="celeb-section">
+        <span class="celeb-section-label">Target Audience</span>
+        <p>Latina women (Dominican, Puerto Rican, Caribbean heritage); Black women; working-class and middle-class women ages 20-40 who have been ignored or condescended to by the healthcare system. Psychographic: "I know what I need. I just need someone to actually listen."</p>
+      </div>
+      <div class="celeb-section">
+        <span class="celeb-section-label">Hero Health Category</span>
+        <p>Mental Health + Women's Primary Care — anxiety, depression, ADHD, and the systemic healthcare barriers faced by Latina and Black women</p>
+        <span class="celeb-section-label" style="margin-top:0.75rem">Secondary Categories</span>
+        <p>Reproductive health, GLP-1 weight management, pediatric care access for single-parent households</p>
+      </div>
+    </div>
+
+    <div class="celeb-section">
+      <span class="celeb-section-label">Content &amp; Trust Strategy</span>
+      <p>Cardi B's superpower is radical authenticity at massive scale. She is among the most-followed people on Instagram and TikTok. She has spoken publicly about postpartum depression, healthcare system failures, and the particular exhaustion of being a working-class Latina navigating institutions not built for her. She does not need a content script — she needs a compliance guardrail and a clinician she trusts. Content strategy: Cardi goes live with a BARDI CARE clinician, unscripted. Patient community stories — "real patients, real results" — featuring Latina and Black women from the Bronx, Houston, and Miami. Spanish-language content is a primary output, not an afterthought (SPEAK Act alignment).</p>
+    </div>
+
+    <div class="celeb-section" style="background:rgba(230,57,70,0.06);border:1px solid rgba(230,57,70,0.2);padding:1rem;margin:1rem 0">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem">
+        <span class="celeb-section-label" style="margin-bottom:0">Cultural Risk Assessment</span>
+        <span class="badge badge-m">MEDIUM</span>
+      </div>
+      <p>Cardi B's authenticity is her brand moat, but it is also her risk vector. Her directness can conflict with FDA claim substantiation requirements — she may describe a clinical result in a way that constitutes an off-label claim or testimonial that triggers FTC scrutiny. Past legal history (prior criminal charges, assault case) is a known public record variable. The Offset relationship dynamic creates periodic tabloid risk that can bleed into brand cycle.</p>
+    </div>
+
+    <div class="celeb-section">
+      <span class="celeb-section-label">Mitigation Protocol</span>
+      <ul class="styled">
+        <li>All Cardi B unscripted content (live streams, Stories, etc.) requires same-day compliance review before any brand amplification</li>
+        <li>Trained compliance liaison on Cardi's team with authority to flag content before it is retweeted or reposted by BARDI CARE accounts</li>
+        <li>Spanish-language content has a separate clinical translation review — medical terminology accuracy is non-negotiable</li>
+        <li>Brand architecture allows BARDI CARE to operate independently in a quarantine scenario</li>
+      </ul>
+    </div>
+
+    <div class="celeb-section">
+      <span class="celeb-section-label">Equity Commitment Terms</span>
+      <p>6% equity. Wellness Commitment: 1 Spanish-language health education live stream per month, 1 Bronx/NYC community health event per quarter, TikTok content targeting Gen Z Latina health discovery (minimum 2 posts per month tagged for social search indexing).</p>
+    </div>
+
+    <div class="celeb-activation">
+      <span class="celeb-activation-label">Launch Activation Concept — Day 41-43</span>
+      <p style="font-size:0.88rem;color:var(--text);line-height:1.6">"Cardi Checks In" — a multi-part TikTok and Instagram series where Cardi B documents getting her annual health panel, has a telehealth consult for a real health concern (not scripted), and then runs a 48-hour open Q&amp;A with a BARDI CARE clinician answering her community's health questions in real time. Fully bilingual: English and Spanish simultaneously.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PART 3 -->
+<section id="part3">
+  <span class="section-label">Part 3</span>
+  <h2 class="section-title">45-Day Launch Roadmap</h2>
+
+  <!-- Week 1 -->
+  <div class="week-header">
+    <div class="week-num">01</div>
+    <div class="week-title">Foundation Sprint &nbsp; <span style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--muted)">Days 1–7</span></div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Day</th><th>Action</th><th>Owner</th><th>Dependency</th></tr></thead>
+      <tbody>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">1</td><td>Engage M&amp;A/healthcare counsel; begin JV entity formation (Delaware C-Corp)</td><td>CEO + Legal</td><td>None</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">1</td><td>Initiate trademark search: KINDRED, CROWN HEALTH, BARDI CARE, YZY MIND, FENTY WELLNESS/RHENNA HEALTH + all 15 naming candidates from Brand Naming Report</td><td>IP Counsel</td><td>None</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">1</td><td>OpenLoop contract execution — begin 7-week onboarding clock</td><td>CEO + OpenLoop BD</td><td>JV entity formation</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">2</td><td>Celebrity equity term sheet circulation (4 artists)</td><td>Legal + Agent Relations</td><td>JV entity</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">2</td><td>SPV legal structure initiated (Cayman or Delaware)</td><td>Legal</td><td>Cap table finalization</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">3</td><td>Regulatory counsel engagement — FDA/FTC specialist retained</td><td>Legal</td><td>None</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">3</td><td>Payer enrollment initiation for top 10 target plans in priority markets (TX, FL, NY, CA)</td><td>Revenue Cycle (OpenLoop)</td><td>Contract execution</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">4</td><td>Head of Brand posted; Chief Medical Officer search initiated</td><td>HR</td><td>Entity formation</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">5</td><td>Chief Compliance Officer retained (healthcare regulatory specialist, ideally with FTC/FDA background)</td><td>CEO</td><td>None</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">5</td><td>Data security audit firm engaged (direct response to OpenLoop January 2026 breach)</td><td>CCO</td><td>None</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">6</td><td>Celebrity team briefings: agents, publicists, legal reps for all 4 artists</td><td>Brand + Legal</td><td>Term sheet circulation</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">7</td><td>Brand naming final decision + trademark status check</td><td>Brand + IP Counsel</td><td>Search results</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Week 2 -->
+  <div class="week-header">
+    <div class="week-num">02</div>
+    <div class="week-title">Infrastructure &amp; Brand Build &nbsp; <span style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--muted)">Days 8–14</span></div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Day</th><th>Action</th><th>Owner</th><th>Dependency</th></tr></thead>
+      <tbody>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">8</td><td>OpenLoop staging environment access; EHR white-label configuration begins</td><td>CTO + OpenLoop</td><td>Contract execution</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">8–10</td><td>Sub-brand visual identity development: CROWN HEALTH, BARDI CARE, FENTY WELLNESS/RHENNA, YZY MIND</td><td>Creative Director</td><td>Brand naming final</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">9</td><td>HIPAA compliance audit of all marketing materials in development</td><td>CCO</td><td>Draft materials</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">10</td><td>Social listening setup: Brandwatch or Sprinklr monitoring for all 4 celebrity audience health conversations</td><td>Digital Team</td><td>None</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">11</td><td>Celebrity content team briefings: content calendar framework, FTC disclosure training</td><td>Brand + Compliance</td><td>Equity terms signed</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">12</td><td>Clinical pathway selection for each sub-brand's hero category (from OpenLoop's 100+ vetted protocols)</td><td>CMO + OpenLoop Clinical</td><td>EHR access</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">13</td><td>SPEAK Act compliance plan drafted: Spanish (Cardi), AAPI language support protocols</td><td>CCO + Clinical</td><td>None</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">14</td><td>Investor deck v1 completed: Series A narrative, market data, celebrity equity structure</td><td>CEO + CFO</td><td>Brand naming final</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Week 3 -->
+  <div class="week-header">
+    <div class="week-num">03</div>
+    <div class="week-title">Pilot Configuration &nbsp; <span style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--muted)">Days 15–21</span></div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Day</th><th>Action</th><th>Owner</th><th>Dependency</th></tr></thead>
+      <tbody>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">15</td><td>7-step patient journey mapped for each sub-brand: Engagement → Ongoing Wellness</td><td>Product + Clinical</td><td>EHR configuration</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">16</td><td>Waitlist landing pages live: email + SMS capture for all 4 sub-brands</td><td>Digital + Brand</td><td>Sub-brand identity</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">17</td><td>Micro-influencer identification: 50 per sub-brand from within each celebrity's authentic community</td><td>Digital + Brand</td><td>Social listening data</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">18</td><td>FDA/FTC compliance review of all planned marketing language (pre-approval for all claims)</td><td>CCO + Legal</td><td>Draft content</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">19</td><td>Beta cohort recruitment strategy: targeting 500 patients per sub-brand from waitlist</td><td>Growth + Clinical</td><td>Landing pages live</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">20</td><td>OpenLoop clinician onboarding for pilot specialties: primary care, behavioral health, GLP-1</td><td>OpenLoop + CMO</td><td>Clinical pathway selection</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">21</td><td>Investor deck v2 + pitch scheduling for Tier 1 targets (see Appendix)</td><td>CEO + CFO</td><td>Deck v1 refined</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Week 4 -->
+  <div class="week-header">
+    <div class="week-num">04</div>
+    <div class="week-title">Pre-Launch Activation &nbsp; <span style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--muted)">Days 22–28</span></div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Day</th><th>Action</th><th>Owner</th><th>Dependency</th></tr></thead>
+      <tbody>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">22</td><td>Celebrity teaser content drops: identity/community content, zero clinical claims</td><td>Brand + Compliance</td><td>FTC-cleared content</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">23</td><td>Press strategy execution: healthcare trade (STAT News, MedCity) + cultural media (Complex, Essence, People en Español)</td><td>PR + Brand</td><td>Brand identity final</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">24</td><td>Community health event planning: 1 IRL event per sub-brand scheduled within 60 days</td><td>Events + Community</td><td>Geographic targeting</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">25</td><td>Staff FTC disclosure training completed — all celebrity social posts require "paid owner" disclosure</td><td>CCO + HR</td><td>All staff onboarded</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">26</td><td>Beta patient cohort outreach from waitlist — 2,000 total invitations sent</td><td>Growth</td><td>Waitlist size</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">27</td><td>OpenLoop pilot clinician briefing: brand voice, patient population context, cultural competency</td><td>CMO + OpenLoop</td><td>Clinician onboarding</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">28</td><td>Data security communication plan prepared: patient data commitment messaging ready for launch day</td><td>CCO + Brand</td><td>Audit findings</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Week 5 -->
+  <div class="week-header">
+    <div class="week-num">05</div>
+    <div class="week-title">Soft Launch — CROWN HEALTH &nbsp; <span style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--muted)">Days 29–35</span> <span class="badge badge-go">GO</span></div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Day</th><th>Action</th><th>Owner</th><th>Dependency</th></tr></thead>
+      <tbody>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--green)">29</td><td>CROWN HEALTH beta launch: real patient intake begins through OpenLoop infrastructure</td><td>Product + Clinical</td><td>OpenLoop go-live</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--green)">29</td><td>"The Crown Lab" LeBron content drops on Uninterrupted</td><td>Brand + LeBron team</td><td>Content approval</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--green)">30</td><td>Community health workshop #1: CROWN HEALTH — Akron or LA venue, 100-person capacity</td><td>Events</td><td>Venue booked Week 3</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--green)">31</td><td>NPS monitoring begins: real-time patient satisfaction tracking, intake conversion rate dashboard live</td><td>Product + Analytics</td><td>Patients in system</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--green)">32</td><td>Press embargo lifts: CROWN HEALTH announcement in STAT News, ESPN, Uninterrupted</td><td>PR</td><td>3-day post-launch stability</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--green)">33</td><td>Micro-influencer activation: LeBron community (athletes, fathers, professionals)</td><td>Digital</td><td>Influencer agreements</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--green)">34</td><td>Week 1 metrics review: patient volume, NPS, intake conversion, clinician capacity utilization</td><td>CEO + Analytics</td><td>Data collected</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--green)">35</td><td>Optimization sprint: fix any intake flow friction identified in first 500 patients</td><td>Product + Clinical</td><td>Metrics review</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Week 6 -->
+  <div class="week-header">
+    <div class="week-num">06</div>
+    <div class="week-title">Full Ecosystem Launch &nbsp; <span style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--muted)">Days 36–45</span> <span class="badge badge-go">GO</span></div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Day</th><th>Action</th><th>Owner</th><th>Dependency</th></tr></thead>
+      <tbody>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--green)">36–37</td><td>FENTY WELLNESS / RHENNA HEALTH goes live: Rihanna "The Fenty Check" content drops</td><td>Brand + Clinical</td><td>CROWN HEALTH stable</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--green)">38–39</td><td>Paid social campaign launch: TikTok, Instagram, YouTube — social search optimized for women's health queries</td><td>Paid Media</td><td>Sub-brands live</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--green)">40</td><td>Kindred + OpenLoop joint press release: partnership announcement, infrastructure transparency</td><td>PR + OpenLoop</td><td>Coordination</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--green)">41–42</td><td>BARDI CARE goes live: "Cardi Checks In" TikTok series launches; Spanish-language content priority</td><td>Brand + Clinical</td><td>Infrastructure stable</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--green)">43–44</td><td>Community health partnerships activated: FQHC referral network, community health centers in TX, FL, NY</td><td>BD + Community</td><td>Partnership agreements</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--green)">43–45</td><td>YZY MIND goes live: private listening session film released; behavioral health intake opens</td><td>Brand + Clinical</td><td>Compliance cleared</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--green)">45</td><td>First-week full ecosystem report: all sub-brand patient volumes, conversion rates, NPS; Series A fundraising activates</td><td>CEO + Analytics</td><td>All brands live</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- PART 4 -->
+<section id="part4">
+  <span class="section-label">Part 4</span>
+  <h2 class="section-title">Revenue &amp; Financial Model</h2>
+
+  <h3 class="subsection-title">4.1 ARPU Targets by Sub-Brand</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Sub-Brand</th>
+          <th>Target ARPU (Yr 1)</th>
+          <th>Tier Mix Assumption</th>
+          <th>Payer Reimbursement Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>CROWN HEALTH</strong></td><td style="font-family:'Space Mono',monospace;color:var(--gold)">$89/mo</td><td>30% Community / 50% Care / 20% Premium</td><td>+$30 reimbursement uplift post-enrollment</td></tr>
+        <tr><td><strong>FENTY WELLNESS</strong></td><td style="font-family:'Space Mono',monospace;color:var(--gold)">$105/mo</td><td>20% Community / 45% Care / 35% Premium</td><td>Hormone/women's health payer codes active</td></tr>
+        <tr><td><strong>BARDI CARE</strong></td><td style="font-family:'Space Mono',monospace;color:var(--gold)">$52/mo</td><td>55% Community / 35% Care / 10% Premium</td><td>SPEAK Act compliance unlocks LEP payer pools</td></tr>
+        <tr><td><strong>YZY MIND</strong></td><td style="font-family:'Space Mono',monospace;color:var(--gold)">$79/mo</td><td>40% Community / 45% Care / 15% Premium</td><td>Behavioral health 44% of Medicare visits — high payer capture</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="subsection-title">4.2 45-Day Revenue Target</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin:1.5rem 0">
+    <div class="card" style="text-align:center">
+      <div style="font-family:'Bebas Neue',cursive;font-size:3.5rem;color:var(--gold);line-height:1">2,000</div>
+      <div style="font-family:'Space Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);margin-top:0.3rem">Beta patients by Day 45</div>
+    </div>
+    <div class="card" style="text-align:center">
+      <div style="font-family:'Bebas Neue',cursive;font-size:3.5rem;color:var(--gold);line-height:1">~$78</div>
+      <div style="font-family:'Space Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);margin-top:0.3rem">Blended ARPU / month</div>
+    </div>
+    <div class="card" style="text-align:center">
+      <div style="font-family:'Bebas Neue',cursive;font-size:3.5rem;color:var(--gold);line-height:1">$1.87M</div>
+      <div style="font-family:'Space Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);margin-top:0.3rem">Month 2 annualized run rate</div>
+    </div>
+    <div class="card" style="text-align:center">
+      <div style="font-family:'Bebas Neue',cursive;font-size:3.5rem;color:var(--gold);line-height:1">$18.7M</div>
+      <div style="font-family:'Space Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);margin-top:0.3rem">Target ARR at 12 months (20K patients)</div>
+    </div>
+  </div>
+  <div class="callout-gold">
+    <span style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--gold)">Breakeven Target</span>
+    <p style="font-size:1rem;color:var(--text);margin-top:0.3rem"><strong>8,500 patients</strong> at blended ARPU (before payer reimbursement overlay)</p>
+  </div>
+
+  <h3 class="subsection-title">4.3 Cash-Pay Bridge Strategy</h3>
+  <p style="font-size:0.9rem;color:var(--muted);line-height:1.7">Payer enrollment takes 60-120 days. The business must be cash-pay viable in that window. Community tier ($29/mo) is priced specifically to be accessible without insurance while generating unit economics above direct cost of care via OpenLoop's white-label pricing structure. The Season Health acquisition (food-as-medicine) enables GLP-1 + nutrition bundles at Premium tier — a cash-pay category where Hims &amp; Hers has demonstrated 79% gross margins. This is the margin bridge.</p>
+
+  <h3 class="subsection-title">4.4 Path to Rule-of-40 Sustainability</h3>
+  <div class="r40-timeline">
+    <div class="r40-line"></div>
+    <div class="r40-milestones">
+      <div class="r40-milestone">
+        <div class="r40-dot"></div>
+        <div class="r40-milestone-label">Year 1</div>
+        <div class="r40-milestone-desc">Build patient base, payer enrollment, brand equity. Growth target: 300% YoY. Accept negative net margin.</div>
+      </div>
+      <div class="r40-milestone">
+        <div class="r40-dot"></div>
+        <div class="r40-milestone-label">Year 2</div>
+        <div class="r40-milestone-desc">Payer reimbursement fully active. Blended gross margins target: 55–65%. RPM codes add recurring reimbursement.</div>
+      </div>
+      <div class="r40-milestone">
+        <div class="r40-dot"></div>
+        <div class="r40-milestone-label">Year 3</div>
+        <div class="r40-milestone-desc">Rule-of-40 threshold targeted (Growth Rate % + Profit Margin % ≥ 40). Series B or strategic acquisition conversation.</div>
+      </div>
+      <div class="r40-milestone">
+        <div class="r40-dot" style="background:var(--green)"></div>
+        <div class="r40-milestone-label">Exit</div>
+        <div class="r40-milestone-desc">Acquisition target: CVS/Aetna, Amazon Pharmacy, or health system seeking community-anchored patient acquisition.</div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="subsection-title">4.5 Series A Target</h3>
+  <div class="callout-red">
+    <div class="callout-num">$25M</div>
+    <div style="font-family:'Space Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--red);margin-bottom:0.75rem">Series A Target</div>
+    <ul class="styled">
+      <li><strong>Use of funds:</strong> Technology buildout, payer enrollment ops, community events, celebrity content production, key hires (CMO, CCO, Growth)</li>
+      <li><strong>Valuation anchor:</strong> 5x ARR on projected Year 1 exit run rate + strategic premium for celebrity equity and demographic access</li>
+      <li><strong>Target investors:</strong> See Appendix</li>
+    </ul>
+  </div>
+</section>
+
+<!-- PART 5 -->
+<section id="part5">
+  <span class="section-label">Part 5</span>
+  <h2 class="section-title">Regulatory Compliance Framework</h2>
+  <div class="callout-red" style="margin-bottom:2rem">
+    <span style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--red)">Compliance Priority — Read Before Any Content Goes Live</span>
+  </div>
+
+  <h3 class="subsection-title">5.1 FDA Advertising Guardrails</h3>
+  <div class="card">
+    <div style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--red);margin-bottom:0.75rem">Non-negotiable prohibitions for all sub-brand content</div>
+    <ul class="styled">
+      <li>No "sameness" claims for compounded GLP-1 medications (FDA issued 30 warning letters in March 2026 — this is an active enforcement priority)</li>
+      <li>No miracle or outcome-guarantee language: "lose X pounds in Y days," "cure," "eliminate," "reverse"</li>
+      <li>No off-label claims for any FDA-approved drug</li>
+      <li>Celebrity testimonials about personal health results require mandatory disclaimer: "Individual results may vary. Not medical advice. Consult a clinician."</li>
+      <li>All before/after imagery requires substantiation file maintained by Medical Review Committee</li>
+    </ul>
+  </div>
+  <div class="card" style="margin-top:1rem">
+    <div style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--amber);margin-bottom:0.75rem">GLP-1 Specific — CROWN HEALTH, FENTY WELLNESS, BARDI CARE</div>
+    <ul class="styled">
+      <li>Compounded semaglutide/tirzepatide marketing must reflect current FDA shortage status in real time</li>
+      <li>Claims must reference branded drugs (Ozempic, Wegovy, Mounjaro) only in the context of prescription access facilitation, not direct marketing of the compound</li>
+      <li>Patients must complete intake, eligibility check, and clinical review before any GLP-1 information is presented — no front-loading drug information in awareness advertising</li>
+    </ul>
+  </div>
+
+  <h3 class="subsection-title">5.2 FTC Material Connection Disclosure Protocol</h3>
+  <p style="font-size:0.9rem;color:var(--muted);line-height:1.7;margin-bottom:1.25rem">Every celebrity — Ye, LeBron, Rihanna, Cardi B — is a <strong style="color:var(--text)">co-owner</strong> of the brand they are promoting. This is not a standard endorsement. Under FTC guidelines (reference: FTC v. NextMed order, 2025), material connection must be disclosed <strong style="color:var(--text)">clearly and conspicuously</strong> in every piece of commercial content.</p>
+
+  <div style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);margin-bottom:0.75rem">Standard Disclosure Language — All Channels</div>
+  <div class="code-block">IN-CAPTION / ON-SCREEN:
+"I'm a co-owner of [Sub-Brand]. This is my company,
+not just my endorsement. #Ad #Owner"
+
+IN VIDEO (AUDIO):
+Must be stated within the first 15 seconds of video content
+
+IN STORIES / EPHEMERAL CONTENT:
+Permanent overlay, not a fleeting tag
+
+AT EVENTS:
+Verbal disclosure required in any on-stage remarks</div>
+
+  <h3 class="subsection-title">5.3 OpenLoop Data Breach Acknowledgment</h3>
+  <p style="font-size:0.9rem;color:var(--muted);line-height:1.7;margin-bottom:1rem">The January 2026 OpenLoop data incident is a known public record. Burying it creates greater trust risk than acknowledging it. Recommended patient-facing communication:</p>
+  <div class="code-block">"Kindred operates on OpenLoop's clinical infrastructure, which
+experienced a data security incident in January 2026. In direct
+response, we have engaged [AUDIT FIRM] to conduct an independent
+security review. We will publish our findings. Your data is
+protected by [specific technical safeguards]. If you have
+questions, speak to our Privacy Officer at [contact]."</div>
+  <p style="font-size:0.82rem;color:var(--muted);line-height:1.6;margin-top:0.75rem">This communication is proactive, specific, and demonstrates accountability — the exact posture that builds trust in communities that have been historically lied to by institutions.</p>
+
+  <h3 class="subsection-title">5.4 Claim Substantiation Process</h3>
+  <div class="card">
+    <div style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--gold);margin-bottom:0.75rem">Medical Review Committee (MRC) — Established by Day 14</div>
+    <ul class="styled" style="margin-bottom:1rem">
+      <li>Chief Medical Officer (chair)</li>
+      <li>Chief Compliance Officer</li>
+      <li>2 external clinical advisors (specialty-matched per sub-brand)</li>
+      <li>1 external FDA/FTC regulatory attorney</li>
+    </ul>
+    <div style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);margin-bottom:0.5rem">Review Triggers</div>
+    <p style="font-size:0.85rem;color:var(--muted);line-height:1.6">All content featuring health claims, any celebrity post tagged with brand handle, any paid media, any community event materials. <strong style="color:var(--text)">48-hour review SLA.</strong> Expedited <strong style="color:var(--text)">4-hour review</strong> for trending/reactive content.</p>
+  </div>
+
+  <h3 class="subsection-title">5.5 SPEAK Act Compliance Plan</h3>
+  <p style="font-size:0.9rem;color:var(--muted);line-height:1.7;margin-bottom:1rem">The SPEAK Act (February 2026) mandates language access in telehealth. This is not just a legal requirement — it is a market opportunity.</p>
+  <div class="card">
+    <ul class="styled">
+      <li><strong>BARDI CARE:</strong> Spanish as a primary (not translated) content and care language. All patient intake materials, consent forms, and clinical communications in English and Spanish simultaneously.</li>
+      <li><strong>FENTY WELLNESS:</strong> Caribbean Creole language support for Haitian and Caribbean diaspora patients — partnership with community health translators.</li>
+      <li><strong>All sub-brands:</strong> OpenLoop's clinician network to be filtered for Spanish-language and AAPI-language capability for relevant markets. Language preference captured at intake Step 2.</li>
+      <li><strong>Target LEP patient volume at 90 days:</strong> 30% of BARDI CARE patients, 15% of FENTY WELLNESS patients</li>
+    </ul>
+  </div>
+</section>
+
+<!-- PART 6 -->
+<section id="part6">
+  <span class="section-label">Part 6</span>
+  <h2 class="section-title">Brand + Cultural Strategy</h2>
+
+  <h3 class="subsection-title">6.1 The Trust Transfer Model</h3>
+  <p style="font-size:0.9rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem">The core commercial thesis of this business is a trust transfer. It works in four steps:</p>
+  <div class="trust-steps">
+    <div class="trust-step">
+      <h4>Cultural Capital Accumulation</h4>
+      <p>LeBron, Rihanna, Cardi B, and Ye have each spent decades building authentic relationships with audiences that are predominantly Black and Latinx. That relationship is not transactional — it is emotional, identity-based, and durable.</p>
+    </div>
+    <div class="trust-step">
+      <h4>Equity Signal</h4>
+      <p>Unlike ambassadors or endorsers, these artists <em>own</em> this company. Ownership changes the signal fundamentally. When Cardi B tells her audience about BARDI CARE, she is promoting her own company. Audiences can smell the difference.</p>
+    </div>
+    <div class="trust-step">
+      <h4>Clinical Credibility Bridge</h4>
+      <p>The first time a patient has a genuinely good telehealth experience through a celebrity-branded platform, the celebrity's trust capital transfers to clinical credibility. The doctor becomes trustworthy because the platform is trustworthy because the celebrity is trustworthy.</p>
+    </div>
+    <div class="trust-step">
+      <h4>Community Lock-in</h4>
+      <p>At scale, the platform stops being a celebrity brand and becomes a community institution. The celebrity is the door. The clinician relationship is what keeps the patient.</p>
+    </div>
+  </div>
+
+  <h3 class="subsection-title">6.2 Content Strategy: Authenticity Architecture</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Tier</th>
+          <th>Type</th>
+          <th>Examples</th>
+          <th>Volume</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">1</td><td><strong>Celebrity-Native</strong></td><td>Cardi goes live with a clinician; LeBron's lab results; Rihanna's postpartum content</td><td>Low volume, maximum impact</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">2</td><td><strong>Clinician-led</strong></td><td>"Meet your CROWN HEALTH doctor" — Black male physician intro videos</td><td>2-3x/week per sub-brand</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">3</td><td><strong>Community Story</strong></td><td>Real patients, real outcomes — non-scripted, FTC-compliant testimonials</td><td>Weekly</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">4</td><td><strong>Educational</strong></td><td>Health explainers in plain language; "What is GLP-1?"; ADHD diagnosis content</td><td>Daily / evergreen</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout-gold" style="margin-top:1rem">
+    <div style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--gold);margin-bottom:0.5rem">Social Search Optimization</div>
+    <p style="font-size:0.88rem;color:var(--muted);line-height:1.6">1 in 3 consumers start health searches on TikTok/Instagram. 41% of Gen Z use social platforms as their primary health discovery channel. All Tier 4 content is engineered for search: title-first hook, keyword-matched to health queries, clinician credentialing visible in first frame.</p>
+  </div>
+
+  <h3 class="subsection-title">6.3 The Phygital Funnel</h3>
+  <div class="funnel">
+    <div class="funnel-step top">Social Discovery — TikTok / Instagram Health Search</div>
+    <div class="funnel-arrow"></div>
+    <div class="funnel-step">Celebrity Content Engagement — Trust Activation</div>
+    <div class="funnel-arrow"></div>
+    <div class="funnel-step">Digital Intake — Waitlist → Eligibility Check</div>
+    <div class="funnel-arrow"></div>
+    <div class="funnel-step">Virtual Care — 7-Step Patient Journey via OpenLoop</div>
+    <div class="funnel-arrow"></div>
+    <div class="funnel-step">Community Touchpoint — IRL Event / FQHC Partnership</div>
+    <div class="funnel-arrow"></div>
+    <div class="funnel-step" style="border-bottom-color:var(--green);color:var(--green)">Subscription Retention — Ongoing Wellness Relationship</div>
+  </div>
+  <p style="font-size:0.82rem;color:var(--muted);text-align:center;margin-top:0.5rem;line-height:1.6">Every IRL community event generates digital content that feeds back into the top of the funnel. The phygital loop is the compounding mechanism.</p>
+
+  <h3 class="subsection-title">6.4 Community vs. Mass Media Split</h3>
+  <p style="font-family:'Space Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);margin-bottom:1rem">First 45 Days Strategy</p>
+  <div class="split-cards">
+    <div class="split-card">
+      <div class="split-pct">60%</div>
+      <span class="split-label">Community Channels</span>
+      <div class="split-desc">Micro-influencer activation, FQHC partnerships, community health events, church and barbershop networks, Spanish-language radio</div>
+    </div>
+    <div class="split-card" style="border-color:var(--gold)">
+      <div class="split-pct" style="color:var(--muted)">40%</div>
+      <span class="split-label">Mass Media</span>
+      <div class="split-desc">STAT News (healthcare trade), Complex (LeBron/Ye audience), Essence (Rihanna/Cardi), People en Español (BARDI CARE), ESPN (CROWN HEALTH)</div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:1rem">
+    <p style="font-size:0.85rem;color:var(--muted);line-height:1.7">This split is intentional. Mass media builds awareness. Community channels build trust. For underserved communities where institutional healthcare distrust is the primary adoption barrier, trust is the conversion mechanism — not awareness.</p>
+  </div>
+</section>
+
+<!-- PART 7 -->
+<section id="part7">
+  <span class="section-label">Part 7</span>
+  <h2 class="section-title">Risk Matrix + Mitigation</h2>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Risk</th>
+          <th>Probability</th>
+          <th>Impact</th>
+          <th>Mitigation</th>
+          <th>Owner</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Ye controversy event</strong> — antisemitic statement, erratic behavior, partner conflict</td>
+          <td><span class="badge badge-h">H</span></td>
+          <td><span class="badge badge-h">H</span></td>
+          <td>YZY MIND launches last; 30-day controversy clause trigger; brand quarantine architecture in place; no clinical claims in Ye content</td>
+          <td>CEO + Legal</td>
+        </tr>
+        <tr>
+          <td><strong>Cardi B off-script health claim</strong> — FTC/FDA violation via unscripted content</td>
+          <td><span class="badge badge-m">M</span></td>
+          <td><span class="badge badge-h">H</span></td>
+          <td>Compliance liaison embedded in Cardi team; same-day content review before brand amplification; pre-cleared response scripts</td>
+          <td>CCO</td>
+        </tr>
+        <tr>
+          <td><strong>FDA enforcement action on GLP-1 marketing</strong> — compounding claims, sameness language</td>
+          <td><span class="badge badge-h">H</span></td>
+          <td><span class="badge badge-h">H</span></td>
+          <td>Zero compounding claims in launch content; Medical Review Committee pre-clears all GLP-1 language; no GLP-1 front-loaded in awareness ads</td>
+          <td>CMO + CCO</td>
+        </tr>
+        <tr>
+          <td><strong>OpenLoop post-breach trust deficit</strong> — patients discover infrastructure provider had breach</td>
+          <td><span class="badge badge-m">M</span></td>
+          <td><span class="badge badge-h">H</span></td>
+          <td>Proactive disclosure on Kindred patient-facing channels; independent security audit published; OpenLoop positioned as invisible infrastructure layer</td>
+          <td>CCO + Brand</td>
+        </tr>
+        <tr>
+          <td><strong>Payer enrollment delay</strong> — 60-120 day processing disrupts revenue</td>
+          <td><span class="badge badge-h">H</span></td>
+          <td><span class="badge badge-m">M</span></td>
+          <td>Cash-pay tiers priced at viable unit economics; payer enrollment initiated Day 1; OpenLoop RCM manages process</td>
+          <td>CFO + OpenLoop</td>
+        </tr>
+        <tr>
+          <td><strong>Medicare telehealth in-person visit requirement</strong> — Jan 31, 2026 effective</td>
+          <td><span class="badge badge-m">M</span></td>
+          <td><span class="badge badge-m">M</span></td>
+          <td>Clinical pathway review ensures all Medicare patients receive in-person visit requirement disclosure; hybrid care pathway for affected patients</td>
+          <td>CMO + CCO</td>
+        </tr>
+        <tr>
+          <td><strong>FTC celebrity disclosure failure</strong> — material connection not clearly disclosed</td>
+          <td><span class="badge badge-l">L</span></td>
+          <td><span class="badge badge-h">H</span></td>
+          <td>FTC disclosure training completed before any content goes live; disclosure review is a publish gate — no post goes out without it</td>
+          <td>CCO</td>
+        </tr>
+        <tr>
+          <td><strong>Cultural appropriation / authenticity challenge</strong> — brand perceived as exploitative of community trust</td>
+          <td><span class="badge badge-l">L</span></td>
+          <td><span class="badge badge-h">H</span></td>
+          <td>Celebrity ownership is the answer — this is not a brand licensing deal; ownership narrative is front and center in all launch communications</td>
+          <td>Brand + PR</td>
+        </tr>
+        <tr>
+          <td><strong>HIPAA/data breach at Kindred</strong> — post-OpenLoop breach, another incident would be catastrophic</td>
+          <td><span class="badge badge-l">L</span></td>
+          <td><span class="badge badge-h">H</span></td>
+          <td>Independent security audit Day 1; HIPAA-compliant patient data commitment published; breach response plan documented before first patient</td>
+          <td>CCO + CTO</td>
+        </tr>
+        <tr>
+          <td><strong>LeBron FTC scrutiny</strong> — equity ownership disclosure not meeting evolving standards</td>
+          <td><span class="badge badge-l">L</span></td>
+          <td><span class="badge badge-m">M</span></td>
+          <td>External FTC counsel reviews all LeBron content; disclosure language reviewed quarterly as FTC guidance evolves</td>
+          <td>Legal + CCO</td>
+        </tr>
+        <tr>
+          <td><strong>Fenty brand licensing failure</strong> — Rihanna sub-brand delayed</td>
+          <td><span class="badge badge-m">M</span></td>
+          <td><span class="badge badge-m">M</span></td>
+          <td>RHENNA HEALTH fallback name ready; brand identity developed in parallel; sub-brand not contingent on Fenty licensing</td>
+          <td>Brand + Legal</td>
+        </tr>
+        <tr>
+          <td><strong>Series A fundraising gap</strong> — investors skeptical of celebrity health SPV</td>
+          <td><span class="badge badge-m">M</span></td>
+          <td><span class="badge badge-h">H</span></td>
+          <td>Midi Health ($63M SPV) and Ro (Serena Williams) precedents used as proof of concept; 45-day patient volume data is the pitch</td>
+          <td>CEO + CFO</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- APPENDIX -->
+<section id="appendix">
+  <span class="section-label">Appendix</span>
+  <h2 class="section-title">Supporting Materials</h2>
+
+  <!-- A: Naming Options -->
+  <h3 class="subsection-title">A. Celebrity Sub-Brand Naming Options</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Artist</th>
+          <th>Option 1 — Recommended</th>
+          <th>Option 2</th>
+          <th>Option 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Ye / Kanye</td><td class="naming-rec">YZY MIND™</td><td>DONDA HEALTH</td><td>SAINT MIND</td></tr>
+        <tr><td>LeBron</td><td class="naming-rec">CROWN HEALTH™</td><td>KING WELLNESS</td><td>LBRY HEALTH</td></tr>
+        <tr><td>Rihanna</td><td class="naming-rec">FENTY WELLNESS™</td><td>RHENNA HEALTH</td><td>BAJAN HEALTH</td></tr>
+        <tr><td>Cardi B</td><td class="naming-rec">BARDI CARE™</td><td>KULTURE HEALTH</td><td>BRONX CARE</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- B: OpenLoop Specialties -->
+  <h3 class="subsection-title">B. Recommended OpenLoop Specialty Selections Per Sub-Brand</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Sub-Brand</th>
+          <th>Primary Specialty</th>
+          <th>Secondary Specialties</th>
+          <th>Protocol Count</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>CROWN HEALTH</strong></td><td>Medical Weight Loss (GLP-1)</td><td>Men's Primary Care, RPM, Cardiovascular</td><td style="font-family:'Space Mono',monospace;color:var(--gold)">18+ protocols</td></tr>
+        <tr><td><strong>FENTY WELLNESS</strong></td><td>Women's Health / Hormone</td><td>Maternal Health, Dermatology, Nutrition (Season Health)</td><td style="font-family:'Space Mono',monospace;color:var(--gold)">22+ protocols</td></tr>
+        <tr><td><strong>BARDI CARE</strong></td><td>Behavioral / Mental Health</td><td>Women's Primary Care, Reproductive Health, Pediatric</td><td style="font-family:'Space Mono',monospace;color:var(--gold)">20+ protocols</td></tr>
+        <tr><td><strong>YZY MIND</strong></td><td>Telepsychiatry / Behavioral</td><td>Men's Mental Health, Sleep, Primary Care</td><td style="font-family:'Space Mono',monospace;color:var(--gold)">15+ protocols</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- C: Regulatory References -->
+  <h3 class="subsection-title">C. Key Regulatory References</h3>
+  <div class="card">
+    <ul class="styled">
+      <li><strong style="color:var(--gold)">FDA March 2026 Warning Letters:</strong> 30 letters issued to telehealth companies for compounded GLP-1 marketing; primary violations: sameness claims, miracle language, off-label promotion. STAT News archive available.</li>
+      <li><strong style="color:var(--gold)">FTC v. NextMed (2025):</strong> Consent order establishing standard for celebrity/influencer material connection disclosure in telehealth. Primary compliance template for Kindred disclosure language.</li>
+      <li><strong style="color:var(--gold)">SPEAK Act (February 2026):</strong> Federal mandate for language access in telehealth; LEP (Limited English Proficiency) patients must receive care in their preferred language. Enforcement begins 90 days from passage.</li>
+      <li><strong style="color:var(--gold)">NCQA CVO Accreditation:</strong> OpenLoop's Credentialing Verification Organization status means clinician credentialing meets the highest payer and regulatory standards — use in investor and partner materials.</li>
+      <li><strong style="color:var(--gold)">Medicare Telehealth In-Person Visit Requirement (Jan 31, 2026):</strong> Home telehealth for certain Medicare patients requires prior in-person visit. Clinical pathways for Medicare patients must account for this requirement.</li>
+    </ul>
+  </div>
+
+  <!-- D: Competitive Map -->
+  <h3 class="subsection-title">D. Competitive Positioning Map</h3>
+  <div class="quadrant-wrap">
+    <div class="q-axis-h"></div>
+    <div class="q-axis-v"></div>
+    <!-- Labels -->
+    <div class="q-label top">HIGH CLINICAL DEPTH</div>
+    <div class="q-label bottom">LOW CLINICAL DEPTH</div>
+    <div class="q-label left">LOW CULTURAL TRUST</div>
+    <div class="q-label right">HIGH CULTURAL TRUST</div>
+    <!-- Players -->
+    <div class="q-player star" style="left:72%;top:22%">KINDRED★</div>
+    <div class="q-player" style="left:62%;top:30%">Ro</div>
+    <div class="q-player" style="left:28%;top:38%">Hims &amp; Hers</div>
+    <div class="q-player" style="left:22%;top:45%">Wheel</div>
+    <div class="q-player" style="left:60%;top:42%">Midi Health</div>
+  </div>
+  <p style="font-size:0.82rem;color:var(--muted);text-align:center;margin-top:1rem;line-height:1.6">Kindred's target position: High Cultural Trust + High Clinical Depth — a quadrant currently unoccupied by any competitor at scale. This is the white space.</p>
+
+  <!-- E: Investor Targets -->
+  <h3 class="subsection-title">E. Suggested Series A Investor Targets</h3>
+  <div class="investor-grid">
+    <div class="investor-card">
+      <h4>General Catalyst</h4>
+      <p>Active health transformation fund; healthcare-first mandate</p>
+    </div>
+    <div class="investor-card">
+      <h4>a16z Bio + Health</h4>
+      <p>Culturally-aware digital health portfolio; celebrity brand precedent</p>
+    </div>
+    <div class="investor-card">
+      <h4>Andreessen Horowitz Cultural Leadership Fund</h4>
+      <p>Direct overlap with celebrity equity thesis</p>
+    </div>
+    <div class="investor-card">
+      <h4>Forerunner Ventures</h4>
+      <p>Consumer-first health brands; Gen Z demographic alignment</p>
+    </div>
+    <div class="investor-card">
+      <h4>Fearless Fund</h4>
+      <p>Black women founder mandate — Cardi/Rihanna sub-brand alignment</p>
+    </div>
+    <div class="investor-card">
+      <h4>MaC Venture Capital</h4>
+      <p>Black-led VC; community-anchored business thesis match</p>
+    </div>
+    <div class="investor-card">
+      <h4>Telegea / Health Equity-focused family offices</h4>
+      <p>Dual eligible + FQHC community alignment</p>
+    </div>
+    <div class="investor-card">
+      <h4>Strategic: CVS Health Ventures</h4>
+      <p>Pharmacy-telehealth integration; acquisition candidate</p>
+    </div>
+    <div class="investor-card" style="grid-column:span 2">
+      <h4>Strategic: Amazon Health Services</h4>
+      <p>Distribution at scale; existing celebrity partnership precedent</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>CONFIDENTIAL — Executive Draft &nbsp;|&nbsp; Version 1.0 &nbsp;|&nbsp; May 2026</p>
+  <p style="margin-top:0.5rem">Next Review: Day 7 of Launch — Legal + Regulatory sign-off required before any external distribution</p>
+</footer>
+
+</body>
+</html>
