@@ -1,0 +1,92 @@
+# Shell & system
+.DS_Store
+.CFUserTextEncoding
+.zsh_history
+.zsh_sessions/
+.zcompdump*
+
+# Credentials & secrets
+.ssh/
+.gitconfig
+.mcp-auth/
+.mcp.json
+.claude.json
+.claude.json.backup
+
+# AI tool configs (local only)
+.agents/
+.antigravity/
+.cagent/
+.claude/
+.cline/
+.codebuddy/
+.codeium/
+.codex/
+.collaborator/
+.commandcode/
+.config/
+.continue/
+.copilot/
+.crush/
+.cursor/
+.docker/
+.factory/
+.gemini/
+.goose/
+.junie/
+.kilocode/
+.kiro/
+.kode/
+.local/
+.mcpjam/
+.moltbot/
+.mux/
+.neovate/
+.npm/
+.openhands/
+.pi/
+.playwright-mcp/
+.pochi/
+.qoder/
+.qwen/
+.roo/
+.trae/
+.venv/
+.vscode/
+.windsurf/
+.zencoder/
+.gem/
+.cagent/
+
+# Runtime & logs
+*.log
+df_out.txt
+cleanup_log.txt
+docker_disk.log
+docker_exit.txt
+docker_prune.log
+
+# Directories
+Applications/
+Desktop/
+Documents/
+Downloads/
+Library/
+Movies/
+Music/
+Pictures/
+Public/
+mnt/
+
+# Project-specific local dirs
+codex/
+my-higgsfield-project/
+Scrapling/
+skills-lock.json
+AGENTS.md
+advisor_parser.py
+
+# Sensitive project folders
+Celeb Telehealth Company/
+Tempist Brand Kit/
+LINC_vote_round1_deliverables/
