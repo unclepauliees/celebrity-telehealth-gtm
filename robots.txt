@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Disallow: /platforms/hydronex/access.html
+Disallow: /platforms/hydronex/portfolio.html
+Disallow: /platforms/tempist/access.html
+Disallow: /platforms/tempist/portfolio.html
+Disallow: /platforms/commonground/access.html
+Disallow: /platforms/commonground/portfolio.html
+Disallow: /brand/
+Disallow: /docs/
+Disallow: /.claude/
+Disallow: /HOLDING-SITE-NOTES.md
+Sitemap: https://unclepauliees.github.io/obsidian-capital-site/sitemap.xml
