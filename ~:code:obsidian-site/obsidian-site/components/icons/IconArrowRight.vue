@@ -1,0 +1,17 @@
+<script setup lang="ts">
+withDefaults(defineProps<{ size?: number }>(), { size: 24 })
+</script>
+
+<template>
+  <svg
+    :width="size"
+    :height="size"
+    viewBox="0 0 24 24"
+    fill="none"
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <line x1="3" y1="12" x2="20" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter" />
+    <polyline points="14,6 20,12 14,18" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter" fill="none" />
+  </svg>
+</template>
