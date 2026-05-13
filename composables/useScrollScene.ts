@@ -220,10 +220,11 @@ export const useScrollScene = (renderer: WebGLRenderer): ScrollSceneReturn => {
     const THREE = await import('three')
     const { GLTFLoader } = await import('three/examples/jsm/loaders/GLTFLoader.js')
 
+    const base = useRuntimeConfig().app.baseURL.replace(/\/$/, '')
     const urlMap: Record<string, string> = {
-      obsidian: '/scenes/scene-obsidian.glb',
-      chain: '/scenes/scene-capital-chain.glb',
-      platforms: '/scenes/scene-platforms.glb',
+      obsidian: `${base}/scenes/scene-obsidian.glb`,
+      chain: `${base}/scenes/scene-capital-chain.glb`,
+      platforms: `${base}/scenes/scene-platforms.glb`,
     }
 
     const loader = new GLTFLoader()
