@@ -139,7 +139,13 @@ const actEnds = computed(() => {
         class="act act--1"
         aria-label="Act 1 — Obsidian"
         :style="{ height: `${actHeights.act1}px` }"
-      />
+      >
+        <div class="act1-hero">
+          <p class="act1-hero__eyebrow">OBSIDIAN CAPITAL PARTNERS</p>
+          <h1 class="act1-hero__headline">Capital flows where builders dare.</h1>
+          <p class="act1-hero__sub">Obsidian deploys patient capital at the intersection of infrastructure, technology, and real assets.</p>
+        </div>
+      </section>
 
       <!-- Act 2: Transition: obsidian → capital chain -->
       <section
@@ -207,6 +213,63 @@ const actEnds = computed(() => {
   position: relative;
   width: 100%;
   background: transparent;
+}
+
+/* Act 1 hero — vertically centered in the first viewport */
+.act1-hero {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 var(--grid-margin-desktop);
+  max-width: var(--grid-max-width);
+  margin: 0 auto;
+}
+
+.act1-hero__eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-style: normal;
+  font-size: var(--text-eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin: 0 0 var(--space-4);
+}
+
+.act1-hero__headline {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-style: normal;
+  font-size: var(--text-display);
+  line-height: var(--lh-display);
+  letter-spacing: var(--tracking-display);
+  color: var(--color-parchment);
+  margin: 0 0 var(--space-4);
+  max-width: 10ch;
+}
+
+.act1-hero__sub {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-style: normal;
+  font-size: var(--text-body-lg);
+  line-height: var(--lh-body-lg);
+  letter-spacing: var(--tracking-body);
+  color: var(--color-mid-gray);
+  margin: 0;
+  max-width: 48ch;
+}
+
+@media (max-width: 767px) {
+  .act1-hero {
+    padding: 0 var(--grid-margin-mobile);
+  }
+  .act1-hero__headline {
+    font-size: var(--text-h1);
+  }
 }
 
 /*

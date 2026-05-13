@@ -27,29 +27,13 @@ export default defineNuxtConfig({
         { name: 'description', content: 'Obsidian Capital Partners — We Build. We Don\'t Broker.' },
       ],
       link: [
-        // Preload Cormorant Garamond 300 (display serif — hero, h1, h2)
+        // Google Fonts CDN — preview fallback while self-hosted font files are not yet in repo.
+        // Replace with self-hosted @font-face (fonts.css) once /public/fonts/ is populated.
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' },
         {
-          rel: 'preload',
-          href: '/fonts/cormorant-garamond-v22-latin-300.woff2',
-          as: 'font',
-          type: 'font/woff2',
-          crossorigin: 'anonymous',
-        },
-        // Preload Montserrat 300 (light nav, captions)
-        {
-          rel: 'preload',
-          href: '/fonts/montserrat-v26-latin-300.woff2',
-          as: 'font',
-          type: 'font/woff2',
-          crossorigin: 'anonymous',
-        },
-        // Preload Montserrat 600 (semibold labels, eyebrows, buttons)
-        {
-          rel: 'preload',
-          href: '/fonts/montserrat-v26-latin-600.woff2',
-          as: 'font',
-          type: 'font/woff2',
-          crossorigin: 'anonymous',
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600;700&family=Space+Mono&display=swap',
         },
       ],
     },
@@ -85,6 +69,12 @@ export default defineNuxtConfig({
           },
         },
       },
+    },
+  },
+
+  nitro: {
+    prerender: {
+      ignore: ['/dev/components'],
     },
   },
 

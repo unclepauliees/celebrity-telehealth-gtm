@@ -9,6 +9,7 @@
     "preview": "nuxt preview",
     "postinstall": "node node_modules/.bin/nuxt prepare || true",
     "test": "playwright test",
+    "generate": "nuxt generate",
     "analyze": "nuxt build --analyze",
     "voice-audit": "node --experimental-strip-types scripts/voice-audit.ts"
   },

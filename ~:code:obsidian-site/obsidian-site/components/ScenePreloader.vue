@@ -26,10 +26,11 @@ const isVisible = ref(true)
 const isFadingOut = ref(false)
 
 // Scene GLB URLs to preload (must match useScrollScene paths)
+const base = useRuntimeConfig().app.baseURL.replace(/\/$/, '')
 const SCENE_URLS = [
-  '/scenes/scene-obsidian.glb',
-  '/scenes/scene-capital-chain.glb',
-  '/scenes/scene-platforms.glb',
+  `${base}/scenes/scene-obsidian.glb`,
+  `${base}/scenes/scene-capital-chain.glb`,
+  `${base}/scenes/scene-platforms.glb`,
 ] as const
 
 // Formatted display: zero-padded to 2 digits
