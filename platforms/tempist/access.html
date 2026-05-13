@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" data-platform="tempist">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Access · Tempist Systems · Obsidian Capital Partners</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="../_shared.css">
+</head>
+<body>
+
+<div class="atmosphere" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<main class="gate" role="main">
+  <div class="gate__panel">
+    <svg class="gate__mark" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <polygon points="28,6 44,15 49,34 39,47 19,49 10,36 8,18" fill="#0A0A0A" stroke="#B8965A" stroke-width="0.5"/>
+      <line x1="24" y1="8" x2="36" y2="48" stroke="#B8965A" stroke-width="0.5" opacity="0.4"/>
+    </svg>
+
+    <p class="gate__ocp-lineage" style="font-family:var(--font-mono);font-size:var(--text-label);letter-spacing:var(--tr-label);text-transform:uppercase;color:var(--color-mid-gray);margin-bottom:var(--s-2);">An Obsidian Capital Partners Platform Company</p>
+    <p class="gate__lineage">Tempist Systems · Confidential</p>
+    <h1 class="gate__title">Access by introduction.</h1>
+    <p class="gate__sub">Enter the access code issued to you. Codes are bound to a single party and expire by policy.</p>
+
+    <form class="gate__form" id="gateForm" autocomplete="off" novalidate>
+      <input
+        type="password"
+        id="gateInput"
+        class="gate__input"
+        placeholder="ACCESS CODE"
+        aria-label="Access code"
+        autocomplete="off"
+        autocapitalize="characters"
+        spellcheck="false"
+        required
+      >
+      <button type="submit" class="gate__submit">Authenticate</button>
+    </form>
+    <p class="gate__error" id="gateError" role="alert" aria-live="polite"></p>
+
+    <a href="index.html" class="gate__back-link">← Return to Tempist</a>
+  </div>
+</main>
+
+<script>
+/* TEMP: Client-side gate scaffold — REPLACE BEFORE PRODUCTION */
+const TEMP_PLATFORM = 'tempist';
+
+document.getElementById('gateForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const input = document.getElementById('gateInput');
+  const errorEl = document.getElementById('gateError');
+  const code = input.value.trim();
+
+  if (!code) {
+    input.classList.add('is-error');
+    errorEl.textContent = 'Code required';
+    errorEl.classList.add('is-visible');
+    return;
+  }
+
+  const isValid = code.toUpperCase() === 'DEMO-TEMPIST-2026';
+
+  if (isValid) {
+    try { sessionStorage.setItem('cg-access-' + TEMP_PLATFORM, '1'); } catch (e) {}
+    window.location.href = 'portfolio.html';
+  } else {
+    input.classList.add('is-error');
+    errorEl.textContent = 'Invalid code';
+    errorEl.classList.add('is-visible');
+    setTimeout(() => input.classList.remove('is-error'), 400);
+  }
+});
+
+document.getElementById('gateInput').addEventListener('input', () => {
+  document.getElementById('gateError').classList.remove('is-visible');
+});
+</script>
+
+</body>
+</html>

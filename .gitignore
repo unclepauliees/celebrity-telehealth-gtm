@@ -53,6 +53,7 @@
 .trae/
 .venv/
 .vscode/
+.idea/
 .windsurf/
 .zencoder/
 .gem/
