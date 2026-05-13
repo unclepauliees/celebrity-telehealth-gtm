@@ -88,6 +88,12 @@ export default defineNuxtConfig({
     },
   },
 
+  nitro: {
+    prerender: {
+      ignore: ['/dev/components'],
+    },
+  },
+
   // No @nuxtjs/google-fonts — self-host only (brand requirement)
   modules: [],
 })
