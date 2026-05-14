@@ -116,10 +116,10 @@
       position: relative;
       background-repeat: no-repeat;
       background-size:
-        20px 1px, 1px 20px,
-        20px 1px, 1px 20px,
-        20px 1px, 1px 20px,
-        20px 1px, 1px 20px;
+        28px 1px, 1px 28px,
+        28px 1px, 1px 28px,
+        28px 1px, 1px 28px,
+        28px 1px, 1px 28px;
       background-position:
         top left,    top left,
         top right,   top right,
@@ -158,7 +158,7 @@
       letter-spacing: 0.2em;
       color: var(--threat-red);
       border: 1px solid var(--threat-red);
-      padding: 4px 12px;
+      padding: 6px 14px;
     }
 
     /* ─── SITE SECTIONS ────────────────────────────────────────── */
@@ -172,7 +172,7 @@
       z-index: 10;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 120px 40px;
+      padding: 160px 48px;
     }
 
     /* ─── PARALLAX LAYER ───────────────────────────────────────── */
@@ -185,11 +185,11 @@
     /* ─── SCROLL REVEAL ────────────────────────────────────────── */
     .reveal {
       opacity: 0;
-      transition: opacity 300ms linear;
+      transition: opacity 550ms linear;
     }
     .reveal--fade {
-      transform: translateY(16px);
-      transition: opacity 300ms linear, transform 300ms linear;
+      transform: translateY(40px);
+      transition: opacity 550ms linear, transform 550ms linear;
     }
     .reveal.is-revealed        { opacity: 1; }
     .reveal--fade.is-revealed  { transform: translateY(0); }
@@ -216,7 +216,7 @@
 
     /* ─── RESPONSIVE ───────────────────────────────────────────── */
     @media (max-width: 767px) {
-      .site-section__inner { padding: 80px 24px; }
+      .site-section__inner { padding: 100px 24px; }
     }
 
     /* ─── HERO ─────────────────────────────────────────────────── */
@@ -356,33 +356,43 @@
 
     /* ─── SHARED SECTION TYPOGRAPHY ────────────────────────────── */
     .section-eyebrow {
-      display: block;
+      display: flex;
+      align-items: center;
+      gap: 14px;
       font-family: var(--font-mono);
       font-size: 11px;
       font-weight: 400;
       letter-spacing: 0.2em;
       color: var(--steel-blue);
       text-transform: uppercase;
-      margin-bottom: 24px;
+      margin-bottom: 36px;
+    }
+    .section-eyebrow::before {
+      content: '';
+      width: 28px;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.45;
+      flex-shrink: 0;
     }
 
     .section-headline {
       font-family: var(--font-headline);
       font-weight: 700;
-      font-size: clamp(32px, 4vw, 56px);
-      line-height: 1.05;
-      max-width: 720px;
-      margin-bottom: 16px;
+      font-size: clamp(40px, 5vw, 72px);
+      line-height: 1.03;
+      max-width: 840px;
+      margin-bottom: 20px;
     }
 
     .section-lede {
       font-family: var(--font-body);
       font-weight: 300;
-      font-size: 17px;
-      line-height: 1.65;
+      font-size: 18px;
+      line-height: 1.7;
       opacity: 0.6;
-      max-width: 600px;
-      margin-bottom: 64px;
+      max-width: 620px;
+      margin-bottom: 96px;
     }
 
     /* ─── THREAT — STAT GRID ────────────────────────────────────── */
@@ -396,7 +406,7 @@
 
     .stat-card {
       background: var(--ops-bg);
-      padding: 40px 32px;
+      padding: 48px 40px;
     }
 
     .stat-card__number {
@@ -428,7 +438,7 @@
       overflow: hidden;
       border-top: 1px solid rgba(255,255,255,0.07);
       border-bottom: 1px solid rgba(255,255,255,0.07);
-      padding: 14px 0;
+      padding: 20px 0;
     }
 
     .ticker-track {
@@ -469,11 +479,14 @@
 
     .cap-card {
       background: var(--ops-bg);
-      padding: 40px 32px;
-      transition: background 0ms linear;
+      padding: 48px 40px;
+      transition: background 180ms linear, box-shadow 180ms linear;
     }
 
-    .cap-card:hover { background: rgba(255,255,255,0.03); }
+    .cap-card:hover {
+      background: rgba(255,255,255,0.05);
+      box-shadow: inset 2px 0 0 rgba(232,228,220,0.12);
+    }
 
     .cap-card__num {
       display: block;
@@ -508,11 +521,30 @@
     /* General fix: counter inside fading parent — parent controls visibility */
     .reveal--fade .reveal--count { opacity: 1; transition: none; }
 
+    /* ─── STAGGER DELAYS FOR GRID REVEALS ──────────────────────── */
+    .stat-grid .reveal:nth-child(2) { transition-delay: 70ms; }
+    .stat-grid .reveal:nth-child(3) { transition-delay: 140ms; }
+    .stat-grid .reveal:nth-child(4) { transition-delay: 210ms; }
+
+    .cap-grid .reveal:nth-child(2) { transition-delay: 60ms; }
+    .cap-grid .reveal:nth-child(3) { transition-delay: 120ms; }
+    .cap-grid .reveal:nth-child(4) { transition-delay: 180ms; }
+    .cap-grid .reveal:nth-child(5) { transition-delay: 240ms; }
+    .cap-grid .reveal:nth-child(6) { transition-delay: 300ms; }
+
+    .advisor-grid .reveal:nth-child(2) { transition-delay: 70ms; }
+    .advisor-grid .reveal:nth-child(3) { transition-delay: 140ms; }
+    .advisor-grid .reveal:nth-child(4) { transition-delay: 210ms; }
+
+    .pipeline-grid .reveal:nth-child(2) { transition-delay: 90ms; }
+    .pipeline-grid .reveal:nth-child(3) { transition-delay: 180ms; }
+    .pipeline-grid .reveal:nth-child(4) { transition-delay: 270ms; }
+
     /* ─── METRICS — HUD PANEL ───────────────────────────────────── */
     .hud-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 80px;
+      gap: 100px;
       align-items: center;
     }
 
@@ -599,7 +631,7 @@
     .metric-list {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px 48px;
+      gap: 52px 56px;
     }
 
     .metric-item__value {
@@ -660,10 +692,10 @@
 
     .matrix-table tbody tr {
       border-bottom: 1px solid rgba(255,255,255,0.05);
-      transition: background 0ms linear;
+      transition: background 150ms linear;
     }
 
-    .matrix-table tbody tr:hover { background: rgba(255,255,255,0.03); }
+    .matrix-table tbody tr:hover { background: rgba(255,255,255,0.05); }
 
     .matrix-table td {
       font-size: 12px;
@@ -697,7 +729,7 @@
     .market-layout {
       display: grid;
       grid-template-columns: 1fr 2fr;
-      gap: 80px;
+      gap: 100px;
       align-items: start;
     }
 
@@ -808,10 +840,10 @@
 
     .comp-table tbody tr {
       border-bottom: 1px solid rgba(255,255,255,0.05);
-      transition: background 0ms linear;
+      transition: background 150ms linear;
     }
 
-    .comp-table tbody tr:hover { background: rgba(255,255,255,0.02); }
+    .comp-table tbody tr:hover { background: rgba(255,255,255,0.04); }
 
     .comp-table td {
       font-size: 12px;
@@ -845,11 +877,14 @@
 
     .pipeline-tile {
       background: var(--ops-bg);
-      padding: 40px 32px;
-      transition: background 0ms linear;
+      padding: 48px 40px;
+      transition: background 180ms linear, box-shadow 180ms linear;
     }
 
-    .pipeline-tile:hover { background: rgba(255,255,255,0.03); }
+    .pipeline-tile:hover {
+      background: rgba(255,255,255,0.05);
+      box-shadow: inset 2px 0 0 rgba(232,228,220,0.12);
+    }
 
     .pipeline-tile .classification-stamp {
       display: block;
@@ -892,7 +927,7 @@
     .compliance-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
     }
 
     .compliance-badge {
@@ -902,8 +937,13 @@
       letter-spacing: 0.15em;
       color: var(--classified-white);
       border: 1px solid rgba(255,255,255,0.14);
-      padding: 8px 16px;
+      padding: 10px 20px;
       opacity: 0.65;
+      transition: opacity 150ms linear, border-color 150ms linear;
+    }
+    .compliance-badge:hover {
+      opacity: 0.9;
+      border-color: rgba(255,255,255,0.28);
     }
 
     @media (max-width: 768px) {
@@ -914,12 +954,12 @@
     .raise-layout {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 64px;
+      gap: 80px;
       align-items: start;
     }
 
     .raise-panel {
-      padding: 40px;
+      padding: 52px;
     }
 
     .raise-panel__title {
@@ -1082,7 +1122,7 @@
       font-weight: 400;
       letter-spacing: 0.15em;
       color: var(--steel-blue);
-      transition: color 0ms linear;
+      transition: color 150ms linear, opacity 150ms linear;
     }
 
     .site-nav__links a:hover { color: var(--classified-white); }
@@ -1094,8 +1134,8 @@
 
     /* ─── LEADERSHIP ─────────────────────────────────────────────── */
     .leader-block {
-      margin-bottom: 72px;
-      padding-bottom: 64px;
+      margin-bottom: 96px;
+      padding-bottom: 80px;
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
@@ -1155,11 +1195,14 @@
 
     .advisor-card {
       background: var(--ops-bg);
-      padding: 32px 24px;
-      transition: background 0ms linear;
+      padding: 40px 32px;
+      transition: background 180ms linear, box-shadow 180ms linear;
     }
 
-    .advisor-card:hover { background: rgba(255,255,255,0.03); }
+    .advisor-card:hover {
+      background: rgba(255,255,255,0.05);
+      box-shadow: inset 2px 0 0 rgba(232,228,220,0.12);
+    }
 
     .advisor-card__name {
       font-family: var(--font-body);
@@ -1185,11 +1228,11 @@
     .contact-layout {
       display: grid;
       grid-template-columns: 2fr 1fr;
-      gap: 80px;
+      gap: 100px;
       align-items: start;
     }
 
-    .form-group { margin-bottom: 24px; }
+    .form-group { margin-bottom: 32px; }
 
     .form-label {
       display: block;
@@ -1214,10 +1257,13 @@
       outline: none;
       border-radius: 0;
       -webkit-appearance: none;
-      transition: border-color 0ms linear;
+      transition: border-color 150ms linear, background 150ms linear;
     }
 
-    .form-input:focus { border-color: rgba(255,255,255,0.3); }
+    .form-input:focus {
+      border-color: rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.05);
+    }
     .form-input::placeholder { color: rgba(232,228,220,0.2); font-family: var(--font-mono); }
     .form-textarea { resize: vertical; min-height: 120px; }
 
@@ -1235,10 +1281,10 @@
       margin-top: 8px;
       -webkit-appearance: none;
       border-radius: 0;
-      transition: opacity 0ms linear;
+      transition: opacity 150ms linear;
     }
 
-    .form-submit:hover { opacity: 0.7; }
+    .form-submit:hover { opacity: 0.65; }
     .form-submit:disabled { opacity: 0.4; cursor: not-allowed; }
 
     .contact-meta__block {
