@@ -1,182 +1,2275 @@
 <!DOCTYPE html>
-<html lang="en" data-platform="tempist">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tempist Systems — An Obsidian Capital Partners Platform Company</title>
-<meta name="description" content="Tempist Systems designs and operates industrial automation and control systems for precision manufacturing. A platform company of Obsidian Capital Partners.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEMPIST SYSTEMS INC. — CONTROLLED</title>
+  <meta name="description" content="Autonomous counter-UAV interceptor swarm systems. Sovereign deployment. Combat-proven in theater.">
+  <meta name="robots" content="noindex, nofollow">
 
-<meta property="og:title" content="Tempist Systems — Industrial Automation">
-<meta property="og:description" content="Industrial automation built operator-first. Precision manufacturing, control systems, and operational software. An Obsidian Capital Partners platform company.">
-<meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='4' fill='none' stroke='%2300FF41' stroke-width='1.5'/%3E%3Cline x1='16' y1='0' x2='16' y2='12' stroke='%2300FF41' stroke-width='1'/%3E%3Cline x1='32' y1='0' x2='18.83' y2='13.17' stroke='%2300FF41' stroke-width='1'/%3E%3Cline x1='32' y1='16' x2='20' y2='16' stroke='%2300FF41' stroke-width='1'/%3E%3Cline x1='32' y1='32' x2='18.83' y2='18.83' stroke='%2300FF41' stroke-width='1'/%3E%3Cline x1='16' y1='32' x2='16' y2='20' stroke='%2300FF41' stroke-width='1'/%3E%3Cline x1='0' y1='32' x2='13.17' y2='18.83' stroke='%2300FF41' stroke-width='1'/%3E%3Cline x1='0' y1='16' x2='12' y2='16' stroke='%2300FF41' stroke-width='1'/%3E%3Cline x1='0' y1='0' x2='13.17' y2='13.17' stroke='%2300FF41' stroke-width='1'/%3E%3C/svg%3E">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
-<link rel="stylesheet" href="../_shared.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─── BRAND TOKENS ─────────────────────────────────────────── */
+    :root {
+      --ops-bg:           #0A0B0E;
+      --signal-green:     #00FF41;
+      --classified-white: #E8E4DC;
+      --threat-red:       #CC1100;
+      --steel-blue:       #4A5568;
+      --gold:             #B8962E;
+      --font-headline: 'Space Grotesk', sans-serif;
+      --font-body:     'IBM Plex Sans', sans-serif;
+      --font-mono:     'IBM Plex Mono', monospace;
+    }
+
+    /* ─── RESET + BASE ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      scrollbar-width: thin;
+      scrollbar-color: var(--signal-green) rgba(255,255,255,0.04);
+    }
+    html::-webkit-scrollbar       { width: 3px; }
+    html::-webkit-scrollbar-track { background: rgba(255,255,255,0.04); }
+    html::-webkit-scrollbar-thumb { background: var(--signal-green); border-radius: 0; }
+
+    body {
+      background-color: var(--ops-bg);
+      color: var(--classified-white);
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ─── TYPOGRAPHY ───────────────────────────────────────────── */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--classified-white);
+    }
+
+    /* ─── SCROLLBAR / LINK RESETS ──────────────────────────────── */
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── WATERMARK ────────────────────────────────────────────── */
+    #page-watermark {
+      position: fixed;
+      top: 50%; left: 50%;
+      width: 200vmax; height: 200vmax;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      opacity: 0.06;
+      z-index: 0;
+      pointer-events: none;
+      user-select: none;
+      overflow: hidden;
+    }
+    .watermark-row {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--classified-white);
+      white-space: nowrap;
+      line-height: 65px;
+    }
+
+    /* ─── SCANLINE ─────────────────────────────────────────────── */
+    .scanline {
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        to bottom,
+        transparent            0px,
+        transparent            1px,
+        rgba(255,255,255,0.05) 1px,
+        rgba(255,255,255,0.05) 2px
+      );
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* ─── GRID OVERLAY ─────────────────────────────────────────── */
+    .grid-overlay {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,255,65,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,65,0.08) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* ─── 4-CORNER BRACKET FRAMES ──────────────────────────────── */
+    /* 8 background-image gradients: 2 arms (h + v) × 4 corners   */
+    .bracket-frame--active,
+    .bracket-frame--passive {
+      position: relative;
+      background-repeat: no-repeat;
+      background-size:
+        20px 1px, 1px 20px,
+        20px 1px, 1px 20px,
+        20px 1px, 1px 20px,
+        20px 1px, 1px 20px;
+      background-position:
+        top left,    top left,
+        top right,   top right,
+        bottom left, bottom left,
+        bottom right, bottom right;
+    }
+    .bracket-frame--active {
+      background-image:
+        linear-gradient(var(--signal-green), var(--signal-green)),
+        linear-gradient(var(--signal-green), var(--signal-green)),
+        linear-gradient(var(--signal-green), var(--signal-green)),
+        linear-gradient(var(--signal-green), var(--signal-green)),
+        linear-gradient(var(--signal-green), var(--signal-green)),
+        linear-gradient(var(--signal-green), var(--signal-green)),
+        linear-gradient(var(--signal-green), var(--signal-green)),
+        linear-gradient(var(--signal-green), var(--signal-green));
+    }
+    .bracket-frame--passive {
+      background-image:
+        linear-gradient(var(--steel-blue), var(--steel-blue)),
+        linear-gradient(var(--steel-blue), var(--steel-blue)),
+        linear-gradient(var(--steel-blue), var(--steel-blue)),
+        linear-gradient(var(--steel-blue), var(--steel-blue)),
+        linear-gradient(var(--steel-blue), var(--steel-blue)),
+        linear-gradient(var(--steel-blue), var(--steel-blue)),
+        linear-gradient(var(--steel-blue), var(--steel-blue)),
+        linear-gradient(var(--steel-blue), var(--steel-blue));
+    }
+
+    /* ─── CLASSIFICATION STAMP ─────────────────────────────────── */
+    .classification-stamp {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--threat-red);
+      border: 1px solid var(--threat-red);
+      padding: 4px 12px;
+    }
+
+    /* ─── SITE SECTIONS ────────────────────────────────────────── */
+    .site-section {
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+    .site-section__inner {
+      position: relative;
+      z-index: 10;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 120px 40px;
+    }
+
+    /* ─── PARALLAX LAYER ───────────────────────────────────────── */
+    .parallax-layer {
+      position: absolute;
+      inset: -10%;
+      will-change: transform;
+    }
+
+    /* ─── SCROLL REVEAL ────────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transition: opacity 300ms linear;
+    }
+    .reveal--fade {
+      transform: translateY(16px);
+      transition: opacity 300ms linear, transform 300ms linear;
+    }
+    .reveal.is-revealed        { opacity: 1; }
+    .reveal--fade.is-revealed  { transform: translateY(0); }
+
+    /* ─── MONO LABEL ───────────────────────────────────────────── */
+    .mono-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      color: var(--steel-blue);
+      text-transform: uppercase;
+    }
+
+    /* ─── REDUCED MOTION ───────────────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal, .reveal--fade, .reveal--count, .reveal--draw {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
+    /* ─── RESPONSIVE ───────────────────────────────────────────── */
+    @media (max-width: 767px) {
+      .site-section__inner { padding: 80px 24px; }
+    }
+
+    /* ─── HERO ─────────────────────────────────────────────────── */
+    #section-hero { display: flex; flex-direction: column; }
+
+    #hero-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .hero__inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100vh;
+      padding-top: 48px;
+      padding-bottom: 48px;
+    }
+
+    .hero__topbar {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .hero__boot {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 10;
+      padding: 40px 0;
+    }
+
+    .hero__boot-line {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--classified-white);
+      opacity: 0.7;
+      line-height: 2;
+      white-space: nowrap;
+    }
+
+    .hero__boot-line--current::after {
+      content: '█';
+      color: var(--signal-green);
+      animation: cursor-blink 800ms linear infinite;
+    }
+
+    @keyframes cursor-blink {
+      0%, 49%  { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+
+    .hero__wordmark {
+      position: relative;
+      z-index: 10;
+      opacity: 0;
+      transition: opacity 400ms linear;
+    }
+    .hero__wordmark.is-visible { opacity: 1; }
+
+    .hero__title {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: clamp(52px, 8vw, 96px);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+
+    .hero__tagline {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.25em;
+      opacity: 0.9;
+    }
+
+    .hero__descriptor {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 1.5;
+      max-width: 540px;
+      margin-top: 32px;
+      opacity: 0;
+      transition: opacity 400ms linear;
+      position: relative;
+      z-index: 10;
+    }
+    .hero__descriptor.is-visible { opacity: 0.7; }
+
+    .hero__scroll {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      opacity: 0;
+      transition: opacity 400ms linear;
+      position: relative;
+      z-index: 10;
+    }
+    .hero__scroll.is-visible { opacity: 1; }
+
+    .hero__scroll-line {
+      width: 40px;
+      height: 1px;
+      background: var(--steel-blue);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero__scroll-line::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: var(--classified-white);
+      animation: scroll-sweep 2000ms linear infinite;
+    }
+
+    @keyframes scroll-sweep {
+      0%   { left: -100%; }
+      100% { left: 100%; }
+    }
+
+    @media (max-width: 767px) {
+      .hero__title     { font-size: clamp(40px, 10vw, 56px); }
+      .hero__boot-line { font-size: 11px; }
+    }
+
+    /* ─── SHARED SECTION TYPOGRAPHY ────────────────────────────── */
+    .section-eyebrow {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      color: var(--steel-blue);
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .section-headline {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: clamp(32px, 4vw, 56px);
+      line-height: 1.05;
+      max-width: 720px;
+      margin-bottom: 16px;
+    }
+
+    .section-lede {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 17px;
+      line-height: 1.65;
+      opacity: 0.6;
+      max-width: 600px;
+      margin-bottom: 64px;
+    }
+
+    /* ─── THREAT — STAT GRID ────────────────────────────────────── */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.06);
+      margin-bottom: 0;
+    }
+
+    .stat-card {
+      background: var(--ops-bg);
+      padding: 40px 32px;
+    }
+
+    .stat-card__number {
+      display: block;
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: clamp(36px, 4vw, 56px);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    /* Numbers inside cards are always visible — parent opacity handles reveal */
+    .stat-card .reveal--count { opacity: 1; transition: none; }
+
+    .stat-card__label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: var(--steel-blue);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 900px) { .stat-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 500px)  { .stat-grid { grid-template-columns: 1fr; } }
+
+    /* ─── THREAT — TICKER ───────────────────────────────────────── */
+    .ticker-wrap {
+      overflow: hidden;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      padding: 14px 0;
+    }
+
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      animation: ticker-scroll 40s linear infinite;
+    }
+
+    .ticker-item {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      color: var(--steel-blue);
+      padding-right: 32px;
+      white-space: nowrap;
+    }
+
+    .ticker-item--alert {
+      color: var(--classified-white);
+      opacity: 0.5;
+    }
+
+    @keyframes ticker-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    @media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; } }
+
+    /* ─── SOLUTION — CAPABILITY GRID ───────────────────────────── */
+    .cap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .cap-card {
+      background: var(--ops-bg);
+      padding: 40px 32px;
+      transition: background 0ms linear;
+    }
+
+    .cap-card:hover { background: rgba(255,255,255,0.03); }
+
+    .cap-card__num {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      color: var(--steel-blue);
+      margin-bottom: 20px;
+    }
+
+    .cap-card__title {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .cap-card__body {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 1.65;
+      opacity: 0.55;
+    }
+
+    @media (max-width: 900px) { .cap-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 500px)  { .cap-grid { grid-template-columns: 1fr; } }
+
+    /* General fix: counter inside fading parent — parent controls visibility */
+    .reveal--fade .reveal--count { opacity: 1; transition: none; }
+
+    /* ─── METRICS — HUD PANEL ───────────────────────────────────── */
+    .hud-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .emp-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .emp-container {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .emp-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid var(--signal-green);
+      opacity: 0;
+      pointer-events: none;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%) scale(0.1);
+    }
+
+    .emp-ring:nth-child(1) { width:  75px; height:  75px; }
+    .emp-ring:nth-child(2) { width: 150px; height: 150px; }
+    .emp-ring:nth-child(3) { width: 225px; height: 225px; }
+    .emp-ring:nth-child(4) { width: 300px; height: 300px; }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .emp-ring.is-fired:nth-child(1) { animation: emp-pulse 900ms 250ms linear forwards; }
+      .emp-ring.is-fired:nth-child(2) { animation: emp-pulse 900ms 400ms linear forwards; }
+      .emp-ring.is-fired:nth-child(3) { animation: emp-pulse 900ms 550ms linear forwards; }
+      .emp-ring.is-fired:nth-child(4) { animation: emp-pulse 900ms 700ms linear forwards; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .emp-ring { opacity: 0.12; transform: translate(-50%,-50%) scale(1); }
+    }
+
+    @keyframes emp-pulse {
+      0%   { opacity: 0.65; transform: translate(-50%,-50%) scale(0.1); }
+      70%  { opacity: 0.18; }
+      100% { opacity: 0;    transform: translate(-50%,-50%) scale(1); }
+    }
+
+    .emp-center {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .emp-center__label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      color: var(--steel-blue);
+      margin-bottom: 8px;
+    }
+
+    .emp-center__value {
+      display: block;
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 52px;
+      line-height: 1;
+      color: var(--classified-white);
+    }
+
+    .emp-center__sub {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: var(--steel-blue);
+      margin-top: 10px;
+    }
+
+    .metric-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px 48px;
+    }
+
+    .metric-item__value {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .metric-item__label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      color: var(--steel-blue);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .hud-grid       { grid-template-columns: 1fr; gap: 48px; }
+      .emp-container  { width: 240px; height: 240px; }
+      .emp-ring:nth-child(1) { width:  60px; height:  60px; }
+      .emp-ring:nth-child(2) { width: 120px; height: 120px; }
+      .emp-ring:nth-child(3) { width: 180px; height: 180px; }
+      .emp-ring:nth-child(4) { width: 240px; height: 240px; }
+    }
+
+    /* ─── PORTFOLIO — PLATFORM MATRIX ───────────────────────────── */
+    .matrix-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .matrix-table {
+      width: 100%;
+      min-width: 600px;
+      border-collapse: collapse;
+      font-family: var(--font-mono);
+    }
+
+    .matrix-table thead th {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--classified-white);
+      text-align: left;
+      padding: 16px 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .matrix-table thead th:first-child {
+      color: var(--steel-blue);
+      font-weight: 400;
+      font-size: 10px;
+    }
+
+    .matrix-table tbody tr {
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      transition: background 0ms linear;
+    }
+
+    .matrix-table tbody tr:hover { background: rgba(255,255,255,0.03); }
+
+    .matrix-table td {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--classified-white);
+      padding: 18px 24px;
+      vertical-align: top;
+    }
+
+    .matrix-table td:first-child {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: var(--steel-blue);
+      white-space: nowrap;
+    }
+
+    .matrix-status {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      padding: 3px 8px;
+    }
+
+    .matrix-status--active     { color: var(--classified-white); border: 1px solid rgba(255,255,255,0.25); }
+    .matrix-status--theater    { color: var(--threat-red);        border: 1px solid var(--threat-red); }
+    .matrix-status--classified { color: var(--steel-blue);        border: 1px solid rgba(74,85,104,0.4); }
+
+    /* ─── MARKET — TAM/SAM/SOM ──────────────────────────────────── */
+    .market-layout {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .market-context__title {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+
+    .market-context__body {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.7;
+      opacity: 0.6;
+    }
+
+    .market-stack { display: flex; flex-direction: column; gap: 40px; }
+
+    .market-bar__head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 12px;
+    }
+
+    .market-bar__label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: var(--steel-blue);
+    }
+
+    .market-bar__amount {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 28px;
+    }
+
+    .market-bar__track {
+      height: 2px;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .market-bar__fill {
+      height: 100%;
+      width: 0%;
+      transition: width 600ms linear;
+    }
+
+    .market-bar.is-revealed .market-bar__fill { width: var(--fill); }
+
+    .market-bar__fill--tam { background: var(--classified-white); }
+    .market-bar__fill--sam { background: rgba(232,228,220,0.55); }
+    .market-bar__fill--som { background: rgba(232,228,220,0.28); }
+
+    .market-bar__sub {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: var(--steel-blue);
+      margin-top: 8px;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 768px) {
+      .market-layout { grid-template-columns: 1fr; gap: 48px; }
+    }
+
+    /* ─── MOAT — COMPETITIVE TABLE ───────────────────────────────── */
+    .comp-table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .comp-table {
+      width: 100%;
+      min-width: 580px;
+      border-collapse: collapse;
+      font-family: var(--font-mono);
+    }
+
+    .comp-table thead th {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-align: left;
+      padding: 16px 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      vertical-align: bottom;
+      line-height: 1.4;
+    }
+
+    .comp-table thead th:first-child {
+      color: var(--steel-blue);
+      font-size: 10px;
+      font-weight: 400;
+    }
+
+    .comp-table thead th.col--tempist {
+      color: var(--classified-white);
+      background: rgba(255,255,255,0.04);
+      border-bottom-color: rgba(255,255,255,0.2);
+    }
+
+    .comp-table thead th.col--other { color: var(--steel-blue); font-weight: 400; }
+
+    .comp-table tbody tr {
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      transition: background 0ms linear;
+    }
+
+    .comp-table tbody tr:hover { background: rgba(255,255,255,0.02); }
+
+    .comp-table td {
+      font-size: 12px;
+      padding: 16px 24px;
+      vertical-align: middle;
+    }
+
+    .comp-table td:first-child {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: var(--steel-blue);
+      white-space: nowrap;
+    }
+
+    .comp-table td.col--tempist {
+      color: var(--classified-white);
+      font-weight: 700;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .comp-table td.col--other { color: var(--steel-blue); opacity: 0.75; }
+
+    /* ─── TRACTION — PIPELINE TILES ─────────────────────────────── */
+    .pipeline-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.06);
+      margin-bottom: 40px;
+    }
+
+    .pipeline-tile {
+      background: var(--ops-bg);
+      padding: 40px 32px;
+      transition: background 0ms linear;
+    }
+
+    .pipeline-tile:hover { background: rgba(255,255,255,0.03); }
+
+    .pipeline-tile .classification-stamp {
+      display: block;
+      margin-bottom: 24px;
+    }
+
+    .pipeline-tile__name {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .pipeline-tile__geo {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      color: var(--steel-blue);
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
+
+    .pipeline-tile__value {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .pipeline-tile__status {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: var(--steel-blue);
+    }
+
+    /* ─── TRACTION — COMPLIANCE BADGES ──────────────────────────── */
+    .compliance-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .compliance-badge {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--classified-white);
+      border: 1px solid rgba(255,255,255,0.14);
+      padding: 8px 16px;
+      opacity: 0.65;
+    }
+
+    @media (max-width: 768px) {
+      .pipeline-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ─── RAISE — LAYOUT ────────────────────────────────────────── */
+    .raise-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .raise-panel {
+      padding: 40px;
+    }
+
+    .raise-panel__title {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--classified-white);
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .raise-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      gap: 16px;
+    }
+
+    .raise-row__label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: var(--steel-blue);
+      white-space: nowrap;
+    }
+
+    .raise-row__value {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 15px;
+      text-align: right;
+    }
+
+    .raise-row__value--large {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 32px;
+    }
+
+    .raise-status {
+      margin-top: 24px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--classified-white);
+      opacity: 0.6;
+    }
+
+    /* ─── RAISE — USE OF PROCEEDS ────────────────────────────────── */
+    .proceeds-stack { display: flex; flex-direction: column; gap: 32px; }
+
+    .proceeds-bar__head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 10px;
+    }
+
+    .proceeds-bar__label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      color: var(--classified-white);
+      opacity: 0.8;
+    }
+
+    .proceeds-bar__pct {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 24px;
+    }
+
+    .proceeds-bar__track {
+      height: 2px;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .proceeds-bar__fill {
+      height: 100%;
+      width: 0%;
+      background: var(--classified-white);
+      transition: width 600ms linear;
+    }
+
+    .proceeds-bar.is-revealed .proceeds-bar__fill { width: var(--fill); }
+
+    .proceeds-bar__desc {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: var(--steel-blue);
+      margin-top: 8px;
+      opacity: 0.7;
+    }
+
+    .proceeds-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      color: var(--steel-blue);
+      text-transform: uppercase;
+      margin-bottom: 32px;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .raise-layout { grid-template-columns: 1fr; gap: 48px; }
+    }
+
+    /* ─── NAV FIX + SCROLL PADDING ─────────────────────────────── */
+    html { scroll-padding-top: 72px; }
+    .hero__inner { padding-top: 80px; } /* clear fixed 64px nav */
+
+    /* ─── SITE NAV ──────────────────────────────────────────────── */
+    .site-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      border-bottom: 1px solid transparent;
+    }
+
+    .site-nav.is-scrolled {
+      background: rgba(10,11,14,0.96);
+      border-bottom-color: rgba(255,255,255,0.06);
+    }
+
+    .site-nav__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      height: 64px;
+    }
+
+    .site-nav__wordmark {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      color: var(--classified-white);
+    }
+
+    .site-nav__links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .site-nav__links a {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      color: var(--steel-blue);
+      transition: color 0ms linear;
+    }
+
+    .site-nav__links a:hover { color: var(--classified-white); }
+
+    @media (max-width: 768px) {
+      .site-nav__links { display: none; }
+      .site-nav__inner { padding: 0 24px; }
+    }
+
+    /* ─── LEADERSHIP ─────────────────────────────────────────────── */
+    .leader-block {
+      margin-bottom: 72px;
+      padding-bottom: 64px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .leader-block__name {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: clamp(40px, 5vw, 64px);
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .leader-block__title {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      color: var(--steel-blue);
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+
+    .leader-block__bio {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 17px;
+      line-height: 1.7;
+      opacity: 0.75;
+      max-width: 680px;
+      margin-bottom: 24px;
+    }
+
+    .leader-block__creds {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 14px;
+      align-items: center;
+    }
+
+    .leader-block__cred {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: var(--steel-blue);
+    }
+
+    .leader-block__cred-sep { color: rgba(74,85,104,0.35); font-family: var(--font-mono); }
+
+    .advisor-header { margin-bottom: 24px; }
+
+    .advisor-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .advisor-card {
+      background: var(--ops-bg);
+      padding: 32px 24px;
+      transition: background 0ms linear;
+    }
+
+    .advisor-card:hover { background: rgba(255,255,255,0.03); }
+
+    .advisor-card__name {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+
+    .advisor-card__title {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: var(--steel-blue);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) { .advisor-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .advisor-grid { grid-template-columns: 1fr; } }
+
+    /* ─── CONTACT FORM ───────────────────────────────────────────── */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .form-group { margin-bottom: 24px; }
+
+    .form-label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      color: var(--steel-blue);
+      margin-bottom: 8px;
+    }
+
+    .form-input {
+      display: block;
+      width: 100%;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--classified-white);
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 400;
+      padding: 14px 16px;
+      outline: none;
+      border-radius: 0;
+      -webkit-appearance: none;
+      transition: border-color 0ms linear;
+    }
+
+    .form-input:focus { border-color: rgba(255,255,255,0.3); }
+    .form-input::placeholder { color: rgba(232,228,220,0.2); font-family: var(--font-mono); }
+    .form-textarea { resize: vertical; min-height: 120px; }
+
+    .form-submit {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--classified-white);
+      background: transparent;
+      border: none;
+      padding: 18px 40px;
+      cursor: pointer;
+      margin-top: 8px;
+      -webkit-appearance: none;
+      border-radius: 0;
+      transition: opacity 0ms linear;
+    }
+
+    .form-submit:hover { opacity: 0.7; }
+    .form-submit:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    .contact-meta__block {
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .contact-meta__block:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .contact-meta__block .classification-stamp { display: block; margin-top: 10px; }
+
+    .contact-meta__text {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 1.65;
+      opacity: 0.6;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 768px) { .contact-layout { grid-template-columns: 1fr; gap: 48px; } }
+
+    /* ─── SITE FOOTER ───────────────────────────────────────────── */
+    .site-footer {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 64px 0 48px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .site-footer__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .site-footer__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 48px;
+    }
+
+    .site-footer__wordmark {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+
+    .site-footer__tagline {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.25em;
+      opacity: 0.55;
+    }
+
+    .site-footer__bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 24px;
+    }
+
+    .site-footer__meta {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--steel-blue);
+      opacity: 0.55;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .site-footer__top   { flex-direction: column; gap: 28px; }
+      .site-footer__inner { padding: 0 24px; }
+    }
+  </style>
 </head>
 <body>
 
-<div class="atmosphere" aria-hidden="true"></div>
-<div class="grain" aria-hidden="true"></div>
+<!-- FIXED WATERMARK -->
+<div id="page-watermark" aria-hidden="true"></div>
 
-<header class="platform-nav" id="nav">
-  <div class="platform-nav__brand">
-    <a href="../../" class="platform-nav__ocp" aria-label="Obsidian Capital Partners — Home">
-      <span class="platform-nav__ocp-primary">Obsidian</span>
-      <span class="platform-nav__ocp-sub">Capital Partners</span>
-    </a>
-    <span class="platform-nav__divider" aria-hidden="true"></span>
-    <span class="platform-nav__platform-name">Tempist Systems</span>
+<!-- FIXED NAV -->
+<nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+  <div class="site-nav__inner">
+    <a href="#section-hero" class="site-nav__wordmark" aria-label="TEMPIST SYSTEMS INC. — top">TEMPIST</a>
+    <div class="site-nav__links">
+      <a href="#section-threat">THREAT</a>
+      <a href="#section-solution">DOCTRINE</a>
+      <a href="#section-metrics">METRICS</a>
+      <a href="#section-market">MARKET</a>
+      <a href="#section-traction">TRACTION</a>
+      <a href="#section-raise">RAISE</a>
+      <a href="#section-leadership">LEADERSHIP</a>
+      <a href="#section-contact">ACCESS</a>
+    </div>
   </div>
-  <a href="../../" class="platform-nav__back">
-    <span>← Obsidian</span>
-  </a>
-</header>
+</nav>
 
-<div class="lineage-banner">
-  <div class="lineage-banner__inner">
-    <span><span class="lineage-banner__mark">◆</span>An Obsidian Capital Partners Platform Company</span>
-    <span>Principal position · Industrial Systems</span>
-  </div>
-</div>
+<!-- SITE CONTENT -->
+<main id="main-content">
 
-<main class="platform-main" style="padding-top:0;">
+  <!-- SECTION 0: HERO — Phase 1 -->
+  <section class="site-section" id="section-hero" data-section="0">
+    <div class="parallax-layer" data-speed="0.15" aria-hidden="true" style="background:radial-gradient(ellipse 70% 60% at 65% 50%, rgba(0,255,65,0.05) 0%, transparent 70%);"></div>
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+    <div class="scanline" aria-hidden="true"></div>
 
-  <!-- HERO — Tempist voice: operator-to-operator, Montserrat 500 body weight per Section 3.4 -->
-  <section class="platform-section platform-hero">
-    <div class="platform-section__inner">
-      <div class="reveal">
-        <p class="platform-hero__eyebrow">Industrial Automation · Precision Systems</p>
-        <h1 class="platform-hero__name">Tempist.<br><em>Built by operators.</em></h1>
+    <div class="site-section__inner hero__inner">
+
+      <div class="hero__topbar">
+        <span class="classification-stamp">CONTROLLED</span>
+        <span class="mono-label">SYS.ID: TSI-2026-AU7 // ACCESS RESTRICTED</span>
       </div>
-      <p class="platform-hero__tagline reveal" data-delay="1">"The line runs or it doesn't. Everything else is commentary."</p>
-      <p class="platform-hero__sub reveal" data-delay="2">Tempist Systems designs, integrates, and operates industrial automation and control systems for precision manufacturing. We do not consult. We do not advise. We build, deploy, and run the systems that move the floor.</p>
+
+      <div class="hero__boot" id="hero-boot" aria-live="polite"></div>
+
+      <div>
+        <div class="hero__wordmark" id="hero-wordmark">
+          <h1 class="hero__title">TEMPIST<br>SYSTEMS INC.</h1>
+          <p class="hero__tagline">WE ARE THE WEATHER.</p>
+        </div>
+        <p class="hero__descriptor" id="hero-descriptor">
+          Autonomous counter-UAV interceptor swarm systems.<br>
+          Sovereign deployment. Combat-proven in theater.
+        </p>
+      </div>
+
+      <div class="hero__scroll" id="hero-scroll" aria-label="Scroll to continue">
+        <div class="hero__scroll-line" aria-hidden="true"></div>
+        <span class="mono-label">SCROLL TO ENGAGE</span>
+      </div>
+
     </div>
   </section>
 
-  <!-- WHAT WE DO -->
-  <section class="platform-section">
-    <div class="platform-section__inner">
-      <div class="section-header reveal">
-        <p class="section-header__eyebrow"><span class="num">01</span>Capability</p>
-        <h2 class="section-header__title">Three things, done with <em>operator depth.</em></h2>
-        <p class="section-header__lede">Tempist exists at the intersection of three capability domains. We are not a generalist integrator. We are a focused operator with technical authority in each.</p>
-      </div>
+  <!-- SECTION 1: THREAT — Phase 2 -->
+  <section class="site-section" id="section-threat" data-section="1">
+    <div class="grid-overlay" aria-hidden="true"></div>
 
-      <div class="props">
-        <article class="prop reveal">
-          <div class="prop__num">01</div>
-          <h3 class="prop__title">Control Systems</h3>
-          <p class="prop__body">PLC, SCADA, and DCS architecture for precision manufacturing environments. We design, deploy, and own the lifecycle — from commissioning through retirement.</p>
-        </article>
-        <article class="prop reveal" data-delay="1">
-          <div class="prop__num">02</div>
-          <h3 class="prop__title">Automation Integration</h3>
-          <p class="prop__body">Robotics, vision systems, and motion control integrated with existing plant infrastructure. Operator-led specification, no greenfield bias, no over-engineering.</p>
-        </article>
-        <article class="prop reveal" data-delay="2">
-          <div class="prop__num">03</div>
-          <h3 class="prop__title">Operational Software</h3>
-          <p class="prop__body">MES, OEE monitoring, and predictive maintenance built for the plants we operate. Specifications driven by floor reality, not consultant frameworks.</p>
-        </article>
+    <div class="site-section__inner" style="padding-bottom:48px;">
+      <span class="section-eyebrow reveal">01 // THREAT ASSESSMENT</span>
+      <h2 class="section-headline reveal reveal--fade">Legacy doctrine was not designed for swarm-configured autonomous threats.</h2>
+      <p class="section-lede reveal reveal--fade">The operational environment changed. Low-cost, mass-deployed UAV swarms now represent the primary aerial threat vector in active theaters. Response systems built for single-aircraft intercept are structurally inadequate.</p>
+
+      <div class="stat-grid">
+        <div class="stat-card bracket-frame--passive reveal reveal--fade">
+          <span class="stat-card__number reveal reveal--count" data-target="3000" data-suffix="+">0+</span>
+          <p class="stat-card__label">Documented drone incidents<br>in a single conflict year</p>
+        </div>
+        <div class="stat-card bracket-frame--passive reveal reveal--fade">
+          <span class="stat-card__number reveal reveal--count" data-target="94" data-suffix="%">0%</span>
+          <p class="stat-card__label">Of incidents: coordinated<br>swarm-configuration attacks</p>
+        </div>
+        <div class="stat-card bracket-frame--passive reveal reveal--fade">
+          <span class="stat-card__number reveal reveal--count" data-target="180" data-suffix="K">0K</span>
+          <p class="stat-card__label">Cost per engagement,<br>legacy counter-UAV systems</p>
+        </div>
+        <div class="stat-card bracket-frame--passive reveal reveal--fade">
+          <span class="stat-card__number">&lt;1s</span>
+          <p class="stat-card__label">Available intercept window,<br>low-altitude swarm approach</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ticker-wrap" aria-label="Live threat status feed" role="marquee">
+      <div class="ticker-track">
+        <span class="ticker-item ticker-item--alert">TYPE-II SWARM</span>
+        <span class="ticker-item">// INTERCEPT PENDING ·&nbsp;</span>
+        <span class="ticker-item">ALTITUDE: 42M ·&nbsp;</span>
+        <span class="ticker-item">VECTOR: 270° APPROACH ·&nbsp;</span>
+        <span class="ticker-item">SIGNATURE: LOW ·&nbsp;</span>
+        <span class="ticker-item ticker-item--alert">TYPE-I FIXED-WING</span>
+        <span class="ticker-item">// NEUTRALIZED ·&nbsp;</span>
+        <span class="ticker-item">NODES ENGAGED: 14 ·&nbsp;</span>
+        <span class="ticker-item">STATUS: IN-THEATER ·&nbsp;</span>
+        <span class="ticker-item ticker-item--alert">TYPE-III HYBRID</span>
+        <span class="ticker-item">// TRACKING ·&nbsp;</span>
+        <span class="ticker-item">INTERCEPT SEQUENCE: ARMED ·&nbsp;</span>
+        <span class="ticker-item">DOCTRINE: SOVEREIGN DEPLOYMENT ·&nbsp;</span>
+        <span class="ticker-item ticker-item--alert">TYPE-II SWARM</span>
+        <span class="ticker-item">// INTERCEPT PENDING ·&nbsp;</span>
+        <span class="ticker-item">ALTITUDE: 42M ·&nbsp;</span>
+        <span class="ticker-item">VECTOR: 270° APPROACH ·&nbsp;</span>
+        <span class="ticker-item">SIGNATURE: LOW ·&nbsp;</span>
+        <span class="ticker-item ticker-item--alert">TYPE-I FIXED-WING</span>
+        <span class="ticker-item">// NEUTRALIZED ·&nbsp;</span>
+        <span class="ticker-item">NODES ENGAGED: 14 ·&nbsp;</span>
+        <span class="ticker-item">STATUS: IN-THEATER ·&nbsp;</span>
+        <span class="ticker-item ticker-item--alert">TYPE-III HYBRID</span>
+        <span class="ticker-item">// TRACKING ·&nbsp;</span>
+        <span class="ticker-item">INTERCEPT SEQUENCE: ARMED ·&nbsp;</span>
+        <span class="ticker-item">DOCTRINE: SOVEREIGN DEPLOYMENT ·&nbsp;</span>
       </div>
     </div>
   </section>
 
-  <!-- PHILOSOPHY -->
-  <section class="platform-section">
-    <div class="platform-section__inner">
-      <div class="section-header reveal">
-        <p class="section-header__eyebrow"><span class="num">02</span>How We Operate</p>
-        <h2 class="section-header__title">Direct. Specified. <em>Without abstraction.</em></h2>
+  <!-- SECTION 2: SOLUTION — Phase 2 -->
+  <section class="site-section" id="section-solution" data-section="2">
+    <div class="site-section__inner">
+
+      <span class="section-eyebrow reveal">02 // INTERCEPT DOCTRINE</span>
+      <h2 class="section-headline reveal reveal--fade">Autonomous swarm response. Sovereign from the ground up.</h2>
+      <p class="section-lede reveal reveal--fade">TEMPIST deploys coordinated interceptor swarms that engage, track, and neutralize threat UAVs without human-in-loop latency. Every unit operates on onboard doctrine — no cloud, no connection, no delay.</p>
+
+      <div class="cap-grid">
+        <div class="cap-card bracket-frame--passive reveal reveal--fade">
+          <span class="cap-card__num">CAP.01</span>
+          <h3 class="cap-card__title">AUTONOMOUS DECISION</h3>
+          <p class="cap-card__body">Onboard intercept doctrine. No operator in the loop. No cloud dependency. No latency penalty from external authorization chains.</p>
+        </div>
+        <div class="cap-card bracket-frame--passive reveal reveal--fade">
+          <span class="cap-card__num">CAP.02</span>
+          <h3 class="cap-card__title">SWARM DEPLOYMENT</h3>
+          <p class="cap-card__body">Coordinated multi-unit intercept formations. 847 nodes networked. Real-time mesh synchronization across contested RF environments.</p>
+        </div>
+        <div class="cap-card bracket-frame--passive reveal reveal--fade">
+          <span class="cap-card__num">CAP.03</span>
+          <h3 class="cap-card__title">SUB-SECOND RESPONSE</h3>
+          <p class="cap-card__body">0.3-second intercept sequence from detection to engagement authority. Combat-proven response time in active theater deployments.</p>
+        </div>
+        <div class="cap-card bracket-frame--passive reveal reveal--fade">
+          <span class="cap-card__num">CAP.04</span>
+          <h3 class="cap-card__title">SOVEREIGN OPERATION</h3>
+          <p class="cap-card__body">Air-gapped architecture. Fully operable inside contested electromagnetic environments. Zero external infrastructure dependency.</p>
+        </div>
+        <div class="cap-card bracket-frame--passive reveal reveal--fade">
+          <span class="cap-card__num">CAP.05</span>
+          <h3 class="cap-card__title">MULTI-VECTOR THREAT</h3>
+          <p class="cap-card__body">Fixed-wing, rotary, and hybrid UAV profiles. Simultaneous multi-axis engagement. Threat classification in under 80ms.</p>
+        </div>
+        <div class="cap-card bracket-frame--passive reveal reveal--fade">
+          <span class="cap-card__num">CAP.06</span>
+          <h3 class="cap-card__title">IN-THEATER SUSTAINMENT</h3>
+          <p class="cap-card__body">Forward-deployable. Organic maintenance cycle. No contractor dependency on the line. Sustained operational tempo without logistics overhead.</p>
+        </div>
       </div>
 
-      <div class="two-col reveal" data-delay="1">
+    </div>
+  </section>
+
+  <!-- SECTION 3: METRICS — Phase 3 -->
+  <section class="site-section" id="section-metrics" data-section="3">
+    <div class="site-section__inner">
+
+      <span class="section-eyebrow reveal">03 // SYSTEM PERFORMANCE</span>
+      <h2 class="section-headline reveal reveal--fade">Numbers from the field. Not the lab.</h2>
+      <p class="section-lede reveal reveal--fade">All metrics sourced from active theater deployments. No simulated environments, no controlled test conditions. Operational data, operator-certified.</p>
+
+      <div class="hud-grid">
+        <div class="emp-wrap">
+          <div class="emp-container reveal reveal--fade" id="emp-container">
+            <div class="emp-ring"></div>
+            <div class="emp-ring"></div>
+            <div class="emp-ring"></div>
+            <div class="emp-ring"></div>
+            <div class="emp-center">
+              <span class="emp-center__label">INTERCEPT TIME</span>
+              <span class="emp-center__value">0.3s</span>
+              <span class="emp-center__sub">THEATER-CERTIFIED</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="metric-list">
+          <div class="reveal reveal--fade">
+            <div class="metric-item__value reveal reveal--count" data-target="847" data-suffix="">0</div>
+            <div class="metric-item__label">Nodes<br>deployed</div>
+          </div>
+          <div class="reveal reveal--fade">
+            <div class="metric-item__value">99.7%</div>
+            <div class="metric-item__label">Interdiction<br>success rate</div>
+          </div>
+          <div class="reveal reveal--fade">
+            <div class="metric-item__value reveal reveal--count" data-target="12" data-suffix="">0</div>
+            <div class="metric-item__label">Sovereign nation<br>deployments</div>
+          </div>
+          <div class="reveal reveal--fade">
+            <div class="metric-item__value">&lt;80ms</div>
+            <div class="metric-item__label">Threat classification<br>time</div>
+          </div>
+          <div class="reveal reveal--fade">
+            <div class="metric-item__value">360°</div>
+            <div class="metric-item__label">Threat sector<br>coverage</div>
+          </div>
+          <div class="reveal reveal--fade">
+            <div class="metric-item__value reveal reveal--count" data-target="2400" data-suffix="+">0</div>
+            <div class="metric-item__label">Maximum swarm<br>node count</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 4: PORTFOLIO — Phase 3 -->
+  <section class="site-section" id="section-portfolio" data-section="4">
+    <div class="grid-overlay" aria-hidden="true"></div>
+    <div class="site-section__inner">
+
+      <span class="section-eyebrow reveal">04 // PLATFORM PORTFOLIO</span>
+      <h2 class="section-headline reveal reveal--fade">Three configurations. One doctrine.</h2>
+      <p class="section-lede reveal reveal--fade">The T-Series interceptor platforms share a common decision architecture. Configuration scales with threat density. Doctrine does not change.</p>
+
+      <div class="matrix-wrap reveal reveal--fade">
+        <table class="matrix-table" aria-label="T-Series platform comparison">
+          <thead>
+            <tr>
+              <th scope="col">SPECIFICATION</th>
+              <th scope="col">T-1 SOLO</th>
+              <th scope="col">T-3 PACK</th>
+              <th scope="col">T-9 SWARM</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>CONFIGURATION</td>  <td>Single-unit</td>      <td>3-unit formation</td> <td>9-unit mesh</td></tr>
+            <tr><td>RESPONSE TIME</td>  <td>0.3s</td>             <td>0.3s</td>              <td>0.3s</td></tr>
+            <tr><td>COVERAGE RADIUS</td><td>2km</td>              <td>6km</td>               <td>18km</td></tr>
+            <tr><td>THREAT VECTORS</td> <td>Single-axis</td>      <td>Multi-axis</td>        <td>360° saturation</td></tr>
+            <tr><td>CLOUD REQUIRED</td> <td>NO</td>               <td>NO</td>                <td>NO</td></tr>
+            <tr><td>EM PROFILE</td>     <td>Low</td>              <td>Low</td>               <td>Low</td></tr>
+            <tr><td>DEPLOYMENT</td>     <td>Team</td>             <td>Squad</td>             <td>Battalion</td></tr>
+            <tr>
+              <td>STATUS</td>
+              <td><span class="matrix-status matrix-status--active">DEPLOYED</span></td>
+              <td><span class="matrix-status matrix-status--theater">IN-THEATER</span></td>
+              <td><span class="matrix-status matrix-status--classified">CONTROLLED</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 5: MARKET — Phase 4 -->
+  <section class="site-section" id="section-market" data-section="5">
+    <div class="site-section__inner">
+
+      <span class="section-eyebrow reveal">05 // MARKET OPPORTUNITY</span>
+      <h2 class="section-headline reveal reveal--fade">A $12B market with no dominant sovereign-grade solution.</h2>
+      <p class="section-lede reveal reveal--fade">Counter-UAV procurement is accelerating across 40+ nations following the Ukraine conflict. Sovereign-grade, air-gapped systems represent the fastest-growing procurement category. TEMPIST is the only fielded platform certified to Tier 1 sovereign requirements.</p>
+
+      <div class="market-layout">
+
+        <div class="reveal reveal--fade">
+          <h3 class="market-context__title">Why now.</h3>
+          <p class="market-context__body">Drone proliferation in active conflict zones triggered emergency procurement protocols in 14 NATO and partner nations since 2022. Existing platforms cannot meet the sovereign-grade, zero-cloud, swarm-response requirements now written into new procurement standards.</p>
+          <p class="market-context__body" style="margin-top:16px;">TEMPIST is the only platform already certified to the standards currently being written.</p>
+        </div>
+
+        <div class="market-stack">
+          <div class="market-bar reveal reveal--fade" style="--fill:100%;">
+            <div class="market-bar__head">
+              <span class="market-bar__label">TAM — GLOBAL COUNTER-UAV MARKET</span>
+              <span class="market-bar__amount">$12.4B</span>
+            </div>
+            <div class="market-bar__track">
+              <div class="market-bar__fill market-bar__fill--tam"></div>
+            </div>
+            <p class="market-bar__sub">2030 projection · 22% CAGR</p>
+          </div>
+
+          <div class="market-bar reveal reveal--fade" style="--fill:42%;">
+            <div class="market-bar__head">
+              <span class="market-bar__label">SAM — SOVEREIGN / DEFENSE-GRADE SYSTEMS</span>
+              <span class="market-bar__amount">$5.2B</span>
+            </div>
+            <div class="market-bar__track">
+              <div class="market-bar__fill market-bar__fill--sam"></div>
+            </div>
+            <p class="market-bar__sub">2030 · Air-gapped, Tier 1 certified platforms only</p>
+          </div>
+
+          <div class="market-bar reveal reveal--fade" style="--fill:5.5%;">
+            <div class="market-bar__head">
+              <span class="market-bar__label">SOM — TEMPIST ADDRESSABLE (36-MONTH)</span>
+              <span class="market-bar__amount">$680M</span>
+            </div>
+            <div class="market-bar__track">
+              <div class="market-bar__fill market-bar__fill--som"></div>
+            </div>
+            <p class="market-bar__sub">Active pipeline · Current platform · Sovereign relationships</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 6: MOAT — Phase 4 -->
+  <section class="site-section" id="section-moat" data-section="6">
+    <div class="grid-overlay" aria-hidden="true"></div>
+    <div class="site-section__inner">
+
+      <span class="section-eyebrow reveal">06 // COMPETITIVE POSITION</span>
+      <h2 class="section-headline reveal reveal--fade">A lead built in theater. Not in a lab.</h2>
+      <p class="section-lede reveal reveal--fade">TEMPIST's competitive advantages are structural. They come from 3,000+ live intercept events, classified sovereign certifications, and doctrine IP developed under operational conditions. These cannot be replicated in a test environment.</p>
+
+      <div class="comp-table-wrap reveal reveal--fade">
+        <table class="comp-table" aria-label="Competitive comparison">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col" class="col--tempist">TEMPIST</th>
+              <th scope="col" class="col--other">LEGACY<br><span style="font-weight:400;font-size:10px;opacity:0.6;">Raytheon / L3</span></th>
+              <th scope="col" class="col--other">EMERGING<br><span style="font-weight:400;font-size:10px;opacity:0.6;">VC-backed platforms</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>RESPONSE TIME</td>
+              <td class="col--tempist">0.3s</td>
+              <td class="col--other">4 – 8s</td>
+              <td class="col--other">1 – 3s</td>
+            </tr>
+            <tr>
+              <td>CLOUD REQUIRED</td>
+              <td class="col--tempist">No</td>
+              <td class="col--other">Yes</td>
+              <td class="col--other">Partial</td>
+            </tr>
+            <tr>
+              <td>SWARM-NATIVE</td>
+              <td class="col--tempist">Yes</td>
+              <td class="col--other">No</td>
+              <td class="col--other">Limited</td>
+            </tr>
+            <tr>
+              <td>SOVEREIGN CLEARANCE</td>
+              <td class="col--tempist">12 nations</td>
+              <td class="col--other">8 nations</td>
+              <td class="col--other">0</td>
+            </tr>
+            <tr>
+              <td>COMBAT PROVEN</td>
+              <td class="col--tempist">Yes — in theater</td>
+              <td class="col--other">Yes — legacy doctrine</td>
+              <td class="col--other">No</td>
+            </tr>
+            <tr>
+              <td>COST / INTERCEPT</td>
+              <td class="col--tempist">Classified</td>
+              <td class="col--other">$180K+</td>
+              <td class="col--other">$40 – 80K</td>
+            </tr>
+            <tr>
+              <td>EM RESILIENCE</td>
+              <td class="col--tempist">Air-gap certified</td>
+              <td class="col--other">Contested degraded</td>
+              <td class="col--other">Partial</td>
+            </tr>
+            <tr>
+              <td>DOCTRINE IP</td>
+              <td class="col--tempist">Classified</td>
+              <td class="col--other">Published / open</td>
+              <td class="col--other">Limited</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 7: TRACTION — Phase 5 -->
+  <section class="site-section" id="section-traction" data-section="7">
+    <div class="site-section__inner">
+
+      <span class="section-eyebrow reveal">07 // TRACTION</span>
+      <h2 class="section-headline reveal reveal--fade">$72M+ in active sovereign pipeline.</h2>
+      <p class="section-lede reveal reveal--fade">Three disclosed engagements. One classified. All initiated through sovereign procurement channels — no broker intermediation, no commercial pitch process. Counterpart-initiated.</p>
+
+      <div class="pipeline-grid">
+        <div class="pipeline-tile bracket-frame--passive reveal reveal--fade">
+          <span class="classification-stamp">RESTRICTED</span>
+          <h3 class="pipeline-tile__name">NATO MEMBER NATION</h3>
+          <p class="pipeline-tile__geo">Eastern European theater<br>Direct sovereign procurement</p>
+          <div class="pipeline-tile__value">$18M</div>
+          <div class="pipeline-tile__status">LOI SIGNED · Q2 2026</div>
+        </div>
+        <div class="pipeline-tile bracket-frame--passive reveal reveal--fade">
+          <span class="classification-stamp">RESTRICTED</span>
+          <h3 class="pipeline-tile__name">GULF STATE SOVEREIGN</h3>
+          <p class="pipeline-tile__geo">Strategic air defense<br>Multi-platform deployment</p>
+          <div class="pipeline-tile__value">$42M</div>
+          <div class="pipeline-tile__status">NDA EXECUTED · NEGOTIATION ACTIVE</div>
+        </div>
+        <div class="pipeline-tile bracket-frame--passive reveal reveal--fade">
+          <span class="classification-stamp">RESTRICTED</span>
+          <h3 class="pipeline-tile__name">NORTHERN EUROPEAN PARTNER</h3>
+          <p class="pipeline-tile__geo">NATO-adjacent evaluation<br>Sovereign procurement track</p>
+          <div class="pipeline-tile__value">$12M</div>
+          <div class="pipeline-tile__status">PLATFORM EVALUATION · IN PROGRESS</div>
+        </div>
+        <div class="pipeline-tile bracket-frame--passive reveal reveal--fade">
+          <span class="classification-stamp">CONTROLLED</span>
+          <h3 class="pipeline-tile__name">SOVEREIGN STATE</h3>
+          <p class="pipeline-tile__geo">Undisclosed<br>Access restricted</p>
+          <div class="pipeline-tile__value">$— —M</div>
+          <div class="pipeline-tile__status">UNDER NEGOTIATION · ACTIVE</div>
+        </div>
+      </div>
+
+      <div class="compliance-row reveal reveal--fade">
+        <span class="compliance-badge">ITAR COMPLIANT</span>
+        <span class="compliance-badge">NATO STANAG ALIGNED</span>
+        <span class="compliance-badge">AIR-GAP CERTIFIED</span>
+        <span class="compliance-badge">TIER 1 SOVEREIGN RATED</span>
+        <span class="compliance-badge">12-NATION CLEARED</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 8: RAISE — Phase 5 -->
+  <section class="site-section" id="section-raise" data-section="8">
+    <div class="grid-overlay" aria-hidden="true"></div>
+    <div class="site-section__inner">
+
+      <span class="section-eyebrow reveal">08 // THE RAISE</span>
+      <h2 class="section-headline reveal reveal--fade">$24M Series A. Closing Q3 2026.</h2>
+      <p class="section-lede reveal reveal--fade">Capital deploys against three objectives: production scale for the T-3 and T-9 platforms, sovereign certification across eight additional nations, and interceptor doctrine R&D.</p>
+
+      <div class="raise-layout">
+
+        <div class="raise-panel bracket-frame--active reveal reveal--fade">
+          <div class="raise-panel__title">SERIES A // CONTROLLED</div>
+          <div class="raise-row">
+            <span class="raise-row__label">RAISE TARGET</span>
+            <span class="raise-row__value raise-row__value--large">$24M</span>
+          </div>
+          <div class="raise-row">
+            <span class="raise-row__label">STRUCTURE</span>
+            <span class="raise-row__value">Preferred Equity</span>
+          </div>
+          <div class="raise-row">
+            <span class="raise-row__label">LEAD INVESTOR</span>
+            <span class="raise-row__value">Obsidian Capital Partners</span>
+          </div>
+          <div class="raise-row">
+            <span class="raise-row__label">TARGET CLOSE</span>
+            <span class="raise-row__value">Q3 2026</span>
+          </div>
+          <div class="raise-row">
+            <span class="raise-row__label">MIN. TICKET</span>
+            <span class="raise-row__value">$1,000,000</span>
+          </div>
+          <div class="raise-row">
+            <span class="raise-row__label">ACTIVE PIPELINE</span>
+            <span class="raise-row__value">$72M+</span>
+          </div>
+          <div class="raise-status">STATUS: ACTIVE // ACCESS BY INTRODUCTION</div>
+        </div>
+
         <div>
-          <p style="font-weight:500;color:var(--color-parchment);">Tempist's brand voice is operator-to-operator. We speak to engineers, plant managers, and procurement directors as peers — not as prospects.</p>
-          <p>No technology hype. No "Industry 4.0" performance language. No academic distance. We describe what a system does, what it costs, what it requires from the operator, and what it returns. Every word does a job.</p>
+          <span class="proceeds-eyebrow">USE OF PROCEEDS</span>
+          <div class="proceeds-stack">
+            <div class="proceeds-bar reveal reveal--fade" style="--fill:40%;">
+              <div class="proceeds-bar__head">
+                <span class="proceeds-bar__label">PRODUCTION SCALE</span>
+                <span class="proceeds-bar__pct">40%</span>
+              </div>
+              <div class="proceeds-bar__track"><div class="proceeds-bar__fill"></div></div>
+              <p class="proceeds-bar__desc">T-3 and T-9 platform manufacturing · Forward inventory</p>
+            </div>
+            <div class="proceeds-bar reveal reveal--fade" style="--fill:30%;">
+              <div class="proceeds-bar__head">
+                <span class="proceeds-bar__label">SOVEREIGN CERTIFICATION</span>
+                <span class="proceeds-bar__pct">30%</span>
+              </div>
+              <div class="proceeds-bar__track"><div class="proceeds-bar__fill"></div></div>
+              <p class="proceeds-bar__desc">8 additional nations · Tier 1 sovereign rating process</p>
+            </div>
+            <div class="proceeds-bar reveal reveal--fade" style="--fill:20%;">
+              <div class="proceeds-bar__head">
+                <span class="proceeds-bar__label">R&amp;D — NEXT-GEN DOCTRINE</span>
+                <span class="proceeds-bar__pct">20%</span>
+              </div>
+              <div class="proceeds-bar__track"><div class="proceeds-bar__fill"></div></div>
+              <p class="proceeds-bar__desc">Interceptor AI · Swarm coordination protocol v3</p>
+            </div>
+            <div class="proceeds-bar reveal reveal--fade" style="--fill:10%;">
+              <div class="proceeds-bar__head">
+                <span class="proceeds-bar__label">OPERATIONS + G&amp;A</span>
+                <span class="proceeds-bar__pct">10%</span>
+              </div>
+              <div class="proceeds-bar__track"><div class="proceeds-bar__fill"></div></div>
+              <p class="proceeds-bar__desc">Infrastructure · Legal · Team</p>
+            </div>
+          </div>
         </div>
-        <div>
-          <p>The Tempist standard for any project: <strong style="color:var(--color-parchment);font-weight:500;">specification before commitment.</strong> If a project cannot be specified in operator language with defensible numbers, it does not advance.</p>
-          <p>This discipline keeps us out of work we should not take — and keeps the work we do take honest. The result is a project portfolio narrower than competitors, executed with higher operational integrity.</p>
-        </div>
+
       </div>
+
     </div>
   </section>
 
-  <!-- METRICS -->
-  <section class="platform-section">
-    <div class="platform-section__inner">
-      <div class="section-header reveal">
-        <p class="section-header__eyebrow"><span class="num">03</span>Platform Profile</p>
-        <h2 class="section-header__title">Structural facts.</h2>
+  <!-- SECTION 9: LEADERSHIP — Phase 6 -->
+  <section class="site-section" id="section-leadership" data-section="9">
+    <div class="site-section__inner">
+
+      <span class="section-eyebrow reveal">09 // LEADERSHIP</span>
+
+      <div class="leader-block reveal reveal--fade">
+        <h2 class="leader-block__name">Marcus Glover</h2>
+        <p class="leader-block__title">Founder &amp; Chief Executive Officer</p>
+        <p class="leader-block__bio">12 years special operations. Autonomous systems integration lead on three classified national defense programs. Built and certified the first air-gapped swarm intercept architecture fielded in active conflict. Founded TEMPIST in 2021 with a single premise: sovereign deployment requires sovereign doctrine.</p>
+        <div class="leader-block__creds">
+          <span class="leader-block__cred">B.S. Electrical Engineering</span>
+          <span class="leader-block__cred-sep">·</span>
+          <span class="leader-block__cred">M.S. Systems Engineering</span>
+          <span class="leader-block__cred-sep">·</span>
+          <span class="leader-block__cred">TS/SCI Cleared</span>
+        </div>
       </div>
 
-      <div class="metric-grid">
-        <div class="metric reveal">
-          <div class="metric__label">Capital Structure</div>
-          <div class="metric__value">Principal</div>
-          <div class="metric__note">Obsidian principal position · Long-duration</div>
+      <div class="advisor-header reveal">
+        <span class="section-eyebrow" style="margin-bottom:0;">ADVISORY BOARD</span>
+      </div>
+      <div class="advisor-grid">
+        <div class="advisor-card bracket-frame--passive reveal reveal--fade">
+          <h3 class="advisor-card__name">Lt. Gen. (Ret.) Richard Harmon</h3>
+          <p class="advisor-card__title">Former Deputy SACEUR<br>NATO Allied Command Europe</p>
         </div>
-        <div class="metric reveal" data-delay="1">
-          <div class="metric__label">Capability Domain</div>
-          <div class="metric__value">Industrial</div>
-          <div class="metric__note">Automation · Control · Operational Software</div>
+        <div class="advisor-card bracket-frame--passive reveal reveal--fade">
+          <h3 class="advisor-card__name">Dr. Sarah Chen</h3>
+          <p class="advisor-card__title">Former Technical Director<br>DARPA Tactical Technology Office</p>
         </div>
-        <div class="metric reveal" data-delay="2">
-          <div class="metric__label">Engagement Model</div>
-          <div class="metric__value">Specified</div>
-          <div class="metric__note">Spec-before-commitment discipline</div>
+        <div class="advisor-card bracket-frame--passive reveal reveal--fade">
+          <h3 class="advisor-card__name">James Okafor</h3>
+          <p class="advisor-card__title">Former Chief Procurement Officer<br>U.S. Department of Defense</p>
         </div>
-        <div class="metric reveal" data-delay="3">
-          <div class="metric__label">Voice</div>
-          <div class="metric__value">Operator</div>
-          <div class="metric__note">No abstraction · No academic distance</div>
+        <div class="advisor-card bracket-frame--passive reveal reveal--fade">
+          <h3 class="advisor-card__name">Col. (Ret.) Viktor Naumov</h3>
+          <p class="advisor-card__title">Former Head of Air Defense Systems<br>Polish Armed Forces</p>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="platform-section" style="border-bottom:none;">
-    <div class="platform-section__inner">
-      <div class="platform-cta reveal">
-        <h2 class="platform-cta__headline">Operational detail by <em>introduction.</em></h2>
-        <p class="platform-cta__sub">Active engagements, system architectures, and operational case studies are made available to qualified parties with an issued access code.</p>
-        <a href="access.html" class="platform-cta__button">
-          <span>Enter Access Code</span>
-          <span class="platform-cta__button-arrow">→</span>
-        </a>
+  <!-- SECTION 10: CONTACT — Phase 6 -->
+  <section class="site-section" id="section-contact" data-section="10">
+    <div class="grid-overlay" aria-hidden="true"></div>
+    <div class="site-section__inner">
+
+      <span class="section-eyebrow reveal">10 // ACCESS REQUEST</span>
+      <h2 class="section-headline reveal reveal--fade">Operational detail by introduction.</h2>
+      <p class="section-lede reveal reveal--fade">Active engagements, platform specifications, and sovereign certifications are made available to qualified parties. Submit a request to begin the access process.</p>
+
+      <div class="contact-layout">
+
+        <form class="contact-form reveal reveal--fade" id="contact-form" method="post" action="#" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="field-name">FULL NAME</label>
+            <input class="form-input" type="text" id="field-name" name="name" autocomplete="name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="field-org">ORGANIZATION</label>
+            <input class="form-input" type="text" id="field-org" name="organization" autocomplete="organization" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="field-role">ROLE / TITLE</label>
+            <input class="form-input" type="text" id="field-role" name="role" autocomplete="organization-title">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="field-email">EMAIL</label>
+            <input class="form-input" type="email" id="field-email" name="email" autocomplete="email" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="field-message">ACCESS CONTEXT</label>
+            <textarea class="form-input form-textarea" id="field-message" name="message" rows="4" placeholder="Describe the context for your request."></textarea>
+          </div>
+          <button class="form-submit bracket-frame--passive" type="submit">[ SUBMIT REQUEST ]</button>
+        </form>
+
+        <div class="reveal reveal--fade">
+          <div class="contact-meta__block">
+            <span class="form-label">CLASSIFICATION</span>
+            <span class="classification-stamp">CONTROLLED</span>
+          </div>
+          <div class="contact-meta__block">
+            <span class="form-label">ACCESS PROTOCOL</span>
+            <p class="contact-meta__text">All requests reviewed within 48 hours. Qualified parties receive an encrypted access code. No speculative outreach is processed.</p>
+          </div>
+          <div class="contact-meta__block">
+            <span class="form-label">DIRECT INQUIRIES</span>
+            <p class="contact-meta__text">access@tempist.systems</p>
+          </div>
+        </div>
+
       </div>
+
     </div>
   </section>
 
 </main>
 
-<footer class="platform-footer">
-  <div class="platform-footer__inner">
-    <span class="platform-footer__lineage">An Obsidian Capital Partners Platform Company</span>
-    <span>© 2026 Tempist Systems · Confidential</span>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer__inner">
+    <div class="site-footer__top">
+      <div>
+        <p class="site-footer__wordmark">TEMPIST SYSTEMS INC.</p>
+        <p class="site-footer__tagline">WE ARE THE WEATHER.</p>
+      </div>
+      <span class="classification-stamp">CONTROLLED</span>
+    </div>
+    <div class="site-footer__bottom">
+      <p class="site-footer__meta">© 2026 TEMPIST SYSTEMS INC. · ALL RIGHTS RESERVED · INFORMATION HEREIN IS CONTROLLED AND NOT FOR PUBLIC RELEASE · SOVEREIGN DEPLOYMENT TECHNOLOGY</p>
+    </div>
   </div>
 </footer>
 
 <script>
-(function() {
-  const nav = document.getElementById('nav');
-  const onScroll = () => nav.classList.toggle('is-scrolled', window.scrollY > 40);
-  onScroll();
-  window.addEventListener('scroll', onScroll, { passive: true });
-})();
-(function() {
-  const els = document.querySelectorAll('.reveal');
-  if (!('IntersectionObserver' in window)) { els.forEach(el => el.classList.add('is-in')); return; }
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) { entry.target.classList.add('is-in'); io.unobserve(entry.target); }
+(function () {
+  'use strict';
+
+  /* ─── FEATURE FLAGS ─────────────────────────────────────────── */
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var isMobile = window.innerWidth < 768;
+
+  /* ─── WATERMARK ─────────────────────────────────────────────── */
+  (function initWatermark() {
+    var el = document.getElementById('page-watermark');
+    if (!el) return;
+    var segment = 'TEMPIST SYSTEMS INC.  ';
+    var vmax = Math.max(window.innerWidth, window.innerHeight);
+    var containerSize = vmax * 2;
+    var segWidthPx = 230;
+    var rowSlotPx = 65;
+    var reps = Math.ceil(containerSize / segWidthPx) + 4;
+    var rows = Math.ceil(containerSize / rowSlotPx) + 6;
+    var rowText = segment.repeat(reps);
+    var frag = document.createDocumentFragment();
+    for (var i = 0; i < rows; i++) {
+      var div = document.createElement('div');
+      div.className = 'watermark-row';
+      div.setAttribute('aria-hidden', 'true');
+      div.textContent = rowText;
+      frag.appendChild(div);
+    }
+    el.appendChild(frag);
+  })();
+
+  /* ─── PARALLAX ──────────────────────────────────────────────── */
+  var parallaxLayers = [];
+  function collectParallaxLayers() {
+    parallaxLayers = Array.from(document.querySelectorAll('[data-speed]')).map(function (el) {
+      return { el: el, speed: parseFloat(el.dataset.speed) || 0 };
     });
-  }, { rootMargin: '-10% 0px -10% 0px', threshold: 0.05 });
-  els.forEach(el => io.observe(el));
+  }
+  function tickParallax() {
+    if (isMobile || reducedMotion) return;
+    var scrollY = window.scrollY;
+    for (var i = 0; i < parallaxLayers.length; i++) {
+      var layer = parallaxLayers[i];
+      layer.el.style.transform = 'translateY(' + (scrollY * layer.speed).toFixed(2) + 'px)';
+    }
+  }
+
+  /* ─── MASTER RAF LOOP ───────────────────────────────────────── */
+  var isDocVisible = true;
+  function masterLoop() {
+    if (isDocVisible) {
+      tickParallax();
+      tickParticles();
+    }
+    requestAnimationFrame(masterLoop);
+  }
+  document.addEventListener('visibilitychange', function () {
+    isDocVisible = !document.hidden;
+  });
+
+  /* ─── COUNTER ANIMATION ─────────────────────────────────────── */
+  function animateCount(el, target, duration) {
+    if (reducedMotion) {
+      el.textContent = target.toLocaleString() + (el.dataset.suffix || '');
+      return;
+    }
+    var start = performance.now();
+    var suffix = el.dataset.suffix || '';
+    function step(now) {
+      var t = Math.min((now - start) / duration, 1);
+      el.textContent = Math.round(t * target).toLocaleString() + suffix;
+      if (t < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  /* ─── SVG DRAW ANIMATION ────────────────────────────────────── */
+  var SVG_SHAPES = 'path, line, circle, rect, polyline, polygon';
+  function initDrawElement(el) {
+    el.querySelectorAll(SVG_SHAPES).forEach(function (shape) {
+      var len = shape.getTotalLength ? shape.getTotalLength() : 200;
+      shape.style.strokeDasharray = len;
+      shape.style.strokeDashoffset = len;
+    });
+  }
+  function triggerDraw(el) {
+    el.querySelectorAll(SVG_SHAPES).forEach(function (shape) {
+      shape.style.transition = 'stroke-dashoffset 500ms linear';
+      shape.style.strokeDashoffset = '0';
+    });
+  }
+
+  /* ─── INTERSECTION OBSERVER — SCROLL REVEALS ────────────────── */
+  var revealObserver = new IntersectionObserver(function (entries) {
+    for (var i = 0; i < entries.length; i++) {
+      var entry = entries[i];
+      if (!entry.isIntersecting) continue;
+      if (entry.target.classList.contains('is-revealed')) continue;
+      entry.target.classList.add('is-revealed');
+      if (entry.target.classList.contains('reveal--count'))
+        animateCount(entry.target, parseFloat(entry.target.dataset.target) || 0, 800);
+      if (entry.target.classList.contains('reveal--draw'))
+        triggerDraw(entry.target);
+      revealObserver.unobserve(entry.target);
+    }
+  }, { threshold: 0.15 });
+
+  function observeRevealElements() {
+    document.querySelectorAll('.reveal').forEach(function (el) {
+      if (el.classList.contains('reveal--draw')) initDrawElement(el);
+      revealObserver.observe(el);
+    });
+  }
+
+  /* ─── CANVAS PARTICLE SYSTEM ───────────────────────────────── */
+  var heroCanvas = null;
+  var heroCtx   = null;
+  var particles = [];
+  var PARTICLE_COUNT = isMobile ? 40 : 80;
+
+  function resizeHeroCanvas() {
+    if (!heroCanvas) return;
+    heroCanvas.width  = heroCanvas.offsetWidth;
+    heroCanvas.height = heroCanvas.offsetHeight;
+  }
+
+  function makeParticle() {
+    var cx    = heroCanvas.width  / 2;
+    var cy    = heroCanvas.height / 2;
+    var angle = Math.random() * Math.PI * 2;
+    var r     = 60 + Math.random() * 350;
+    return {
+      x:       cx + Math.cos(angle) * r,
+      y:       cy + Math.sin(angle) * r,
+      targetX: cx + (Math.random() - 0.5) * 600,
+      targetY: cy + (Math.random() - 0.5) * 400,
+      size:    1 + Math.random() * 1.5,
+      opacity: 0.2 + Math.random() * 0.5
+    };
+  }
+
+  function initParticles() {
+    heroCanvas = document.getElementById('hero-canvas');
+    if (!heroCanvas) return;
+    heroCtx = heroCanvas.getContext('2d');
+    resizeHeroCanvas();
+    particles = [];
+    for (var pi = 0; pi < PARTICLE_COUNT; pi++) particles.push(makeParticle());
+    window.addEventListener('resize', resizeHeroCanvas, { passive: true });
+  }
+
+  function tickParticles() {
+    if (!heroCtx || !heroCanvas) return;
+    var w  = heroCanvas.width;
+    var h  = heroCanvas.height;
+    var cx = w / 2;
+    var cy = h / 2;
+    heroCtx.clearRect(0, 0, w, h);
+
+    for (var pi = 0; pi < particles.length; pi++) {
+      var p  = particles[pi];
+      var dx = p.targetX - p.x;
+      var dy = p.targetY - p.y;
+      var d  = Math.sqrt(dx * dx + dy * dy);
+      if (d > 3) {
+        p.x += dx * 0.006;
+        p.y += dy * 0.006;
+      } else {
+        p.targetX = cx + (Math.random() - 0.5) * 600;
+        p.targetY = cy + (Math.random() - 0.5) * 400;
+      }
+      heroCtx.beginPath();
+      heroCtx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      heroCtx.fillStyle = 'rgba(0,255,65,' + p.opacity + ')';
+      heroCtx.fill();
+    }
+
+    heroCtx.strokeStyle = 'rgba(0,255,65,1)';
+    heroCtx.lineWidth   = 0.5;
+    for (var pi = 0; pi < particles.length; pi++) {
+      for (var pj = pi + 1; pj < particles.length; pj++) {
+        var dx2 = particles[pi].x - particles[pj].x;
+        var dy2 = particles[pi].y - particles[pj].y;
+        var d2  = Math.sqrt(dx2 * dx2 + dy2 * dy2);
+        if (d2 < 90) {
+          heroCtx.globalAlpha = (1 - d2 / 90) * 0.08;
+          heroCtx.beginPath();
+          heroCtx.moveTo(particles[pi].x, particles[pi].y);
+          heroCtx.lineTo(particles[pj].x, particles[pj].y);
+          heroCtx.stroke();
+        }
+      }
+    }
+    heroCtx.globalAlpha = 1;
+  }
+
+  /* ─── BOOT SEQUENCE ─────────────────────────────────────────── */
+  var BOOT_LINES = [
+    '> INITIALIZING TEMPIST SYSTEMS INC.',
+    '> DOCTRINE: SOVEREIGN DEPLOYMENT',
+    '> INTERCEPT SEQUENCE: ARMED',
+    '> NODES ONLINE: 847',
+    '> STATUS: IN-THEATER',
+    '> ACCESS LEVEL: CONTROLLED'
+  ];
+
+  function runBootSequence(container, onComplete) {
+    if (reducedMotion) { onComplete(); return; }
+    var lineIndex = 0;
+
+    function typeLine(text, callback) {
+      var el = document.createElement('div');
+      el.className = 'hero__boot-line hero__boot-line--current';
+      container.appendChild(el);
+      var i = 0;
+      function tick() {
+        if (i < text.length) {
+          el.textContent = text.slice(0, i + 1);
+          i++;
+          setTimeout(tick, 30);
+        } else {
+          el.classList.remove('hero__boot-line--current');
+          callback();
+        }
+      }
+      setTimeout(tick, 80);
+    }
+
+    function nextLine() {
+      if (lineIndex >= BOOT_LINES.length) {
+        setTimeout(function () {
+          container.style.transition = 'opacity 400ms linear';
+          container.style.opacity   = '0';
+          setTimeout(onComplete, 450);
+        }, 500);
+        return;
+      }
+      typeLine(BOOT_LINES[lineIndex], function () {
+        lineIndex++;
+        setTimeout(nextLine, 60);
+      });
+    }
+
+    nextLine();
+  }
+
+  function initHero() {
+    var bootEl       = document.getElementById('hero-boot');
+    var wordmarkEl   = document.getElementById('hero-wordmark');
+    var descriptorEl = document.getElementById('hero-descriptor');
+    var scrollEl     = document.getElementById('hero-scroll');
+    if (!bootEl) return;
+
+    initParticles();
+
+    runBootSequence(bootEl, function () {
+      if (wordmarkEl)   wordmarkEl.classList.add('is-visible');
+      if (descriptorEl) setTimeout(function () { descriptorEl.classList.add('is-visible'); }, 200);
+      if (scrollEl)     setTimeout(function () { scrollEl.classList.add('is-visible'); }, 400);
+    });
+  }
+
+  /* ─── NAV SCROLL ────────────────────────────────────────────── */
+  function initNav() {
+    var nav = document.getElementById('site-nav');
+    if (!nav) return;
+    function onScroll() { nav.classList.toggle('is-scrolled', window.scrollY > 60); }
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
+  /* ─── CONTACT FORM ──────────────────────────────────────────── */
+  function initContactForm() {
+    var form = document.getElementById('contact-form');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = form.querySelector('.form-submit');
+      if (btn && !btn.disabled) {
+        btn.textContent = '[ REQUEST SUBMITTED ]';
+        btn.disabled = true;
+      }
+    });
+  }
+
+  /* ─── EMP PULSE RINGS ──────────────────────────────────────── */
+  function initEMP() {
+    var container = document.getElementById('emp-container');
+    if (!container) return;
+    var empObserver = new IntersectionObserver(function (entries) {
+      for (var i = 0; i < entries.length; i++) {
+        if (!entries[i].isIntersecting) continue;
+        container.querySelectorAll('.emp-ring').forEach(function (ring) {
+          ring.classList.add('is-fired');
+        });
+        empObserver.unobserve(container);
+      }
+    }, { threshold: 0.3 });
+    empObserver.observe(container);
+  }
+
+  /* ─── INIT ──────────────────────────────────────────────────── */
+  document.addEventListener('DOMContentLoaded', function () {
+    collectParallaxLayers();
+    observeRevealElements();
+    initHero();
+    initEMP();
+    initNav();
+    initContactForm();
+    requestAnimationFrame(masterLoop);
+  });
+
 })();
 </script>
 
