@@ -3,22 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kindred — 45-Day GTM Strategy</title>
+<title>COMMONGROUND — 45-Day GTM Strategy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#080808;
-  --surface:#111111;
-  --surface2:#1a1a1a;
-  --gold:#C9A84C;
-  --red:#E63946;
-  --green:#2DC653;
-  --text:#F0EDE8;
-  --muted:#888888;
-  --border:#222222;
+  --bg:#13121E;
+  --surface:#1C1A2C;
+  --surface2:#221F33;
+  --gold:#DF8C12;
+  --red:#C24558;
+  --green:#4D6E36;
+  --text:#F2EAD8;
+  --muted:#8890A8;
+  --border:#2A2840;
   --purple:#9B59B6;
   --amber:#F39C12;
   --fuchsia:#E91E8C;
@@ -27,7 +27,7 @@ html{scroll-behavior:smooth;font-size:16px}
 body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
 
 /* NAV */
-nav{position:sticky;top:0;z-index:100;background:rgba(8,8,8,0.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px}
+nav{position:sticky;top:0;z-index:100;background:rgba(19,18,30,0.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px}
 .nav-logo{font-family:'Bebas Neue',cursive;font-size:1.5rem;color:var(--gold);letter-spacing:0.05em;white-space:nowrap}
 .nav-links{display:flex;gap:1.5rem;list-style:none;overflow-x:auto;scrollbar-width:none}
 .nav-links::-webkit-scrollbar{display:none}
@@ -35,7 +35,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(8,8,8,0.85);backdrop-filte
 .nav-links a:hover{color:var(--gold)}
 
 /* HERO */
-#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:6rem 4rem 4rem;background:radial-gradient(ellipse at 70% 30%, rgba(201,168,76,0.06) 0%, transparent 60%),var(--bg);position:relative;overflow:hidden}
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:6rem 4rem 4rem;background:radial-gradient(ellipse at 70% 30%, rgba(223,140,18,0.06) 0%, transparent 60%),var(--bg);position:relative;overflow:hidden}
 #hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(255,255,255,0.012) 79px,rgba(255,255,255,0.012) 80px);pointer-events:none}
 .hero-overline{font-family:'Space Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--gold);margin-bottom:1.5rem}
 .hero-headline{font-family:'Bebas Neue',cursive;font-size:clamp(4rem,10vw,9rem);line-height:0.92;color:var(--text);letter-spacing:0.02em;margin-bottom:1.5rem;max-width:900px}
@@ -58,13 +58,13 @@ section{padding:5rem 4rem;border-bottom:1px solid var(--border);scroll-margin-to
 .card-gold-left{border-left:3px solid var(--gold)}
 
 /* CALLOUT BOXES */
-.callout-red{background:rgba(230,57,70,0.08);border:1px solid var(--red);border-left:4px solid var(--red);padding:1.5rem 2rem;margin:1.5rem 0}
-.callout-gold{background:rgba(201,168,76,0.06);border:1px solid var(--gold);border-left:4px solid var(--gold);padding:1.5rem 2rem;margin:1.5rem 0}
-.callout-green{background:rgba(45,198,83,0.06);border:1px solid var(--green);border-left:4px solid var(--green);padding:1.5rem 2rem;margin:1.5rem 0}
+.callout-red{background:rgba(194,69,88,0.08);border:1px solid var(--red);border-left:4px solid var(--red);padding:1.5rem 2rem;margin:1.5rem 0}
+.callout-gold{background:rgba(223,140,18,0.06);border:1px solid var(--gold);border-left:4px solid var(--gold);padding:1.5rem 2rem;margin:1.5rem 0}
+.callout-green{background:rgba(77,110,54,0.06);border:1px solid var(--green);border-left:4px solid var(--green);padding:1.5rem 2rem;margin:1.5rem 0}
 .callout-num{font-family:'Bebas Neue',cursive;font-size:3rem;color:var(--red);line-height:1;margin-bottom:0.25rem}
 
 /* CODE BLOCK */
-.code-block{font-family:'Space Mono',monospace;font-size:0.78rem;background:#0d0d0d;border:1px solid var(--gold);padding:1.5rem;margin:1.5rem 0;color:var(--text);line-height:1.8;white-space:pre-wrap;word-break:break-word}
+.code-block{font-family:'Space Mono',monospace;font-size:0.78rem;background:#0e0d1a;border:1px solid var(--gold);padding:1.5rem;margin:1.5rem 0;color:var(--text);line-height:1.8;white-space:pre-wrap;word-break:break-word}
 
 /* TABLES */
 .table-wrap{overflow-x:auto;margin:1.5rem 0;-webkit-overflow-scrolling:touch}
@@ -80,10 +80,10 @@ td strong{color:var(--gold)}
 
 /* BADGES */
 .badge{display:inline-block;font-family:'Space Mono',monospace;font-size:0.6rem;font-weight:700;padding:0.2rem 0.5rem;letter-spacing:0.08em;border-radius:2px}
-.badge-h{background:rgba(230,57,70,0.2);color:#ff6b76;border:1px solid rgba(230,57,70,0.4)}
+.badge-h{background:rgba(194,69,88,0.2);color:#d96878;border:1px solid rgba(194,69,88,0.4)}
 .badge-m{background:rgba(243,156,18,0.2);color:#f39c12;border:1px solid rgba(243,156,18,0.4)}
-.badge-l{background:rgba(45,198,83,0.2);color:#2DC653;border:1px solid rgba(45,198,83,0.4)}
-.badge-go{background:rgba(45,198,83,0.15);color:var(--green);border:1px solid var(--green);font-size:0.55rem;padding:0.15rem 0.5rem;letter-spacing:0.1em;margin-left:0.75rem;vertical-align:middle}
+.badge-l{background:rgba(77,110,54,0.2);color:#4D6E36;border:1px solid rgba(77,110,54,0.4)}
+.badge-go{background:rgba(77,110,54,0.15);color:var(--green);border:1px solid var(--green);font-size:0.55rem;padding:0.15rem 0.5rem;letter-spacing:0.1em;margin-left:0.75rem;vertical-align:middle}
 
 /* BRAND VALUES */
 .brand-values{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:1.5rem 0}
@@ -141,7 +141,7 @@ td strong{color:var(--gold)}
 /* PHYGITAL FUNNEL */
 .funnel{display:flex;flex-direction:column;align-items:center;gap:0;margin:2rem auto;max-width:500px}
 .funnel-step{background:var(--surface2);border:1px solid var(--border);padding:0.85rem 2rem;width:100%;text-align:center;font-family:'Space Mono',monospace;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text);position:relative;transition:background 0.2s}
-.funnel-step:hover{background:rgba(201,168,76,0.05)}
+.funnel-step:hover{background:rgba(223,140,18,0.05)}
 .funnel-step.top{border-top-color:var(--gold)}
 .funnel-arrow{width:2px;height:28px;background:var(--gold);margin:0 auto;position:relative;display:flex;justify-content:center}
 .funnel-arrow::after{content:'';position:absolute;bottom:-1px;left:50%;transform:translateX(-50%);border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid var(--gold)}
@@ -156,7 +156,7 @@ td strong{color:var(--gold)}
 .q-label.left{left:0.5rem;top:50%;transform:translateY(-50%) rotate(-90deg);transform-origin:center}
 .q-label.right{right:0.5rem;top:50%;transform:translateY(-50%) rotate(90deg);transform-origin:center}
 .q-player{position:absolute;font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--muted);text-align:center;transform:translate(-50%,-50%)}
-.q-player.star{color:var(--gold);font-size:0.75rem;font-weight:700;background:rgba(201,168,76,0.1);border:1px solid var(--gold);padding:0.3rem 0.6rem}
+.q-player.star{color:var(--gold);font-size:0.75rem;font-weight:700;background:rgba(223,140,18,0.1);border:1px solid var(--gold);padding:0.3rem 0.6rem}
 
 /* TRUST TRANSFER */
 .trust-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin:1.5rem 0;counter-reset:trust-step}
@@ -173,7 +173,7 @@ td strong{color:var(--gold)}
 .split-desc{font-size:0.82rem;color:var(--muted);line-height:1.5}
 
 /* REGULATORY SECTION */
-#part5{background:rgba(230,57,70,0.015)}
+#part5{background:rgba(194,69,88,0.015)}
 
 /* EQUITY TABLE */
 .eq-table thead th:first-child{color:var(--text)}
@@ -227,7 +227,7 @@ ul.styled li:last-child{border-bottom:none}
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">KINDRED™</div>
+  <div class="nav-logo">COMMONGROUND™</div>
   <ul class="nav-links">
     <li><a href="#naming">Brand Name</a></li>
     <li><a href="#exec-summary">Exec Summary</a></li>
@@ -267,7 +267,7 @@ ul.styled li:last-child{border-bottom:none}
 <!-- BRAND NAMING FRAMEWORK -->
 <section id="naming" style="background:var(--surface)">
   <span class="section-label">Brand Identity</span>
-  <h2 class="section-title">The Name: Kindred</h2>
+  <h2 class="section-title">The Name: COMMONGROUND</h2>
   <p style="font-size:0.95rem;color:var(--muted);line-height:1.8;max-width:760px;margin-bottom:3rem">Selected from 15 strategic name concepts across 3 directional clusters — evaluated against four simultaneous requirements: cultural trust signal, clinical/payer credibility, FDA/FTC regulatory safety, and celebrity equity-holder pride. The naming brief is from the Brand Naming Report (May 2026, Confidential).</p>
 
   <!-- 4 Requirements -->
@@ -295,15 +295,16 @@ ul.styled li:last-child{border-bottom:none}
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-bottom:3rem">
 
     <!-- Direction 01: Evolutionary -->
-    <div style="border:1px solid var(--border);padding:1.75rem">
-      <div style="background:rgba(201,168,76,0.08);border:1px solid var(--gold);padding:0.6rem 1rem;margin-bottom:1.25rem;display:flex;align-items:center;justify-content:space-between">
+    <div style="border:1px solid var(--gold);padding:1.75rem;position:relative">
+      <div style="position:absolute;top:-1px;right:1.5rem;background:var(--gold);padding:0.2rem 0.75rem;font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.15em;color:#13121E">Selected</div>
+      <div style="background:rgba(223,140,18,0.08);border:1px solid var(--gold);padding:0.6rem 1rem;margin-bottom:1.25rem;display:flex;align-items:center;justify-content:space-between">
         <span style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted)">Direction 01</span>
         <span style="font-family:'Bebas Neue',cursive;font-size:1.1rem;color:var(--gold);letter-spacing:0.08em">Evolutionary</span>
       </div>
       <div style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--muted);margin-bottom:1rem">Trust-building · Community-first · Accessible</div>
       <div style="display:flex;flex-direction:column;gap:0.75rem">
         <div style="border-left:2px solid var(--border);padding-left:0.75rem"><strong style="color:var(--text);font-size:0.88rem">Hearth Health</strong><span style="font-size:0.78rem;color:var(--muted);display:block;margin-top:0.2rem">Warmth, home, safety — resonant across maternal, chronic, and behavioral health</span></div>
-        <div style="border-left:2px solid var(--border);padding-left:0.75rem"><strong style="color:var(--text);font-size:0.88rem">Commonground</strong><span style="font-size:0.78rem;color:var(--muted);display:block;margin-top:0.2rem">Shared humanity and community ownership in one word</span></div>
+        <div style="border-left:2px solid var(--gold);padding-left:0.75rem;background:rgba(223,140,18,0.05)"><strong style="color:var(--gold);font-size:0.9rem">COMMONGROUND ★</strong><span style="font-size:0.78rem;color:var(--muted);display:block;margin-top:0.2rem">Shared humanity, solidarity, and community ownership in one word. <em>Selected.</em></span></div>
         <div style="border-left:2px solid var(--border);padding-left:0.75rem"><strong style="color:var(--text);font-size:0.88rem">Proxima</strong><span style="font-size:0.78rem;color:var(--muted);display:block;margin-top:0.2rem">Latin for "nearest" — premium without elitism; works in English and Spanish</span></div>
         <div style="border-left:2px solid var(--border);padding-left:0.75rem"><strong style="color:var(--text);font-size:0.88rem">Wellroot</strong><span style="font-size:0.78rem;color:var(--muted);display:block;margin-top:0.2rem">Roots metaphor connects wellness to culture, ancestry, and belonging</span></div>
         <div style="border-left:2px solid var(--border);padding-left:0.75rem"><strong style="color:var(--text);font-size:0.88rem">Villagecare</strong><span style="font-size:0.78rem;color:var(--muted);display:block;margin-top:0.2rem">Reclaims "it takes a village" as health equity infrastructure</span></div>
@@ -311,9 +312,8 @@ ul.styled li:last-child{border-bottom:none}
     </div>
 
     <!-- Direction 02: Disruptive -->
-    <div style="border:1px solid var(--gold);padding:1.75rem;position:relative">
-      <div style="position:absolute;top:-1px;right:1.5rem;background:var(--gold);padding:0.2rem 0.75rem;font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.15em;color:#080808">Selected</div>
-      <div style="background:rgba(201,168,76,0.08);border:1px solid var(--gold);padding:0.6rem 1rem;margin-bottom:1.25rem;display:flex;align-items:center;justify-content:space-between">
+    <div style="border:1px solid var(--border);padding:1.75rem">
+      <div style="background:rgba(223,140,18,0.08);border:1px solid var(--gold);padding:0.6rem 1rem;margin-bottom:1.25rem;display:flex;align-items:center;justify-content:space-between">
         <span style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted)">Direction 02</span>
         <span style="font-family:'Bebas Neue',cursive;font-size:1.1rem;color:var(--gold);letter-spacing:0.08em">Disruptive</span>
       </div>
@@ -323,13 +323,13 @@ ul.styled li:last-child{border-bottom:none}
         <div style="border-left:2px solid var(--border);padding-left:0.75rem"><strong style="color:var(--text);font-size:0.88rem">Meridian</strong><span style="font-size:0.78rem;color:var(--muted);display:block;margin-top:0.2rem">Point of convergence — celebrity, community, clinical excellence</span></div>
         <div style="border-left:2px solid var(--border);padding-left:0.75rem"><strong style="color:var(--text);font-size:0.88rem">Kinfolk Health</strong><span style="font-size:0.78rem;color:var(--muted);display:block;margin-top:0.2rem">Kin + folk — belonging without exclusion; de-stigmatizes care-seeking</span></div>
         <div style="border-left:2px solid var(--border);padding-left:0.75rem"><strong style="color:var(--text);font-size:0.88rem">Anchor</strong><span style="font-size:0.78rem;color:var(--muted);display:block;margin-top:0.2rem">Stability, security, permanence. Counters systemic abandonment narrative</span></div>
-        <div style="border-left:2px solid var(--gold);padding-left:0.75rem;background:rgba(201,168,76,0.05)"><strong style="color:var(--gold);font-size:0.9rem">Kindred ★</strong><span style="font-size:0.78rem;color:var(--muted);display:block;margin-top:0.2rem">Shared blood, shared community, shared stake. <em>Selected.</em></span></div>
+        <div style="border-left:2px solid var(--border);padding-left:0.75rem"><strong style="color:var(--text);font-size:0.88rem">Kindred</strong><span style="font-size:0.78rem;color:var(--muted);display:block;margin-top:0.2rem">Shared blood, shared community, shared stake</span></div>
       </div>
     </div>
 
     <!-- Direction 03: Category-Breaking -->
     <div style="border:1px solid var(--border);padding:1.75rem">
-      <div style="background:rgba(201,168,76,0.08);border:1px solid var(--gold);padding:0.6rem 1rem;margin-bottom:1.25rem;display:flex;align-items:center;justify-content:space-between">
+      <div style="background:rgba(223,140,18,0.08);border:1px solid var(--gold);padding:0.6rem 1rem;margin-bottom:1.25rem;display:flex;align-items:center;justify-content:space-between">
         <span style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted)">Direction 03</span>
         <span style="font-family:'Bebas Neue',cursive;font-size:1.1rem;color:var(--gold);letter-spacing:0.08em">Category-Breaking</span>
       </div>
@@ -347,7 +347,7 @@ ul.styled li:last-child{border-bottom:none}
   <!-- Risk callout from PDF -->
   <div class="callout-red">
     <div style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--red);margin-bottom:0.5rem">Naming Risk — Red Flag</div>
-    <p style="font-size:0.88rem;line-height:1.8">Whatever name is finalized — it must not inadvertently imply clinical claims or superiority to FDA-approved treatments. Given the regulatory climate post-2026 enforcement surge (30 warning letters in March 2026 alone), anything that sounds like "we cure" or "we guarantee" is a liability magnet. <strong>Kindred</strong> signals community, access, and ownership — not clinical promises. That is the right lane. Every celebrity owner's social content must carry FTC-compliant ownership disclosures. The brand is legally responsible for any claim its equity holders make on its behalf.</p>
+    <p style="font-size:0.88rem;line-height:1.8">Whatever name is finalized — it must not inadvertently imply clinical claims or superiority to FDA-approved treatments. Given the regulatory climate post-2026 enforcement surge (30 warning letters in March 2026 alone), anything that sounds like "we cure" or "we guarantee" is a liability magnet. <strong>COMMONGROUND</strong> signals community, access, and collective ownership — not clinical promises. That is the right lane. Every celebrity owner's social content must carry FTC-compliant ownership disclosures. The brand is legally responsible for any claim its equity holders make on its behalf.</p>
   </div>
 
   <!-- Next Steps from PDF -->
@@ -355,7 +355,7 @@ ul.styled li:last-child{border-bottom:none}
   <div style="display:flex;flex-direction:column;gap:0.75rem">
     <div style="display:flex;gap:1rem;align-items:flex-start;padding:1rem;border:1px solid var(--border)">
       <div style="font-family:'Bebas Neue',cursive;font-size:1.8rem;color:var(--gold);line-height:1;min-width:40px">1</div>
-      <div><strong style="color:var(--text)">Brand Identity Development</strong><p style="font-size:0.85rem;color:var(--muted);margin-top:0.25rem;line-height:1.6">Positioning statement, tagline system, tone architecture, and visual territory for Kindred. The name is the seed — the identity is the ecosystem.</p></div>
+      <div><strong style="color:var(--text)">Brand Identity Development</strong><p style="font-size:0.85rem;color:var(--muted);margin-top:0.25rem;line-height:1.6">Positioning statement, tagline system, tone architecture, and visual territory for COMMONGROUND. The name is the seed — the identity is the ecosystem.</p></div>
     </div>
     <div style="display:flex;gap:1rem;align-items:flex-start;padding:1rem;border:1px solid var(--border)">
       <div style="font-family:'Bebas Neue',cursive;font-size:1.8rem;color:var(--gold);line-height:1;min-width:40px">2</div>
@@ -416,9 +416,9 @@ ul.styled li:last-child{border-bottom:none}
     <div style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--gold);margin-bottom:0.75rem">Brand Naming — Executive Short List (May 2026)</div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:1.5rem">
       <div style="border:1px solid var(--border);padding:1.25rem;border-left:3px solid var(--gold)">
-        <div style="font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);margin-bottom:0.4rem">Disruptive</div>
-        <div style="font-family:'Bebas Neue',cursive;font-size:1.6rem;color:var(--gold);letter-spacing:0.04em">Kindred ★</div>
-        <div style="font-size:0.8rem;color:var(--muted);margin-top:0.4rem;line-height:1.5">Shared blood, shared community, shared stake. Strongest emotional memorability. Direct parallel to Tidal family narrative.</div>
+        <div style="font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);margin-bottom:0.4rem">Evolutionary</div>
+        <div style="font-family:'Bebas Neue',cursive;font-size:1.6rem;color:var(--gold);letter-spacing:0.04em">COMMONGROUND ★</div>
+        <div style="font-size:0.8rem;color:var(--muted);margin-top:0.4rem;line-height:1.5">Shared humanity, solidarity, and collective ownership in one word. Strongest structural resonance. The crossroads where community and clinical care meet.</div>
       </div>
       <div style="border:1px solid var(--border);padding:1.25rem;border-left:3px solid var(--muted);opacity:0.7">
         <div style="font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);margin-bottom:0.4rem">Disruptive</div>
@@ -435,34 +435,38 @@ ul.styled li:last-child{border-bottom:none}
   </div>
 
   <div class="card card-gold-left">
-    <p style="font-size:1.2rem;margin-bottom:0.75rem"><strong style="color:var(--gold)">Selected Brand Name:</strong> <strong style="font-family:'Bebas Neue',cursive;font-size:1.5rem;letter-spacing:0.04em">KINDRED™</strong></p>
-    <p style="font-size:0.9rem;color:var(--muted);margin:1rem 0;line-height:1.7"><strong style="color:var(--text)">Brand Rationale:</strong> Shared blood, shared community, shared stake. One word that holds the entire ownership thesis without needing to explain it. For the communities this company was built to serve — Black, Hispanic, rural — kinship is not a metaphor, it is the mechanism of survival. The celebrity owners are not outsiders with a check. They are family with skin in the game. Kindred is the first healthcare brand whose name is simultaneously a promise to patients and a structural description of the ownership model.</p>
-    <p style="font-style:italic;color:var(--text);font-size:0.95rem;border-left:2px solid var(--gold);padding-left:1rem">Healthcare owned by the culture, for the culture — where clinical excellence and community belonging are the same thing.</p>
+    <p style="font-size:1.2rem;margin-bottom:0.75rem"><strong style="color:var(--gold)">Selected Brand Name:</strong> <strong style="font-family:'Bebas Neue',cursive;font-size:1.5rem;letter-spacing:0.04em">COMMONGROUND™</strong></p>
+    <p style="font-size:0.9rem;color:var(--muted);margin:1rem 0;line-height:1.7"><strong style="color:var(--text)">Brand Rationale:</strong> The crossroads mark. The place everyone arrives at together. COMMONGROUND is solidarity-focused healthcare — built on the premise that access to clinical care is not a privilege but the shared floor. For the communities this platform was built to serve — Black, Hispanic, rural — common ground is not idealism, it is the organizing principle of collective survival. The celebrity owners are not translators standing between the institution and the patient. They are proof that the door was always supposed to be here. COMMONGROUND is the first healthcare brand whose name is simultaneously a structural commitment to access and a declaration that health outcomes are collective, not individual.</p>
+    <p style="font-style:italic;color:var(--text);font-size:0.95rem;border-left:2px solid var(--gold);padding-left:1rem">Healthcare for the collective.</p>
     <div style="display:flex;gap:1.5rem;margin-top:1.25rem;flex-wrap:wrap">
       <div style="font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--gold)">✓ Works across all target demographics</div>
       <div style="font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--gold)">✓ Regulatory-safe — zero clinical claims</div>
       <div style="font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--gold)">✓ Platform + media expandable</div>
-      <div style="font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--gold)">✓ Parallel to Tidal ownership narrative</div>
+      <div style="font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--gold)">✓ Solidarity framing — yours, mine, ours</div>
     </div>
   </div>
 
   <h4 style="font-family:'Space Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);margin:1.5rem 0 1rem">Brand Values Architecture</h4>
   <div class="brand-values">
     <div class="brand-value">
-      <h4>Unfiltered</h4>
-      <p>No clinical condescension. Plain language. Authentic voices.</p>
-    </div>
-    <div class="brand-value">
-      <h4>Earned</h4>
-      <p>Every health claim is substantiated. Trust is built, not bought.</p>
-    </div>
-    <div class="brand-value">
       <h4>Collective</h4>
-      <p>Ownership is shared. Health outcomes are shared.</p>
+      <p>Health is not individual. Ownership is shared. Outcomes are shared. The platform is built for everyone at the table.</p>
     </div>
     <div class="brand-value">
-      <h4>Persistent</h4>
-      <p>Chronic conditions require long-term relationships, not one-time transactions.</p>
+      <h4>Access</h4>
+      <p>The door was always supposed to be here. Structural access — language, geography, cost — is not an add-on, it is the product.</p>
+    </div>
+    <div class="brand-value">
+      <h4>Clinicians</h4>
+      <p>Providers are partners, not a backend. Clinical excellence and community credibility are the same requirement.</p>
+    </div>
+    <div class="brand-value">
+      <h4>Plain Language</h4>
+      <p>No condescension. No jargon. Healthcare that speaks the way people actually talk — in English, Spanish, and every register in between.</p>
+    </div>
+    <div class="brand-value">
+      <h4>Infrastructure</h4>
+      <p>Built to last. Not a campaign, not a celebrity moment — a durable clinical and operational platform that survives the news cycle.</p>
     </div>
   </div>
 
@@ -493,12 +497,12 @@ ul.styled li:last-child{border-bottom:none}
 
   <!-- 1.3 OpenLoop -->
   <h3 class="subsection-title">1.3 OpenLoop as "Invisible Infrastructure"</h3>
-  <p style="font-size:0.9rem;color:var(--muted);line-height:1.7;margin-bottom:1rem">OpenLoop is the engine. Kindred is the dashboard. The patient never sees OpenLoop — they see Cardi B's sub-brand, or LeBron's. This is the strategic advantage.</p>
+  <p style="font-size:0.9rem;color:var(--muted);line-height:1.7;margin-bottom:1rem">OpenLoop is the engine. COMMONGROUND is the dashboard. The patient never sees OpenLoop — they see Cardi B's sub-brand, or LeBron's. This is the strategic advantage.</p>
   <div class="card">
     <div style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);margin-bottom:0.75rem">Why "Invisible" is the right architecture</div>
     <ul class="styled">
       <li>Patients in underserved communities have documented distrust of institutional healthcare brands. A "Powered by OpenLoop" badge on a patient intake form is a liability, not an asset, in this demographic context.</li>
-      <li>OpenLoop's January 2026 data breach is a known event. Burying OpenLoop's brand in the B2B layer — while aggressively communicating Kindred's patient data commitments at the consumer layer — is the cleanest trust recovery strategy.</li>
+      <li>OpenLoop's January 2026 data breach is a known event. Burying OpenLoop's brand in the B2B layer — while aggressively communicating COMMONGROUND's patient data commitments at the consumer layer — is the cleanest trust recovery strategy.</li>
       <li>Celebrity brand integrity depends on the consumer believing the experience is <em>theirs</em>, not a white-labeled product. OpenLoop's white-label architecture was purpose-built for exactly this scenario — they power 170+ organizations invisibly today.</li>
     </ul>
   </div>
@@ -682,7 +686,7 @@ ul.styled li:last-child{border-bottom:none}
       <p>LeBron is the most institutionally credible asset in this portfolio. SpringHill Company, Uninterrupted, Liverpool FC ownership, Klutch Sports — he has demonstrated that he can build businesses, not just endorse them. Content strategy: <em>LeBron as patient zero</em> — transparent documentation of his own health optimization journey (labs, nutrition, sleep, performance metrics). Clinician collaboration with sports medicine and performance health specialists. Uninterrupted distribution channel for long-form health content reaches the exact demographic (Black professional men 25-50) that is most underserved and most monetizable.</p>
     </div>
 
-    <div class="celeb-section" style="background:rgba(45,198,83,0.04);border:1px solid rgba(45,198,83,0.15);padding:1rem;margin:1rem 0">
+    <div class="celeb-section" style="background:rgba(77,110,54,0.04);border:1px solid rgba(77,110,54,0.15);padding:1rem;margin:1rem 0">
       <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem">
         <span class="celeb-section-label" style="margin-bottom:0">Cultural Risk Assessment</span>
         <span class="badge badge-l">LOW</span>
@@ -787,7 +791,7 @@ ul.styled li:last-child{border-bottom:none}
       <p>Cardi B's superpower is radical authenticity at massive scale. She is among the most-followed people on Instagram and TikTok. She has spoken publicly about postpartum depression, healthcare system failures, and the particular exhaustion of being a working-class Latina navigating institutions not built for her. She does not need a content script — she needs a compliance guardrail and a clinician she trusts. Content strategy: Cardi goes live with a BARDI CARE clinician, unscripted. Patient community stories — "real patients, real results" — featuring Latina and Black women from the Bronx, Houston, and Miami. Spanish-language content is a primary output, not an afterthought (SPEAK Act alignment).</p>
     </div>
 
-    <div class="celeb-section" style="background:rgba(230,57,70,0.06);border:1px solid rgba(230,57,70,0.2);padding:1rem;margin:1rem 0">
+    <div class="celeb-section" style="background:rgba(194,69,88,0.06);border:1px solid rgba(194,69,88,0.2);padding:1rem;margin:1rem 0">
       <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem">
         <span class="celeb-section-label" style="margin-bottom:0">Cultural Risk Assessment</span>
         <span class="badge badge-m">MEDIUM</span>
@@ -832,7 +836,7 @@ ul.styled li:last-child{border-bottom:none}
       <thead><tr><th>Day</th><th>Action</th><th>Owner</th><th>Dependency</th></tr></thead>
       <tbody>
         <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">1</td><td>Engage M&amp;A/healthcare counsel; begin JV entity formation (Delaware C-Corp)</td><td>CEO + Legal</td><td>None</td></tr>
-        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">1</td><td>Initiate trademark search: KINDRED, CROWN HEALTH, BARDI CARE, YZY MIND, FENTY WELLNESS/RHENNA HEALTH + all 15 naming candidates from Brand Naming Report</td><td>IP Counsel</td><td>None</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">1</td><td>Initiate trademark search: COMMONGROUND, CROWN HEALTH, BARDI CARE, YZY MIND, FENTY WELLNESS/RHENNA HEALTH + all 15 naming candidates from Brand Naming Report</td><td>IP Counsel</td><td>None</td></tr>
         <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">1</td><td>OpenLoop contract execution — begin 7-week onboarding clock</td><td>CEO + OpenLoop BD</td><td>JV entity formation</td></tr>
         <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">2</td><td>Celebrity equity term sheet circulation (4 artists)</td><td>Legal + Agent Relations</td><td>JV entity</td></tr>
         <tr><td style="font-family:'Space Mono',monospace;color:var(--gold)">2</td><td>SPV legal structure initiated (Cayman or Delaware)</td><td>Legal</td><td>Cap table finalization</td></tr>
@@ -940,7 +944,7 @@ ul.styled li:last-child{border-bottom:none}
       <tbody>
         <tr><td style="font-family:'Space Mono',monospace;color:var(--green)">36–37</td><td>FENTY WELLNESS / RHENNA HEALTH goes live: Rihanna "The Fenty Check" content drops</td><td>Brand + Clinical</td><td>CROWN HEALTH stable</td></tr>
         <tr><td style="font-family:'Space Mono',monospace;color:var(--green)">38–39</td><td>Paid social campaign launch: TikTok, Instagram, YouTube — social search optimized for women's health queries</td><td>Paid Media</td><td>Sub-brands live</td></tr>
-        <tr><td style="font-family:'Space Mono',monospace;color:var(--green)">40</td><td>Kindred + OpenLoop joint press release: partnership announcement, infrastructure transparency</td><td>PR + OpenLoop</td><td>Coordination</td></tr>
+        <tr><td style="font-family:'Space Mono',monospace;color:var(--green)">40</td><td>COMMONGROUND + OpenLoop joint press release: partnership announcement, infrastructure transparency</td><td>PR + OpenLoop</td><td>Coordination</td></tr>
         <tr><td style="font-family:'Space Mono',monospace;color:var(--green)">41–42</td><td>BARDI CARE goes live: "Cardi Checks In" TikTok series launches; Spanish-language content priority</td><td>Brand + Clinical</td><td>Infrastructure stable</td></tr>
         <tr><td style="font-family:'Space Mono',monospace;color:var(--green)">43–44</td><td>Community health partnerships activated: FQHC referral network, community health centers in TX, FL, NY</td><td>BD + Community</td><td>Partnership agreements</td></tr>
         <tr><td style="font-family:'Space Mono',monospace;color:var(--green)">43–45</td><td>YZY MIND goes live: private listening session film released; behavioral health intake opens</td><td>Brand + Clinical</td><td>Compliance cleared</td></tr>
@@ -1088,7 +1092,7 @@ Verbal disclosure required in any on-stage remarks</div>
 
   <h3 class="subsection-title">5.3 OpenLoop Data Breach Acknowledgment</h3>
   <p style="font-size:0.9rem;color:var(--muted);line-height:1.7;margin-bottom:1rem">The January 2026 OpenLoop data incident is a known public record. Burying it creates greater trust risk than acknowledging it. Recommended patient-facing communication:</p>
-  <div class="code-block">"Kindred operates on OpenLoop's clinical infrastructure, which
+  <div class="code-block">"COMMONGROUND operates on OpenLoop's clinical infrastructure, which
 experienced a data security incident in January 2026. In direct
 response, we have engaged [AUDIT FIRM] to conduct an independent
 security review. We will publish our findings. Your data is
@@ -1248,7 +1252,7 @@ questions, speak to our Privacy Officer at [contact]."</div>
           <td><strong>OpenLoop post-breach trust deficit</strong> — patients discover infrastructure provider had breach</td>
           <td><span class="badge badge-m">M</span></td>
           <td><span class="badge badge-h">H</span></td>
-          <td>Proactive disclosure on Kindred patient-facing channels; independent security audit published; OpenLoop positioned as invisible infrastructure layer</td>
+          <td>Proactive disclosure on COMMONGROUND patient-facing channels; independent security audit published; OpenLoop positioned as invisible infrastructure layer</td>
           <td>CCO + Brand</td>
         </tr>
         <tr>
@@ -1280,7 +1284,7 @@ questions, speak to our Privacy Officer at [contact]."</div>
           <td>Brand + PR</td>
         </tr>
         <tr>
-          <td><strong>HIPAA/data breach at Kindred</strong> — post-OpenLoop breach, another incident would be catastrophic</td>
+          <td><strong>HIPAA/data breach at COMMONGROUND</strong> — post-OpenLoop breach, another incident would be catastrophic</td>
           <td><span class="badge badge-l">L</span></td>
           <td><span class="badge badge-h">H</span></td>
           <td>Independent security audit Day 1; HIPAA-compliant patient data commitment published; breach response plan documented before first patient</td>
@@ -1364,7 +1368,7 @@ questions, speak to our Privacy Officer at [contact]."</div>
   <div class="card">
     <ul class="styled">
       <li><strong style="color:var(--gold)">FDA March 2026 Warning Letters:</strong> 30 letters issued to telehealth companies for compounded GLP-1 marketing; primary violations: sameness claims, miracle language, off-label promotion. STAT News archive available.</li>
-      <li><strong style="color:var(--gold)">FTC v. NextMed (2025):</strong> Consent order establishing standard for celebrity/influencer material connection disclosure in telehealth. Primary compliance template for Kindred disclosure language.</li>
+      <li><strong style="color:var(--gold)">FTC v. NextMed (2025):</strong> Consent order establishing standard for celebrity/influencer material connection disclosure in telehealth. Primary compliance template for COMMONGROUND disclosure language.</li>
       <li><strong style="color:var(--gold)">SPEAK Act (February 2026):</strong> Federal mandate for language access in telehealth; LEP (Limited English Proficiency) patients must receive care in their preferred language. Enforcement begins 90 days from passage.</li>
       <li><strong style="color:var(--gold)">NCQA CVO Accreditation:</strong> OpenLoop's Credentialing Verification Organization status means clinician credentialing meets the highest payer and regulatory standards — use in investor and partner materials.</li>
       <li><strong style="color:var(--gold)">Medicare Telehealth In-Person Visit Requirement (Jan 31, 2026):</strong> Home telehealth for certain Medicare patients requires prior in-person visit. Clinical pathways for Medicare patients must account for this requirement.</li>
@@ -1382,13 +1386,13 @@ questions, speak to our Privacy Officer at [contact]."</div>
     <div class="q-label left">LOW CULTURAL TRUST</div>
     <div class="q-label right">HIGH CULTURAL TRUST</div>
     <!-- Players -->
-    <div class="q-player star" style="left:72%;top:22%">KINDRED★</div>
+    <div class="q-player star" style="left:72%;top:22%">COMMONGROUND★</div>
     <div class="q-player" style="left:62%;top:30%">Ro</div>
     <div class="q-player" style="left:28%;top:38%">Hims &amp; Hers</div>
     <div class="q-player" style="left:22%;top:45%">Wheel</div>
     <div class="q-player" style="left:60%;top:42%">Midi Health</div>
   </div>
-  <p style="font-size:0.82rem;color:var(--muted);text-align:center;margin-top:1rem;line-height:1.6">Kindred's target position: High Cultural Trust + High Clinical Depth — a quadrant currently unoccupied by any competitor at scale. This is the white space.</p>
+  <p style="font-size:0.82rem;color:var(--muted);text-align:center;margin-top:1rem;line-height:1.6">COMMONGROUND's target position: High Cultural Trust + High Clinical Depth — a quadrant currently unoccupied by any competitor at scale. This is the white space.</p>
 
   <!-- E: Investor Targets -->
   <h3 class="subsection-title">E. Suggested Series A Investor Targets</h3>
