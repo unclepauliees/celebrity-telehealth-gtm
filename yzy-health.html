@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YZY HEALTH™ — Brand Identity & Strategy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#13121E;
+  --surface:#1C1A2C;
+  --surface2:#221F33;
+  --accent:#9B59B6;
+  --accent-dim:rgba(155,89,182,0.07);
+  --accent-border:rgba(155,89,182,0.25);
+  --gold:#DF8C12;
+  --red:#C24558;
+  --green:#4D6E36;
+  --text:#F2EAD8;
+  --muted:#8890A8;
+  --border:#2A2840;
+  --parent:#DF8C12;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(19,18,30,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-parent{font-family:'Space Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--parent)}
+.nav-brand{font-family:'Bebas Neue',cursive;font-size:1.5rem;color:var(--accent);letter-spacing:0.05em}
+.nav-back{font-family:'Space Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);text-decoration:none;transition:color 0.2s}
+.nav-back:hover{color:var(--accent)}
+
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:6rem 4rem 4rem;background:radial-gradient(ellipse at 80% 20%, rgba(155,89,182,0.09) 0%, transparent 55%),radial-gradient(ellipse at 10% 80%, rgba(155,89,182,0.04) 0%, transparent 50%),var(--bg);position:relative;overflow:hidden}
+#hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(255,255,255,0.008) 79px,rgba(255,255,255,0.008) 80px);pointer-events:none}
+.hero-overline{font-family:'Space Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--accent);margin-bottom:1.5rem}
+.hero-headline{font-family:'Bebas Neue',cursive;font-size:clamp(5rem,12vw,10rem);line-height:0.88;color:var(--text);letter-spacing:0.02em;margin-bottom:0.5rem}
+.hero-tm{font-family:'Bebas Neue',cursive;font-size:clamp(1.5rem,3vw,2.5rem);color:var(--accent);vertical-align:super;letter-spacing:0.04em}
+.hero-tagline{font-size:clamp(1rem,2vw,1.4rem);color:var(--muted);font-weight:300;margin:1.5rem 0 3rem;max-width:600px;line-height:1.4;font-style:italic}
+.hero-meta{display:flex;gap:2rem;flex-wrap:wrap}
+.meta-item{border-left:2px solid var(--accent);padding-left:1rem}
+.meta-label{font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);display:block;margin-bottom:0.25rem}
+.meta-val{font-family:'Bebas Neue',cursive;font-size:1.6rem;color:var(--accent);line-height:1}
+
+section{padding:5rem 4rem;border-bottom:1px solid var(--border);scroll-margin-top:56px}
+.section-label{font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--accent);margin-bottom:1rem;display:block}
+.section-title{font-family:'Bebas Neue',cursive;font-size:clamp(2.5rem,5vw,4rem);color:var(--text);line-height:1;margin-bottom:2rem;letter-spacing:0.02em}
+.subsection-title{font-family:'Bebas Neue',cursive;font-size:clamp(1.5rem,3vw,2.2rem);color:var(--text);margin:2.5rem 0 1rem;letter-spacing:0.02em}
+
+.card{background:var(--surface);border:1px solid var(--border);padding:2rem;margin-bottom:1.5rem}
+.card-accent-left{border-left:3px solid var(--accent)}
+.callout-accent{background:var(--accent-dim);border:1px solid var(--accent-border);border-left:4px solid var(--accent);padding:1.5rem 2rem;margin:1.5rem 0}
+.callout-red{background:rgba(194,69,88,0.08);border:1px solid var(--red);border-left:4px solid var(--red);padding:1.5rem 2rem;margin:1.5rem 0}
+.callout-gold{background:rgba(223,140,18,0.07);border:1px solid rgba(223,140,18,0.25);border-left:4px solid var(--gold);padding:1.5rem 2rem;margin:1.5rem 0}
+
+.principle-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1.5rem 0}
+.principle{background:var(--surface2);border-top:2px solid var(--accent);padding:1.5rem;transition:transform 0.2s}
+.principle:hover{transform:translateY(-2px)}
+.principle h4{font-family:'Bebas Neue',cursive;font-size:1.4rem;color:var(--accent);margin-bottom:0.5rem;letter-spacing:0.05em}
+.principle p{font-size:0.82rem;color:var(--muted);line-height:1.5}
+
+.protocol-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin:1.5rem 0}
+.protocol-card{background:var(--surface2);border:1px solid var(--border);padding:1.5rem}
+.protocol-card.hero-cat{border-color:var(--accent);background:var(--accent-dim)}
+.protocol-label{font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);margin-bottom:0.5rem;display:block}
+.protocol-name{font-family:'Bebas Neue',cursive;font-size:1.5rem;letter-spacing:0.04em;color:var(--text);margin-bottom:0.4rem}
+.protocol-card.hero-cat .protocol-name{color:var(--accent)}
+
+.content-pillars{display:flex;flex-direction:column;gap:1rem;margin:1.5rem 0}
+.pillar{display:flex;gap:1.25rem;align-items:flex-start;padding:1.25rem;border:1px solid var(--border);background:var(--surface)}
+.pillar-num{font-family:'Bebas Neue',cursive;font-size:2.2rem;color:var(--accent);line-height:1;min-width:2rem}
+.pillar-body h4{font-size:0.9rem;color:var(--text);font-weight:600;margin-bottom:0.4rem}
+.pillar-body p{font-size:0.82rem;color:var(--muted);line-height:1.6}
+
+.activation-box{border:1px solid var(--accent);background:var(--accent-dim);padding:2.5rem;margin:1.5rem 0}
+.activation-label{font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--accent);margin-bottom:1rem;display:block}
+.activation-name{font-family:'Bebas Neue',cursive;font-size:clamp(2rem,5vw,3.5rem);color:var(--text);letter-spacing:0.04em;margin-bottom:1rem;line-height:1}
+.activation-desc{font-size:0.9rem;color:var(--muted);line-height:1.8;max-width:700px}
+
+.timeline-steps{display:flex;flex-direction:column;gap:0;margin:1.5rem 0}
+.timeline-step{display:flex;gap:1.5rem;align-items:flex-start;padding:1.25rem 1.5rem;border:1px solid var(--border);border-top:none}
+.timeline-step:first-child{border-top:1px solid var(--border)}
+.step-day{font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--accent);min-width:60px;padding-top:0.15rem}
+.step-body h4{font-size:0.88rem;color:var(--text);font-weight:600;margin-bottom:0.25rem}
+.step-body p{font-size:0.8rem;color:var(--muted);line-height:1.5}
+
+.risk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin:1.5rem 0}
+.risk-card{background:var(--surface2);border:1px solid var(--border);padding:1.5rem}
+.risk-label{font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:0.5rem;display:block}
+.risk-card h4{font-size:0.9rem;color:var(--text);font-weight:600;margin-bottom:0.5rem}
+.risk-card p{font-size:0.82rem;color:var(--muted);line-height:1.5}
+
+.compliance-list{list-style:none;display:flex;flex-direction:column;gap:0.5rem;margin:1rem 0}
+.compliance-list li{font-size:0.85rem;color:var(--text);padding:0.75rem 1rem;border:1px solid var(--border);background:var(--surface);display:flex;gap:0.75rem;align-items:flex-start;line-height:1.5}
+.compliance-list li::before{content:'→';color:var(--accent);font-family:'Space Mono',monospace;font-size:0.7rem;flex-shrink:0;margin-top:0.1rem}
+
+.equity-row{display:flex;gap:2rem;flex-wrap:wrap;margin:1.5rem 0}
+.equity-item{flex:1;min-width:200px;background:var(--surface2);padding:1.5rem;border-top:2px solid var(--accent)}
+.equity-label{font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);display:block;margin-bottom:0.5rem}
+.equity-val{font-family:'Bebas Neue',cursive;font-size:2rem;color:var(--accent);line-height:1;display:block;margin-bottom:0.4rem}
+.equity-desc{font-size:0.8rem;color:var(--muted);line-height:1.5}
+
+table{width:100%;border-collapse:collapse;font-size:0.85rem;margin:1.5rem 0}
+thead tr{background:var(--surface2)}
+thead th{font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);padding:0.85rem 1rem;text-align:left;border-bottom:1px solid var(--accent-border)}
+tbody tr{border-bottom:1px solid var(--border)}
+tbody tr:hover{background:rgba(255,255,255,0.02)}
+td{padding:0.85rem 1rem;vertical-align:top;color:var(--text);line-height:1.5}
+td strong{color:var(--accent)}
+
+footer{padding:3rem 4rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-brand{font-family:'Space Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted)}
+.footer-parent{font-family:'Space Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--parent)}
+
+@media(max-width:768px){
+  section,#hero{padding:3rem 1.5rem}
+  nav{padding:0 1.5rem}
+  footer{padding:2rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div>
+    <div class="nav-parent">COMMONGROUND™ / Sub-Brand</div>
+    <div class="nav-brand">YZY HEALTH™</div>
+  </div>
+  <a class="nav-back" href="index.html">← Back to GTM</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-overline">COMMONGROUND™ Sub-Brand · Ye · Est. 2026 · Launches Day 43</div>
+  <div class="hero-headline">YZY<br>HEALTH<span class="hero-tm">™</span></div>
+  <p class="hero-tagline">"Mental health is not a breakdown. It is a creative practice."</p>
+  <div class="hero-meta">
+    <div class="meta-item">
+      <span class="meta-label">Equity Stake</span>
+      <span class="meta-val">6%</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Launch Sequence</span>
+      <span class="meta-val">Day 43</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Monthly Price</span>
+      <span class="meta-val">$79</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Hero Category</span>
+      <span class="meta-val">Behavioral</span>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND IDENTITY -->
+<section id="identity">
+  <span class="section-label">Brand Identity</span>
+  <h2 class="section-title">The Brand</h2>
+
+  <div class="card card-accent-left">
+    <p style="font-size:1rem;line-height:1.8;margin-bottom:1rem"><strong style="color:var(--accent)">Brand Positioning:</strong> YZY HEALTH is the mental health platform built at the intersection of creative expression and clinical care. The premise: mental health destigmatization through art is not just a marketing strategy — it is clinical evidence. When Ye talks about his experience with bipolar disorder, with the psychiatric system, with the particular exhaustion of being a Black man whose interior life is publicly dissected, he creates the permission structure that no clinical messaging can manufacture.</p>
+    <p style="font-size:0.9rem;color:var(--muted);line-height:1.7">Ye's relationship with mental health is not a liability to be managed. It is the most authentic clinical credential in this space. His public experience with bipolar disorder, creative episodes, and psychiatric hospitalization creates a trust architecture with Black men who have been avoiding mental health care their entire lives because no one in that world looked like them or spoke their language. YZY HEALTH is that conversation, institutionalized.</p>
+  </div>
+
+  <div class="callout-gold">
+    <div style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--gold);margin-bottom:0.5rem">The Central Insight</div>
+    <p style="font-size:0.9rem;line-height:1.8">Black men are the least-served demographic in mental healthcare — 63% who need care receive none. The barrier is not access alone. It is stigma, compounded by a mental health system built by and for a demographic that looks nothing like them, run by clinicians who have no framework for their specific experience of stress, systemic pressure, and creative expression. YZY HEALTH does not just address access. It addresses the cultural architecture of why Black men do not seek care — and then offers a door.</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0">
+    <div>
+      <h3 class="subsection-title">Voice & Tone</h3>
+      <div class="callout-accent">
+        <p style="font-size:0.9rem;line-height:1.7"><strong style="color:var(--accent)">Voice archetype:</strong> A Black psychiatrist who grew up in the same neighborhood. He understands the creative mind, the survival instinct, and the particular way pressure compresses in a Black male body over decades. He has never once said "you need to open up more." He just opens the door.</p>
+      </div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;margin-top:1rem">
+        <li style="font-size:0.85rem;color:var(--text);padding:0.6rem 0;border-bottom:1px solid var(--border)">✓ <strong>Say:</strong> "Mental health is performance health. The mind is the instrument."</li>
+        <li style="font-size:0.85rem;color:var(--text);padding:0.6rem 0;border-bottom:1px solid var(--border)">✗ <strong>Never:</strong> "Open up." "Express your feelings." "Talk about it." (Stigma-reinforcing framing)</li>
+        <li style="font-size:0.85rem;color:var(--text);padding:0.6rem 0;border-bottom:1px solid var(--border)">✓ <strong>Say:</strong> "Destigmatization through creative expression. Your art is already the work."</li>
+        <li style="font-size:0.85rem;color:var(--text);padding:0.6rem 0">✗ <strong>Never:</strong> Diagnostic language in marketing. No public speculation about Ye's diagnosis in brand content.</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="subsection-title">Brand Personality</h3>
+      <div class="principle-grid" style="grid-template-columns:1fr 1fr">
+        <div class="principle">
+          <h4>Creative</h4>
+          <p>Mental health expressed through music, art, visual culture — not clinical worksheets.</p>
+        </div>
+        <div class="principle">
+          <h4>Sovereign</h4>
+          <p>The patient defines their own mental health journey. The clinician supports, not directs.</p>
+        </div>
+        <div class="principle">
+          <h4>Precise</h4>
+          <p>Clinical rigor behind a creative surface. YZY HEALTH is a real psychiatric platform.</p>
+        </div>
+        <div class="principle">
+          <h4>Brave</h4>
+          <p>Having this conversation with Black men at this scale is an act of cultural courage.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE -->
+<section id="audience">
+  <span class="section-label">Target Audience</span>
+  <h2 class="section-title">Who This Is For</h2>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin:1.5rem 0">
+    <div style="background:var(--surface);border:1px solid var(--border);padding:1.75rem">
+      <span style="font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);margin-bottom:0.75rem;display:block">Primary</span>
+      <h3 style="font-family:'Bebas Neue',cursive;font-size:1.6rem;color:var(--text);margin-bottom:0.75rem">Black Men 20–45</h3>
+      <p style="font-size:0.85rem;color:var(--muted);line-height:1.7">Ye's core demographic. Creative community: musicians, producers, designers, entrepreneurs. Men who have a relationship with mental health through Ye's music even if they have never used those words. Men who know what "through the wire" means as a mental health document. The entry point is cultural recognition, not clinical vocabulary.</p>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);padding:1.75rem">
+      <span style="font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);margin-bottom:0.75rem;display:block">Secondary</span>
+      <h3 style="font-family:'Bebas Neue',cursive;font-size:1.6rem;color:var(--text);margin-bottom:0.75rem">Creative Professionals</h3>
+      <p style="font-size:0.85rem;color:var(--muted);line-height:1.7">Artists, musicians, creatives across demographics who see Ye as the defining figure of creative-clinical experience. The creative community has the highest rates of depression and anxiety of any occupational category — and the least access to care that understands their specific pressures. YZY HEALTH frames mental health as part of the creative practice, not an interruption to it.</p>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);padding:1.75rem">
+      <span style="font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);margin-bottom:0.75rem;display:block">Tertiary</span>
+      <h3 style="font-family:'Bebas Neue',cursive;font-size:1.6rem;color:var(--text);margin-bottom:0.75rem">Men Resistant to Mental Health</h3>
+      <p style="font-size:0.85rem;color:var(--muted);line-height:1.7">The specific cohort that no other mental health platform can reach: men who would never download BetterHelp but would engage with a platform tied to Ye. The destigmatization-through-culture strategy specifically targets the men who are most resistant to clinical framing. If they come in through music and art, the clinical infrastructure meets them where they arrive.</p>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:2rem">
+    <div style="border:1px solid var(--border);padding:1.5rem">
+      <div style="font-family:'Bebas Neue',cursive;font-size:2.5rem;color:var(--accent);line-height:1;margin-bottom:0.4rem">63%</div>
+      <div style="font-size:0.8rem;color:var(--muted);line-height:1.5">of Black men who need mental health care receive none — the largest unserved cohort in behavioral health</div>
+    </div>
+    <div style="border:1px solid var(--border);padding:1.5rem">
+      <div style="font-family:'Bebas Neue',cursive;font-size:2.5rem;color:var(--accent);line-height:1;margin-bottom:0.4rem">44%</div>
+      <div style="font-size:0.8rem;color:var(--muted);line-height:1.5">of Medicare telehealth visits are behavioral health — highest payer capture rate in the portfolio</div>
+    </div>
+    <div style="border:1px solid var(--border);padding:1.5rem">
+      <div style="font-family:'Bebas Neue',cursive;font-size:2.5rem;color:var(--accent);line-height:1;margin-bottom:0.4rem">Day 43</div>
+      <div style="font-size:0.8rem;color:var(--muted);line-height:1.5">Launches last — infrastructure proven, compliance cleared, full brand quarantine architecture in place</div>
+    </div>
+    <div style="border:1px solid var(--border);padding:1.5rem">
+      <div style="font-family:'Bebas Neue',cursive;font-size:2.5rem;color:var(--accent);line-height:1;margin-bottom:0.4rem">15+</div>
+      <div style="font-size:0.8rem;color:var(--muted);line-height:1.5">OpenLoop protocols at launch — telepsychiatry, behavioral health, sleep, men's mental health specialist network</div>
+    </div>
+  </div>
+</section>
+
+<!-- CLINICAL -->
+<section id="clinical">
+  <span class="section-label">Clinical Architecture</span>
+  <h2 class="section-title">Health Categories</h2>
+
+  <div class="protocol-grid">
+    <div class="protocol-card hero-cat">
+      <span class="protocol-label">Hero Category</span>
+      <div class="protocol-name">Telepsychiatry / Behavioral Health</div>
+      <p style="font-size:0.82rem;color:var(--muted);line-height:1.5">Board-certified Black psychiatrists and psychologists. Mood disorders, anxiety, PTSD, bipolar — with specific competency in the experience of Black men navigating these diagnoses within a system that has historically over-pathologized them. The clinical team is the trust signal.</p>
+    </div>
+    <div class="protocol-card hero-cat">
+      <span class="protocol-label">Hero Category</span>
+      <div class="protocol-name">Men's Mental Health</div>
+      <p style="font-size:0.82rem;color:var(--muted);line-height:1.5">Specialty focus: Black male-specific stressors. Systemic racism, intergenerational trauma, the particular psychological burden of success in hostile systems. Clinicians trained in culturally competent care for Black men — not adapted from general protocols but built from scratch for this population.</p>
+    </div>
+    <div class="protocol-card">
+      <span class="protocol-label">Secondary Category</span>
+      <div class="protocol-name">Sleep Medicine</div>
+      <p style="font-size:0.82rem;color:var(--muted);line-height:1.5">Sleep and mental health are clinically inseparable. Black men have the highest rates of sleep-disordered breathing and the lowest rates of sleep-disorder treatment. Positioned as "mental performance recovery" — the language of optimization, not diagnosis.</p>
+    </div>
+    <div class="protocol-card">
+      <span class="protocol-label">Secondary Category</span>
+      <div class="protocol-name">Men's Primary Care</div>
+      <p style="font-size:0.82rem;color:var(--muted);line-height:1.5">Mental health as the entry point to broader men's health. The man who comes in for depression gets a full metabolic panel. The man who comes in for sleep gets a cardiovascular risk assessment. YZY HEALTH feeds KING HEALTH's primary care pipeline — shared referral protocol.</p>
+    </div>
+    <div class="protocol-card">
+      <span class="protocol-label">Tertiary Category</span>
+      <div class="protocol-name">Substance Use</div>
+      <p style="font-size:0.82rem;color:var(--muted);line-height:1.5">Harm reduction and treatment framing. Black men are disproportionately impacted by the criminalization of substance use; YZY HEALTH approaches this through the public health lens: access to treatment, not judgment. Destigmatization is the access lever.</p>
+    </div>
+    <div class="protocol-card">
+      <span class="protocol-label">Integration</span>
+      <div class="protocol-name">KING HEALTH Referral Pipeline</div>
+      <p style="font-size:0.82rem;color:var(--muted);line-height:1.5">Formal bi-directional referral protocol between YZY HEALTH and KING HEALTH. Mental health patients who need primary care go to KING HEALTH; KING HEALTH patients flagged for mental health needs are referred to YZY HEALTH. The two sub-brands serve the same demographic from different clinical entry points.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section id="content">
+  <span class="section-label">Content & Trust Strategy</span>
+  <h2 class="section-title">The Content System</h2>
+
+  <p style="font-size:0.95rem;color:var(--muted);line-height:1.8;max-width:760px;margin-bottom:2.5rem">The YZY HEALTH content strategy has one rule: <strong style="color:var(--text)">destigmatization through creative expression, not clinical vocabulary.</strong> Ye does not need to announce he has bipolar disorder. He has been documenting his mental health experience through his music and art for 20 years. The content strategy acknowledges that and builds a clinical platform around it — without ever exploiting his specific diagnosis or turning it into a marketing claim.</p>
+
+  <div class="content-pillars">
+    <div class="pillar">
+      <div class="pillar-num">01</div>
+      <div class="pillar-body">
+        <h4>The Listening Session Film — Launch Activation</h4>
+        <p>A private, invite-only listening session / mental health conversation — not a concert, not a press event. 50 Black men from Ye's creative community, 5 Black psychiatrists, no cameras except one documentary crew under NDA. The film drops 30 days later as the YZY HEALTH launch asset. This is not a commercial. It is an artifact of a conversation that needed to happen.</p>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">02</div>
+      <div class="pillar-body">
+        <h4>Black Male Psychiatrist Series</h4>
+        <p>Ye's creative direction applied to a clinical content series featuring Black male psychiatrists. Not institutional. Not clinical white-coat. Shot in creative spaces — studios, community centers, urban environments. These clinicians talk about what they see every week, what Black men come in carrying, and what getting help actually looks like. "This is who will sit with you." The visual language signals: this is not your father's therapy.</p>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">03</div>
+      <div class="pillar-body">
+        <h4>Creative Drop Series — "Wellness as Art"</h4>
+        <p>Quarterly audio, visual, or written pieces from Ye centered on mental health — not clinical explainers, but creative expressions that reframe the conversation. Could be a track, a visual essay, a design piece. The content is not branded advertising. It is art with a purpose: each drop is accompanied by a single call to action: "Book a session." This is Ye's equity contribution — and the most culturally resonant mental health content that has ever existed.</p>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">04</div>
+      <div class="pillar-body">
+        <h4>Community Mental Health Activations</h4>
+        <p>Quarterly in-person mental health activation events, anchored in Chicago (Ye's home) and Los Angeles. Not clinical. Not a health fair. A cultural space — music, art, conversation — with mental health intake available for those who want it. The key: no one has to walk through a door that says "mental health clinic." They walk through a door that says "come hear some music."</p>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">05</div>
+      <div class="pillar-body">
+        <h4>No Ye Likeness in Clinical Content</h4>
+        <p>This is both a compliance rule and a creative principle. Ye's face, name, and likeness do not appear in any clinical or claims-bearing YZY HEALTH content. The creative direction is Ye's; the clinical voice is the clinicians'. This separation protects the brand from the highest-risk scenario: Ye making a clinical claim in a brand context. His equity contribution is creative direction, not medical testimony.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="subsection-title">Distribution Channels</h3>
+  <table>
+    <thead>
+      <tr><th>Channel</th><th>Format</th><th>Cadence</th><th>Audience</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Documentary Film Release</strong></td><td>"The Listening Session" — 30-day post-event release, NDA-protected, distributed through Ye's channels</td><td>Day 43 launch</td><td>Ye's full creative community, media</td></tr>
+      <tr><td><strong>Ye Social (Controlled)</strong></td><td>Creative drops only — art, music, visual content tied to mental health themes. No clinical claims. Pre-cleared by compliance.</td><td>Quarterly creative drop</td><td>Ye's existing audience</td></tr>
+      <tr><td><strong>YZY HEALTH Platform</strong></td><td>Black male psychiatrist series, intake information, "find your clinician"</td><td>Weekly during launch</td><td>Direct patient acquisition</td></tr>
+      <tr><td><strong>Complex / Pitchfork</strong></td><td>Cultural press story: "Why Ye built a mental health platform — and why it matters"</td><td>Launch week</td><td>Music / culture press audience</td></tr>
+      <tr><td><strong>Community Events</strong></td><td>Chicago + LA in-person activations — cultural, not clinical</td><td>Quarterly</td><td>Ye's local creative communities</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- RISK SECTION -->
+<section id="risk">
+  <span class="section-label">Risk Architecture</span>
+  <h2 class="section-title">Risk Management</h2>
+
+  <p style="font-size:0.9rem;color:var(--muted);line-height:1.8;max-width:760px;margin-bottom:2rem">YZY HEALTH is the highest-risk sub-brand in the portfolio — and the one with the most transformative potential. The risk management architecture is not a defensive posture. It is the structure that makes the cultural opportunity possible.</p>
+
+  <div class="risk-grid">
+    <div class="risk-card">
+      <span class="risk-label" style="color:var(--red)">High Risk</span>
+      <h4>Ye Public Controversy</h4>
+      <p>Ye's history of public controversy is the most documented risk in the portfolio. Mitigation: 30-day controversy clause in JV agreement; full brand quarantine architecture in place; YZY HEALTH can operate independently without shutting down other sub-brands. Risk is priced in — the launch is last (Day 43), after infrastructure is proven.</p>
+    </div>
+    <div class="risk-card">
+      <span class="risk-label" style="color:var(--gold)">Medium Risk</span>
+      <h4>Diagnostic Exploitation</h4>
+      <p>Using Ye's bipolar diagnosis as a marketing hook is both ethically unacceptable and legally risky. Protocol: Ye's diagnosis is never referenced in YZY HEALTH content. The platform is built on destigmatization — which requires that no individual's diagnosis, including the founder's, be used as a marketing claim.</p>
+    </div>
+    <div class="risk-card">
+      <span class="risk-label" style="color:var(--gold)">Medium Risk</span>
+      <h4>Ye Clinical Statement Risk</h4>
+      <p>Ye making a clinical claim (about treatment, outcomes, diagnosis) in a brand context. Mitigation: No Ye likeness in clinical content. 48-hour compliance hold on all Ye-adjacent posts. Legal pre-clears all Ye statements before brand channels amplify. Content compliance liaison has final authority.</p>
+    </div>
+    <div class="risk-card">
+      <span class="risk-label" style="color:var(--green)">Low Risk</span>
+      <h4>Cultural Misread</h4>
+      <p>Mental health content that misses the cultural nuance of Black male experience — either over-clinical or under-serious. Mitigation: Black male psychiatrists and cultural consultants co-develop all content. Nothing ships without community review.</p>
+    </div>
+  </div>
+
+  <div class="callout-red">
+    <div style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--red);margin-bottom:0.5rem">Brand Quarantine Architecture</div>
+    <p style="font-size:0.88rem;line-height:1.8">YZY HEALTH is the only sub-brand with a formal quarantine protocol. In the event of a triggered controversy clause, YZY HEALTH can be suspended or operated under a neutral clinical brand without impacting KING HEALTH, FENTY WELLNESS, CARDI CARE, or COMMONGROUND parent entity operations. This is not a failure scenario — it is a feature. The JV can survive a YZY HEALTH suspension. The architecture was designed for it.</p>
+  </div>
+</section>
+
+<!-- LAUNCH ACTIVATION -->
+<section id="activation">
+  <span class="section-label">Launch Activation</span>
+  <h2 class="section-title">The Listening Session</h2>
+
+  <div class="activation-box">
+    <span class="activation-label">Hero Launch Event · Day 43</span>
+    <div class="activation-name">THE LISTENING SESSION</div>
+    <p class="activation-desc">A private, invite-only listening session / mental health conversation. 50 Black men from Ye's creative community. 5 Black psychiatrists. No cameras except one documentary crew under NDA. No agenda except conversation. The film drops 30 days later as the YZY HEALTH launch asset. <strong style="color:var(--text)">This is not a commercial. It is proof that the conversation is possible.</strong></p>
+  </div>
+
+  <div class="timeline-steps">
+    <div class="timeline-step">
+      <div class="step-day">Day 35</div>
+      <div class="step-body">
+        <h4>Compliance clearance confirmed</h4>
+        <p>All Ye-adjacent content reviewed and cleared. Controversy clause terms confirmed with legal. Brand quarantine architecture tested. Launch proceeds only on green.</p>
+      </div>
+    </div>
+    <div class="timeline-step">
+      <div class="step-day">Day 38–40</div>
+      <div class="step-body">
+        <h4>Listening Session event</h4>
+        <p>Private, invite-only. 50 Black men from Ye's creative community + 5 Black psychiatrists. Documentary crew under NDA. No brand presence except at intake — this is a cultural event, not a launch party.</p>
+      </div>
+    </div>
+    <div class="timeline-step">
+      <div class="step-day">Day 41–42</div>
+      <div class="step-body">
+        <h4>Black male psychiatrist series drops</h4>
+        <p>3-part series building trust in the clinical team before patient intake opens. Creative visual direction. Shot in non-clinical environments. "This is who will sit with you."</p>
+      </div>
+    </div>
+    <div class="timeline-step">
+      <div class="step-day">Day 43</div>
+      <div class="step-body">
+        <h4>YZY HEALTH goes live — behavioral health intake opens</h4>
+        <p>Patient intake opens through OpenLoop's behavioral health network. Quarterly creative drop (Ye's first wellness piece) releases simultaneously. Complex / Pitchfork press embargo lifts.</p>
+      </div>
+    </div>
+    <div class="timeline-step">
+      <div class="step-day">Day 45 +30</div>
+      <div class="step-body">
+        <h4>Documentary film release</h4>
+        <p>"The Listening Session" film drops across Ye's platforms and YZY HEALTH channels. This is the platform's origin story — 30 days of patient intake and clinical credibility behind it before the cultural event goes public.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPLIANCE -->
+<section id="compliance">
+  <span class="section-label">FTC / FDA Compliance</span>
+  <h2 class="section-title">Legal Architecture</h2>
+
+  <div class="card card-accent-left">
+    <div style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);margin-bottom:0.5rem">Mandatory FTC Disclosure — All Commercial Content</div>
+    <p style="font-family:'Space Mono',monospace;font-size:0.82rem;color:var(--text);line-height:1.8;">"Ye is a co-owner of YZY HEALTH and receives equity compensation. This content reflects his creative vision and does not constitute medical advice."</p>
+  </div>
+
+  <ul class="compliance-list">
+    <li>No Ye likeness in clinical or claims-bearing content — creative direction only. This is both a compliance rule and a brand principle.</li>
+    <li>YZY HEALTH launches last in the 45-day sequence (Day 43–45), after infrastructure is proven across three other sub-brands</li>
+    <li>Separate content compliance review layer: 48-hour hold on all Ye-adjacent posts before brand channel amplification</li>
+    <li>Legal team pre-clears all Ye statements before they are amplified by YZY HEALTH channels</li>
+    <li>30-day controversy clause in JV agreement: defined trigger events activate immediate suspension review with 30-day wind-down option</li>
+    <li>Brand architecture allows YZY HEALTH to operate independently — full brand quarantine is possible without shutting down KING HEALTH, FENTY WELLNESS, CARDI CARE, or COMMONGROUND</li>
+    <li>Diagnostic language: zero use of "bipolar," "schizophrenia," or any specific diagnosis in marketing content — including Ye's own diagnosis</li>
+    <li>Behavioral health telehealth: crisis escalation protocol documented and tested before first patient interaction. 988 Lifeline integration required.</li>
+  </ul>
+</section>
+
+<!-- EQUITY -->
+<section id="equity">
+  <span class="section-label">JV Structure</span>
+  <h2 class="section-title">Equity & Commitment</h2>
+
+  <div class="equity-row">
+    <div class="equity-item">
+      <span class="equity-label">Equity Stake</span>
+      <span class="equity-val">6%</span>
+      <div class="equity-desc">In COMMONGROUND parent entity. Vesting contingent on quarterly "Wellness Drop" content and compliance protocol adherence.</div>
+    </div>
+    <div class="equity-item">
+      <span class="equity-label">Content Commitment</span>
+      <span class="equity-val">1×/qtr</span>
+      <div class="equity-desc">1 quarterly Wellness Drop: audio, visual, or written piece centered on mental health. No press requirement. Ye's content is his equity contribution.</div>
+    </div>
+    <div class="equity-item">
+      <span class="equity-label">Community Activation</span>
+      <span class="equity-val">1×/qtr</span>
+      <div class="equity-desc">1 community mental health event per quarter. Chicago or LA anchor. Cultural format — not clinical. No cameras beyond the documentary team.</div>
+    </div>
+    <div class="equity-item">
+      <span class="equity-label">Creative Direction</span>
+      <span class="equity-val">Ongoing</span>
+      <div class="equity-desc">Ye retains creative direction over YZY HEALTH visual identity, campaign aesthetics, and content tone. Clinical decisions remain with the Medical team.</div>
+    </div>
+  </div>
+
+  <div class="callout-accent">
+    <p style="font-size:0.9rem;line-height:1.8"><strong style="color:var(--accent)">The Opportunity Case:</strong> Behavioral health is 44% of Medicare telehealth visits — the highest payer capture rate in the portfolio. Black men are the most underserved mental health demographic in America. Ye is the only cultural figure with the specific credibility to open this demographic's door. The risk is real. The quarantine architecture makes it manageable. And the potential — a platform that moves 63% of Black men who need mental health care from "none" to "some" — is the most significant public health outcome possible in this JV. This is worth the complexity.</p>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div class="footer-brand">YZY HEALTH™ — Brand Identity Document</div>
+    <div style="font-family:'Space Mono',monospace;font-size:0.55rem;color:var(--muted);margin-top:0.25rem">Confidential · COMMONGROUND JV · May 2026</div>
+  </div>
+  <div class="footer-parent">A COMMONGROUND™ Sub-Brand</div>
+</footer>
+
+</body>
+</html>

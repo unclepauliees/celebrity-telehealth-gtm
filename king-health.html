@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KING HEALTH™ — Brand Identity & Strategy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#13121E;
+  --surface:#1C1A2C;
+  --surface2:#221F33;
+  --accent:#F39C12;
+  --accent-dim:rgba(243,156,18,0.08);
+  --accent-border:rgba(243,156,18,0.25);
+  --gold:#DF8C12;
+  --red:#C24558;
+  --green:#4D6E36;
+  --text:#F2EAD8;
+  --muted:#8890A8;
+  --border:#2A2840;
+  --parent:#DF8C12;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(19,18,30,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-parent{font-family:'Space Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--parent)}
+.nav-brand{font-family:'Bebas Neue',cursive;font-size:1.5rem;color:var(--accent);letter-spacing:0.05em}
+.nav-back{font-family:'Space Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);text-decoration:none;transition:color 0.2s}
+.nav-back:hover{color:var(--accent)}
+
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:6rem 4rem 4rem;background:radial-gradient(ellipse at 80% 20%, rgba(243,156,18,0.08) 0%, transparent 55%),radial-gradient(ellipse at 10% 80%, rgba(243,156,18,0.04) 0%, transparent 50%),var(--bg);position:relative;overflow:hidden}
+#hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(255,255,255,0.008) 79px,rgba(255,255,255,0.008) 80px);pointer-events:none}
+.hero-overline{font-family:'Space Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--accent);margin-bottom:1.5rem}
+.hero-headline{font-family:'Bebas Neue',cursive;font-size:clamp(5rem,12vw,10rem);line-height:0.88;color:var(--text);letter-spacing:0.02em;margin-bottom:0.5rem}
+.hero-tm{font-family:'Bebas Neue',cursive;font-size:clamp(1.5rem,3vw,2.5rem);color:var(--accent);vertical-align:super;letter-spacing:0.04em}
+.hero-tagline{font-size:clamp(1rem,2vw,1.4rem);color:var(--muted);font-weight:300;margin:1.5rem 0 3rem;max-width:600px;line-height:1.4;font-style:italic}
+.hero-meta{display:flex;gap:2rem;flex-wrap:wrap}
+.meta-item{border-left:2px solid var(--accent);padding-left:1rem}
+.meta-label{font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);display:block;margin-bottom:0.25rem}
+.meta-val{font-family:'Bebas Neue',cursive;font-size:1.6rem;color:var(--accent);line-height:1}
+
+section{padding:5rem 4rem;border-bottom:1px solid var(--border);scroll-margin-top:56px}
+.section-label{font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--accent);margin-bottom:1rem;display:block}
+.section-title{font-family:'Bebas Neue',cursive;font-size:clamp(2.5rem,5vw,4rem);color:var(--text);line-height:1;margin-bottom:2rem;letter-spacing:0.02em}
+.subsection-title{font-family:'Bebas Neue',cursive;font-size:clamp(1.5rem,3vw,2.2rem);color:var(--text);margin:2.5rem 0 1rem;letter-spacing:0.02em}
+
+.card{background:var(--surface);border:1px solid var(--border);padding:2rem;margin-bottom:1.5rem}
+.card-accent-left{border-left:3px solid var(--accent)}
+.callout-accent{background:var(--accent-dim);border:1px solid var(--accent-border);border-left:4px solid var(--accent);padding:1.5rem 2rem;margin:1.5rem 0}
+.callout-red{background:rgba(194,69,88,0.08);border:1px solid var(--red);border-left:4px solid var(--red);padding:1.5rem 2rem;margin:1.5rem 0}
+.callout-green{background:rgba(77,110,54,0.08);border:1px solid var(--green);border-left:4px solid var(--green);padding:1.5rem 2rem;margin:1.5rem 0}
+
+.principle-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1.5rem 0}
+.principle{background:var(--surface2);border-top:2px solid var(--accent);padding:1.5rem;transition:transform 0.2s}
+.principle:hover{transform:translateY(-2px)}
+.principle h4{font-family:'Bebas Neue',cursive;font-size:1.4rem;color:var(--accent);margin-bottom:0.5rem;letter-spacing:0.05em}
+.principle p{font-size:0.82rem;color:var(--muted);line-height:1.5}
+
+.audience-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin:1.5rem 0}
+.audience-card{background:var(--surface);border:1px solid var(--border);padding:1.75rem}
+.audience-tag{font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);margin-bottom:0.75rem;display:block}
+.audience-card h3{font-family:'Bebas Neue',cursive;font-size:1.6rem;color:var(--text);margin-bottom:0.75rem;letter-spacing:0.04em}
+
+.protocol-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin:1.5rem 0}
+.protocol-card{background:var(--surface2);border:1px solid var(--border);padding:1.5rem;position:relative}
+.protocol-card.hero-cat{border-color:var(--accent);background:var(--accent-dim)}
+.protocol-label{font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);margin-bottom:0.5rem;display:block}
+.protocol-name{font-family:'Bebas Neue',cursive;font-size:1.5rem;letter-spacing:0.04em;color:var(--text);margin-bottom:0.4rem}
+.protocol-card.hero-cat .protocol-name{color:var(--accent)}
+
+.content-pillars{display:flex;flex-direction:column;gap:1rem;margin:1.5rem 0}
+.pillar{display:flex;gap:1.25rem;align-items:flex-start;padding:1.25rem;border:1px solid var(--border);background:var(--surface)}
+.pillar-num{font-family:'Bebas Neue',cursive;font-size:2.2rem;color:var(--accent);line-height:1;min-width:2rem}
+.pillar-body h4{font-size:0.9rem;color:var(--text);font-weight:600;margin-bottom:0.4rem}
+.pillar-body p{font-size:0.82rem;color:var(--muted);line-height:1.6}
+
+.activation-box{border:1px solid var(--accent);background:var(--accent-dim);padding:2.5rem;margin:1.5rem 0;position:relative}
+.activation-label{font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--accent);margin-bottom:1rem;display:block}
+.activation-name{font-family:'Bebas Neue',cursive;font-size:clamp(2rem,5vw,3.5rem);color:var(--text);letter-spacing:0.04em;margin-bottom:1rem;line-height:1}
+.activation-desc{font-size:0.9rem;color:var(--muted);line-height:1.8;max-width:700px}
+
+.timeline-steps{display:flex;flex-direction:column;gap:0;margin:1.5rem 0}
+.timeline-step{display:flex;gap:1.5rem;align-items:flex-start;padding:1.25rem 1.5rem;border:1px solid var(--border);border-top:none;position:relative}
+.timeline-step:first-child{border-top:1px solid var(--border)}
+.timeline-step::before{content:'';position:absolute;left:2.75rem;top:100%;width:1px;height:0;background:var(--accent-border)}
+.step-day{font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--accent);min-width:60px;padding-top:0.15rem}
+.step-body h4{font-size:0.88rem;color:var(--text);font-weight:600;margin-bottom:0.25rem}
+.step-body p{font-size:0.8rem;color:var(--muted);line-height:1.5}
+
+.compliance-list{list-style:none;display:flex;flex-direction:column;gap:0.5rem;margin:1rem 0}
+.compliance-list li{font-size:0.85rem;color:var(--text);padding:0.75rem 1rem;border:1px solid var(--border);background:var(--surface);display:flex;gap:0.75rem;align-items:flex-start;line-height:1.5}
+.compliance-list li::before{content:'→';color:var(--accent);font-family:'Space Mono',monospace;font-size:0.7rem;flex-shrink:0;margin-top:0.1rem}
+
+.equity-row{display:flex;gap:2rem;flex-wrap:wrap;margin:1.5rem 0}
+.equity-item{flex:1;min-width:200px;background:var(--surface2);padding:1.5rem;border-top:2px solid var(--accent)}
+.equity-label{font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);display:block;margin-bottom:0.5rem}
+.equity-val{font-family:'Bebas Neue',cursive;font-size:2rem;color:var(--accent);line-height:1;display:block;margin-bottom:0.4rem}
+.equity-desc{font-size:0.8rem;color:var(--muted);line-height:1.5}
+
+table{width:100%;border-collapse:collapse;font-size:0.85rem;margin:1.5rem 0}
+thead tr{background:var(--surface2)}
+thead th{font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);padding:0.85rem 1rem;text-align:left;border-bottom:1px solid var(--accent-border)}
+tbody tr{border-bottom:1px solid var(--border)}
+tbody tr:hover{background:rgba(255,255,255,0.02)}
+td{padding:0.85rem 1rem;vertical-align:top;color:var(--text);line-height:1.5}
+td strong{color:var(--accent)}
+
+.parent-link{display:inline-block;font-family:'Space Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--parent);border:1px solid var(--parent);padding:0.4rem 1rem;margin-top:2rem;text-decoration:none;transition:background 0.2s,color 0.2s}
+.parent-link:hover{background:var(--parent);color:#13121E}
+
+footer{padding:3rem 4rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-brand{font-family:'Space Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted)}
+.footer-parent{font-family:'Space Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--parent)}
+
+@media(max-width:768px){
+  section,#hero{padding:3rem 1.5rem}
+  nav{padding:0 1.5rem}
+  footer{padding:2rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div>
+    <div class="nav-parent">COMMONGROUND™ / Sub-Brand</div>
+    <div class="nav-brand">KING HEALTH™</div>
+  </div>
+  <a class="nav-back" href="index.html">← Back to GTM</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-overline">COMMONGROUND™ Sub-Brand · LeBron James · Est. 2026</div>
+  <div class="hero-headline">KING<br>HEALTH<span class="hero-tm">™</span></div>
+  <p class="hero-tagline">"You train your whole life to perform. Now train to last."</p>
+  <div class="hero-meta">
+    <div class="meta-item">
+      <span class="meta-label">Equity Stake</span>
+      <span class="meta-val">6%</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Launch Sequence</span>
+      <span class="meta-val">Day 29</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Day 45 Target</span>
+      <span class="meta-val">500 pts</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Hero Category</span>
+      <span class="meta-val">Men's Primary</span>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND IDENTITY -->
+<section id="identity">
+  <span class="section-label">Brand Identity</span>
+  <h2 class="section-title">The Brand</h2>
+
+  <div class="card card-accent-left">
+    <p style="font-size:1rem;line-height:1.8;margin-bottom:1rem"><strong style="color:var(--accent)">Brand Positioning:</strong> KING HEALTH is the performance-longevity health platform for Black men who treat their body as an asset. Not a clinic. Not a healthcare brand. A performance system — built by the greatest athlete of his generation, designed for men who measure everything.</p>
+    <p style="font-size:0.9rem;color:var(--muted);line-height:1.7">LeBron James has spent 20+ years publicly optimizing his body — the diet, the sleep, the cryotherapy, the labs. KING HEALTH turns that philosophy into an accessible telehealth platform. The wealth-gap in health optimization closes here. What LeBron does to stay on the court at 40, every man in his community deserves access to.</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0">
+    <div>
+      <h3 class="subsection-title">Voice & Tone</h3>
+      <div class="callout-accent">
+        <p style="font-size:0.9rem;line-height:1.7"><strong style="color:var(--accent)">Voice archetype:</strong> A trainer who became a doctor. Direct. Evidence-based. No condescension — the patient is already a competitor, treat them like one.</p>
+      </div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;margin-top:1rem">
+        <li style="font-size:0.85rem;color:var(--text);padding:0.6rem 0;border-bottom:1px solid var(--border)">✓ <strong>Say:</strong> "Your labs, your numbers, your game plan"</li>
+        <li style="font-size:0.85rem;color:var(--text);padding:0.6rem 0;border-bottom:1px solid var(--border)">✗ <strong>Never:</strong> "Wellness journey" / "self-care" / "holistic healing"</li>
+        <li style="font-size:0.85rem;color:var(--text);padding:0.6rem 0;border-bottom:1px solid var(--border)">✓ <strong>Say:</strong> "Performance metrics. Longevity data. Actual results."</li>
+        <li style="font-size:0.85rem;color:var(--text);padding:0.6rem 0">✗ <strong>Never:</strong> Clinical jargon or anything that sounds like a hospital brochure</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="subsection-title">Brand Personality</h3>
+      <div class="principle-grid" style="grid-template-columns:1fr 1fr">
+        <div class="principle">
+          <h4>Performance</h4>
+          <p>Health is training. Every metric is a scoreboard.</p>
+        </div>
+        <div class="principle">
+          <h4>Precision</h4>
+          <p>Data-driven. Evidence-only. No vibes, no wellness fluff.</p>
+        </div>
+        <div class="principle">
+          <h4>Legacy</h4>
+          <p>Built for longevity — be there for your kids, your community, your next chapter.</p>
+        </div>
+        <div class="principle">
+          <h4>Access</h4>
+          <p>Elite-athlete protocols, community-accessible pricing. The gap closes here.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="subsection-title">Visual Identity</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:1.5rem 0">
+    <div style="background:var(--surface2);padding:1.5rem;border-top:3px solid var(--accent)">
+      <div style="width:48px;height:48px;background:var(--accent);margin-bottom:1rem"></div>
+      <div style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--muted);margin-bottom:0.25rem">Primary Accent</div>
+      <div style="font-family:'Space Mono',monospace;font-size:0.8rem;color:var(--text)">#F39C12</div>
+      <div style="font-size:0.78rem;color:var(--muted);margin-top:0.25rem">Amber — the Gold Standard</div>
+    </div>
+    <div style="background:var(--surface2);padding:1.5rem;border-top:3px solid var(--border)">
+      <div style="width:48px;height:48px;background:var(--bg);border:1px solid var(--border);margin-bottom:1rem"></div>
+      <div style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--muted);margin-bottom:0.25rem">Background</div>
+      <div style="font-family:'Space Mono',monospace;font-size:0.8rem;color:var(--text)">#13121E</div>
+      <div style="font-size:0.78rem;color:var(--muted);margin-top:0.25rem">COMMONGROUND Midnight</div>
+    </div>
+    <div style="background:var(--surface2);padding:1.5rem;border-top:3px solid var(--border)">
+      <div style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--muted);margin-bottom:0.75rem">Type System</div>
+      <div style="font-family:'Bebas Neue',cursive;font-size:1.4rem;color:var(--text);margin-bottom:0.25rem">Bebas Neue</div>
+      <div style="font-size:0.78rem;color:var(--muted);margin-bottom:0.5rem">Headlines, brand name</div>
+      <div style="font-family:'Inter',sans-serif;font-size:0.85rem;color:var(--text);margin-bottom:0.25rem">Inter</div>
+      <div style="font-size:0.78rem;color:var(--muted)">Body, UI, labels</div>
+    </div>
+    <div style="background:var(--surface2);padding:1.5rem;border-top:3px solid var(--border)">
+      <div style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--muted);margin-bottom:0.75rem">Tone Markers</div>
+      <div style="font-size:0.82rem;color:var(--text);line-height:1.7">Performance. Precision. Legacy. Crown motif — not a metaphor for royalty, a metaphor for earned excellence. Photography: real labs, real athletes, real data on screens.</div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE -->
+<section id="audience">
+  <span class="section-label">Target Audience</span>
+  <h2 class="section-title">Who This Is For</h2>
+
+  <div class="audience-grid">
+    <div class="audience-card">
+      <span class="audience-tag">Primary Audience</span>
+      <h3>Black Men 25–50</h3>
+      <p style="font-size:0.85rem;color:var(--muted);line-height:1.7">Fathers. Athletes (amateur to elite). Men who see health as performance, not weakness. Professional class and working class simultaneously — LeBron's audience is cross-income. Psychographic: <em>"I invest in everything I do. My body is my most important asset."</em></p>
+    </div>
+    <div class="audience-card">
+      <span class="audience-tag">Secondary Audience</span>
+      <h3>Black Families via LeBron's Brand</h3>
+      <p style="font-size:0.85rem;color:var(--muted);line-height:1.7">LeBron's family narrative — "I Promise" school, Akron roots, father-as-role-model — creates family-health permission structure. Parents bringing children into the ecosystem. The gateway is men's health; the retention is family health.</p>
+    </div>
+    <div class="audience-card">
+      <span class="audience-tag">Tertiary Audience</span>
+      <h3>Performance-Optimization Men</h3>
+      <p style="font-size:0.85rem;color:var(--muted);line-height:1.7">The biohacker who doesn't use that word. Men following Bryan Johnson, Peter Attia, Huberman — but who don't see themselves in the white, tech-bro aesthetic of that world. They want the same rigor, from a source that looks like them.</p>
+    </div>
+  </div>
+
+  <h3 class="subsection-title">Why LeBron</h3>
+  <div class="card card-accent-left">
+    <p style="font-size:0.9rem;line-height:1.8;margin-bottom:1rem">LeBron James is the most institutionally credible asset in this portfolio — and the most brand-safe. SpringHill Company, Uninterrupted, Liverpool FC ownership, Klutch Sports: he has demonstrated he can build businesses, not just license his name. His audience already trusts his judgment on health. He has documented his own health optimization publicly for years. The permission to talk about healthcare is pre-granted.</p>
+    <p style="font-size:0.9rem;line-height:1.8;color:var(--muted)">Critical advantage: Black men are statistically the most underserved demographic in primary care — the highest rates of undiagnosed hypertension, diabetes, and cardiovascular disease, lowest rates of preventive care utilization. LeBron is the only voice with the cultural credibility and reach to move this demographic into a clinical relationship.</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:2rem">
+    <div style="border:1px solid var(--border);padding:1.5rem">
+      <div style="font-family:'Bebas Neue',cursive;font-size:2.5rem;color:var(--accent);line-height:1;margin-bottom:0.4rem">40%</div>
+      <div style="font-size:0.8rem;color:var(--muted);line-height:1.5">of Black men have hypertension — diagnosed and undiagnosed</div>
+    </div>
+    <div style="border:1px solid var(--border);padding:1.5rem">
+      <div style="font-family:'Bebas Neue',cursive;font-size:2.5rem;color:var(--accent);line-height:1;margin-bottom:0.4rem">3×</div>
+      <div style="font-size:0.8rem;color:var(--muted);line-height:1.5">higher rate of avoidable hospitalization vs. white men of same income</div>
+    </div>
+    <div style="border:1px solid var(--border);padding:1.5rem">
+      <div style="font-family:'Bebas Neue',cursive;font-size:2.5rem;color:var(--accent);line-height:1;margin-bottom:0.4rem">51M</div>
+      <div style="font-size:0.8rem;color:var(--muted);line-height:1.5">LeBron's combined social reach — the largest captive health-ready audience in this portfolio</div>
+    </div>
+    <div style="border:1px solid var(--border);padding:1.5rem">
+      <div style="font-family:'Bebas Neue',cursive;font-size:2.5rem;color:var(--accent);line-height:1;margin-bottom:0.4rem">Day 29</div>
+      <div style="font-size:0.8rem;color:var(--muted);line-height:1.5">First sub-brand to go live — infrastructure proven here before other sub-brands launch</div>
+    </div>
+  </div>
+</section>
+
+<!-- CLINICAL -->
+<section id="clinical">
+  <span class="section-label">Clinical Architecture</span>
+  <h2 class="section-title">Health Categories</h2>
+
+  <div class="protocol-grid">
+    <div class="protocol-card hero-cat">
+      <span class="protocol-label">Hero Category</span>
+      <div class="protocol-name">Men's Primary Care</div>
+      <p style="font-size:0.82rem;color:var(--muted);line-height:1.5">Annual labs, metabolic panels, blood pressure, preventive screening. The entry point. LeBron's own health journey — documented in public — is the prototype patient journey.</p>
+    </div>
+    <div class="protocol-card hero-cat">
+      <span class="protocol-label">Hero Category</span>
+      <div class="protocol-name">Medical Weight Loss (GLP-1)</div>
+      <p style="font-size:0.82rem;color:var(--muted);line-height:1.5">Framed as body composition optimization, not weight-loss clinic positioning. Performance framing: fuel management, metabolic efficiency. GLP-1 protocols through OpenLoop's Season Health partnership for nutrition integration.</p>
+    </div>
+    <div class="protocol-card">
+      <span class="protocol-label">Secondary Category</span>
+      <div class="protocol-name">Remote Patient Monitoring (RPM)</div>
+      <p style="font-size:0.82rem;color:var(--muted);line-height:1.5">Wearable-connected health panels. Continuous performance data feeding clinical team. Hypertension, glucose, sleep, HRV. The "always-on coach" model LeBron already practices privately.</p>
+    </div>
+    <div class="protocol-card">
+      <span class="protocol-label">Secondary Category</span>
+      <div class="protocol-name">Cardiovascular Health</div>
+      <p style="font-size:0.82rem;color:var(--muted);line-height:1.5">Heart disease is the #1 killer of Black men. Positioning: cardiovascular health as performance longevity, not disease management. Risk stratification, lifestyle protocols, medication management where indicated.</p>
+    </div>
+    <div class="protocol-card">
+      <span class="protocol-label">Tertiary Category</span>
+      <div class="protocol-name">Sports Medicine / Musculoskeletal</div>
+      <p style="font-size:0.82rem;color:var(--muted);line-height:1.5">Recovery protocols, injury prevention, physical performance optimization. Serves both athletes and the much larger "weekend warrior" population in LeBron's audience.</p>
+    </div>
+    <div class="protocol-card">
+      <span class="protocol-label">Tertiary Category</span>
+      <div class="protocol-name">Men's Mental Health</div>
+      <p style="font-size:0.82rem;color:var(--muted);line-height:1.5">Positioned as "mental performance" rather than mental health — reduces stigma barrier to entry. Stress management, sleep optimization, performance psychology. Feeds into YZY HEALTH referral pipeline.</p>
+    </div>
+  </div>
+
+  <div class="callout-accent" style="margin-top:2rem">
+    <div style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);margin-bottom:0.5rem">Clinical Infrastructure</div>
+    <p style="font-size:0.88rem;line-height:1.8">All clinical protocols delivered through OpenLoop Health's NCQA-accredited network. <strong>18+ OpenLoop protocols</strong> activated for KING HEALTH at launch. Clinician roster prioritizes Black male physicians — not as a diversity checkbox, but as the single most effective trust-building mechanism for the target demographic. "Your doctor looks like you" is not a tagline, it is clinical evidence for improved patient outcomes and retention.</p>
+  </div>
+</section>
+
+<!-- CONTENT STRATEGY -->
+<section id="content">
+  <span class="section-label">Content & Trust Strategy</span>
+  <h2 class="section-title">The Content System</h2>
+
+  <p style="font-size:0.95rem;color:var(--muted);line-height:1.8;max-width:760px;margin-bottom:2.5rem">LeBron is the most documented health-optimizer in public life. The content strategy treats him as the prototype patient — transparent documentation of his own health journey creates the trust architecture that lets everyone else follow. The strategy has one rule: <strong style="color:var(--text)">real intake, real results, real clinicians.</strong> Nothing scripted beyond safety guardrails.</p>
+
+  <div class="content-pillars">
+    <div class="pillar">
+      <div class="pillar-num">01</div>
+      <div class="pillar-body">
+        <h4>LeBron as Patient Zero</h4>
+        <p>LeBron documents his own health panel — blood work, metabolic markers, sleep data, cardiovascular baseline — through a KING HEALTH telehealth consult on Uninterrupted. No scripted dialogue. Real intake. Real clinician. Real results. This becomes the brand's origin story and the proof-of-concept for the platform. Campaign runs Days 29–32.</p>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">02</div>
+      <div class="pillar-body">
+        <h4>Black Male Clinician Introductions</h4>
+        <p>"Meet your KING HEALTH doctor" — a recurring content series featuring Black male physicians talking about why they practice in telehealth, what they see every week that primary care deserts miss, and the specific health risks that affect this demographic. Not recruitment content. Not marketing. Education delivered by the people who have dedicated their careers to it.</p>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">03</div>
+      <div class="pillar-body">
+        <h4>The Performance Protocol Series</h4>
+        <p>Weekly short-form content on Uninterrupted and social channels: "what LeBron's labs look like at 40," "the metrics that matter more than your weight," "how cardiovascular health predicts your next decade." Data-forward. Clinician-validated. Built for the performance-minded man who has never had a doctor explain his numbers in plain language.</p>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">04</div>
+      <div class="pillar-body">
+        <h4>Community Health Events — Akron + LA</h4>
+        <p>One in-person health event per quarter, anchored in LeBron's home communities. Free labs, blood pressure screening, telehealth onboarding. Not charity — a patient acquisition event. The bridge from community trust to clinical relationship. Target: 100 activations per event → 30 patient conversions per event at the 90-day mark.</p>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">05</div>
+      <div class="pillar-body">
+        <h4>Klutch Sports Network Activation</h4>
+        <p>LeBron's athlete network through Klutch Sports provides a high-credibility secondary distribution channel. Athletes in transition (post-career health planning), younger athletes beginning longevity protocols, agents and team staff. A B2B2C play: Klutch as employer benefits partner feeding patients into KING HEALTH.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="subsection-title">Distribution Channels</h3>
+  <table>
+    <thead>
+      <tr><th>Channel</th><th>Format</th><th>Cadence</th><th>Primary Audience</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Uninterrupted</strong></td><td>Long-form documentary, "The King Lab" series</td><td>Weekly during launch window</td><td>Black professional men 25–50</td></tr>
+      <tr><td><strong>LeBron Instagram</strong></td><td>Labs reveal, clinician posts, performance stats</td><td>2–3x/week</td><td>General LeBron audience, 49M+</td></tr>
+      <tr><td><strong>TikTok</strong></td><td>Short-form health facts, clinician clips, "did you know your risk is…"</td><td>Daily</td><td>18–35 expansion audience</td></tr>
+      <tr><td><strong>Klutch Athletes</strong></td><td>Athlete co-posts, training/health content</td><td>Bi-weekly</td><td>Sports-adjacent men, aspirational</td></tr>
+      <tr><td><strong>ESPN / STAT News</strong></td><td>PR — launch announcement, "The King Lab" exclusive</td><td>Day 32 embargo lift</td><td>Media amplification</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- LAUNCH ACTIVATION -->
+<section id="activation">
+  <span class="section-label">Launch Activation</span>
+  <h2 class="section-title">The King Lab</h2>
+
+  <div class="activation-box">
+    <span class="activation-label">Hero Launch Event · Day 29</span>
+    <div class="activation-name">THE KING LAB</div>
+    <p class="activation-desc">LeBron releases a full health panel — blood work, metabolic markers, cardiovascular baseline, sleep data — on Uninterrupted. He then books a telehealth consult with a KING HEALTH clinician on camera. No scripted dialogue. Real intake. Real results. The session ends with a personalized care plan, visible to the audience. It becomes the brand's origin story. <strong style="color:var(--text)">This is not a commercial. It is the proof.</strong></p>
+  </div>
+
+  <div class="timeline-steps">
+    <div class="timeline-step">
+      <div class="step-day">Day 22</div>
+      <div class="step-body">
+        <h4>LeBron pre-launch teaser</h4>
+        <p>LeBron posts a 60-second teaser to Instagram/Uninterrupted: "I've been doing this for 20 years. Now everyone can." No brand name reveal. Health lab imagery. Generates pre-launch waitlist.</p>
+      </div>
+    </div>
+    <div class="timeline-step">
+      <div class="step-day">Day 26–28</div>
+      <div class="step-body">
+        <h4>Clinician introductions drop</h4>
+        <p>3-part series: meet the Black male physicians powering KING HEALTH. Distributed via Uninterrupted. Builds trust in the clinical team before first patient interaction.</p>
+      </div>
+    </div>
+    <div class="timeline-step">
+      <div class="step-day">Day 29</div>
+      <div class="step-body">
+        <h4>KING HEALTH beta launch — patient intake opens</h4>
+        <p>Real patient intake begins through OpenLoop infrastructure. "The King Lab" content drops simultaneously. STAT News / ESPN embargo lifted at 9AM EST.</p>
+      </div>
+    </div>
+    <div class="timeline-step">
+      <div class="step-day">Day 30</div>
+      <div class="step-body">
+        <h4>Community health event — Akron or LA</h4>
+        <p>100-person capacity in-person event. Free labs, telehealth onboarding, community health talks. LeBron presence (in-person or video). Target: 30 direct patient conversions.</p>
+      </div>
+    </div>
+    <div class="timeline-step">
+      <div class="step-day">Day 32</div>
+      <div class="step-body">
+        <h4>Press embargo lifts</h4>
+        <p>Full KING HEALTH announcement in STAT News, ESPN, Uninterrupted, Complex. Platform infrastructure stability confirmed before press release. 3-day post-launch stability window required.</p>
+      </div>
+    </div>
+    <div class="timeline-step">
+      <div class="step-day">Day 35</div>
+      <div class="step-body">
+        <h4>500 activated patients — North Star milestone</h4>
+        <p>Primary GTM north star for KING HEALTH. Milestone triggers Phase 2 expansion protocol: add second community, expand clinician roster, activate payer enrollment pathway.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <span class="section-label">Revenue Model</span>
+  <h2 class="section-title">Pricing Architecture</h2>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin:1.5rem 0">
+    <div style="background:var(--surface);border:1px solid var(--border);padding:2rem">
+      <div style="font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--muted);margin-bottom:0.75rem">Community Tier · 30%</div>
+      <div style="font-family:'Bebas Neue',cursive;font-size:2.5rem;color:var(--accent);line-height:1;margin-bottom:0.5rem">Free</div>
+      <p style="font-size:0.8rem;color:var(--muted);line-height:1.5">Annual labs, blood pressure check, preventive screening. Entry point. Patient acquisition + retention pipeline. Payer-billable where covered.</p>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--accent);padding:2rem;transform:translateY(-6px)">
+      <div style="font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--accent);margin-bottom:0.75rem">Care Tier · 50% ← Core Revenue</div>
+      <div style="font-family:'Bebas Neue',cursive;font-size:2.5rem;color:var(--accent);line-height:1;margin-bottom:0.5rem">$89<span style="font-size:1rem;color:var(--muted)">/mo</span></div>
+      <p style="font-size:0.8rem;color:var(--muted);line-height:1.5">Ongoing primary care relationship. Dedicated clinician, quarterly labs, RPM integration, care plan management. +$30 reimbursement uplift post-payer enrollment.</p>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);padding:2rem">
+      <div style="font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--muted);margin-bottom:0.75rem">Premium Tier · 20%</div>
+      <div style="font-family:'Bebas Neue',cursive;font-size:2.5rem;color:var(--accent);line-height:1;margin-bottom:0.5rem">$189<span style="font-size:1rem;color:var(--muted)">/mo</span></div>
+      <p style="font-size:0.8rem;color:var(--muted);line-height:1.5">Elite performance protocol. Full metabolic panel monthly, wearable data integration, concierge response time, sports medicine access. LeBron's private health stack, democratized.</p>
+    </div>
+  </div>
+
+  <div class="callout-green">
+    <div style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--green);margin-bottom:0.5rem">Payer Strategy</div>
+    <p style="font-size:0.88rem;line-height:1.8">Men's primary care and cardiovascular management carry strong payer reimbursement codes. Post-enrollment in Medicare Advantage / Medicaid managed care networks, Care Tier effective cost to patient drops significantly. RPM billing codes (CPT 99453/99457) enable additional revenue per patient. Target: 40% of Care Tier patients in payer networks by Day 90.</p>
+  </div>
+</section>
+
+<!-- COMPLIANCE -->
+<section id="compliance">
+  <span class="section-label">FTC / FDA Compliance</span>
+  <h2 class="section-title">Legal Architecture</h2>
+
+  <div class="card card-accent-left">
+    <div style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);margin-bottom:0.5rem">Mandatory FTC Disclosure — All Commercial Content</div>
+    <p style="font-family:'Space Mono',monospace;font-size:0.82rem;color:var(--text);line-height:1.8;">"LeBron James is a co-owner of KING HEALTH and receives equity compensation. This content reflects his genuine experience and does not constitute medical advice."</p>
+  </div>
+
+  <ul class="compliance-list">
+    <li>GLP-1 content: zero compounding claims, zero sameness language, zero before/after imagery that implies guaranteed outcomes</li>
+    <li>Performance framing approved: "optimize," "improve," "support" — not "cure," "treat," "guarantee"</li>
+    <li>All LeBron health-data posts pre-cleared by KING HEALTH Medical Review Committee (48-hour turnaround)</li>
+    <li>NBA marketing rules during active season: consult with NBA League office before any in-season content activation</li>
+    <li>Patient testimonials: HIPAA-compliant consent required; no outcomes-focused testimonials without substantiation protocol</li>
+    <li>FTC Material Connection: Klutch Sports network activations require the same ownership disclosure as direct LeBron content</li>
+    <li>RPM data: separate consent layer for wearable data integration; not used for any content without explicit patient permission</li>
+  </ul>
+
+  <div class="callout-red">
+    <div style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--red);margin-bottom:0.5rem">Risk: Audience Expectation Gap</div>
+    <p style="font-size:0.88rem;line-height:1.8">LeBron's audience expects elite-athlete content. The risk: primary care telehealth feels ordinary by comparison. Mitigation: never position KING HEALTH as "a doctor's office." Position it as <em>LeBron's health operating system</em> — the infrastructure behind the performance, now accessible. The framing is always performance-first, clinical-second.</p>
+  </div>
+</section>
+
+<!-- EQUITY -->
+<section id="equity">
+  <span class="section-label">JV Structure</span>
+  <h2 class="section-title">Equity & Commitment</h2>
+
+  <div class="equity-row">
+    <div class="equity-item">
+      <span class="equity-label">Equity Stake</span>
+      <span class="equity-val">6%</span>
+      <div class="equity-desc">In COMMONGROUND parent entity. +2% board seat premium available if LeBron elected Lead Celebrity (recommended).</div>
+    </div>
+    <div class="equity-item">
+      <span class="equity-label">Content Commitment</span>
+      <span class="equity-val">2×/qtr</span>
+      <div class="equity-desc">Minimum 2 long-form pieces per quarter via Uninterrupted. Equity vesting contingent on delivery.</div>
+    </div>
+    <div class="equity-item">
+      <span class="equity-label">Network Activation</span>
+      <span class="equity-val">1×/qtr</span>
+      <div class="equity-desc">1 Klutch Sports network activation per quarter. Athletes, agents, team staff.</div>
+    </div>
+    <div class="equity-item">
+      <span class="equity-label">Community Events</span>
+      <span class="equity-val">1×/yr</span>
+      <div class="equity-desc">1 in-person community health event per year minimum, anchored in Akron or LA.</div>
+    </div>
+  </div>
+
+  <div class="callout-accent">
+    <p style="font-size:0.9rem;line-height:1.8"><strong style="color:var(--accent)">Board Seat Recommendation:</strong> LeBron is the only celebrity in this portfolio with the business credibility (SpringHill, Liverpool, Klutch) to serve as a functioning board member rather than a figurehead. The Lead Celebrity + Board Seat structure gives him governance authority and investment alignment that strengthens the JV from an institutional investor perspective. This is the pitch: not "LeBron endorses our healthcare company" — but "LeBron runs this healthcare company, and he brought us as his clinical infrastructure."</p>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div class="footer-brand">KING HEALTH™ — Brand Identity Document</div>
+    <div style="font-family:'Space Mono',monospace;font-size:0.55rem;color:var(--muted);margin-top:0.25rem">Confidential · COMMONGROUND JV · May 2026</div>
+  </div>
+  <div class="footer-parent">A COMMONGROUND™ Sub-Brand</div>
+</footer>
+
+</body>
+</html>

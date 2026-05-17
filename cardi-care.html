@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CARDI CARE™ — Brand Identity & Strategy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#13121E;
+  --surface:#1C1A2C;
+  --surface2:#221F33;
+  --accent:#C24558;
+  --accent-dim:rgba(194,69,88,0.07);
+  --accent-border:rgba(194,69,88,0.25);
+  --gold:#DF8C12;
+  --green:#4D6E36;
+  --text:#F2EAD8;
+  --muted:#8890A8;
+  --border:#2A2840;
+  --parent:#DF8C12;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(19,18,30,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-parent{font-family:'Space Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--parent)}
+.nav-brand{font-family:'Bebas Neue',cursive;font-size:1.5rem;color:var(--accent);letter-spacing:0.05em}
+.nav-back{font-family:'Space Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);text-decoration:none;transition:color 0.2s}
+.nav-back:hover{color:var(--accent)}
+
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:6rem 4rem 4rem;background:radial-gradient(ellipse at 80% 20%, rgba(194,69,88,0.09) 0%, transparent 55%),radial-gradient(ellipse at 10% 80%, rgba(194,69,88,0.04) 0%, transparent 50%),var(--bg);position:relative;overflow:hidden}
+#hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(255,255,255,0.008) 79px,rgba(255,255,255,0.008) 80px);pointer-events:none}
+.hero-overline{font-family:'Space Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--accent);margin-bottom:1.5rem}
+.hero-headline{font-family:'Bebas Neue',cursive;font-size:clamp(5rem,12vw,10rem);line-height:0.88;color:var(--text);letter-spacing:0.02em;margin-bottom:0.5rem}
+.hero-tm{font-family:'Bebas Neue',cursive;font-size:clamp(1.5rem,3vw,2.5rem);color:var(--accent);vertical-align:super;letter-spacing:0.04em}
+.hero-tagline{font-size:clamp(1rem,2vw,1.4rem);color:var(--muted);font-weight:300;margin:1.5rem 0 3rem;max-width:600px;line-height:1.4;font-style:italic}
+.hero-meta{display:flex;gap:2rem;flex-wrap:wrap}
+.meta-item{border-left:2px solid var(--accent);padding-left:1rem}
+.meta-label{font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);display:block;margin-bottom:0.25rem}
+.meta-val{font-family:'Bebas Neue',cursive;font-size:1.6rem;color:var(--accent);line-height:1}
+
+section{padding:5rem 4rem;border-bottom:1px solid var(--border);scroll-margin-top:56px}
+.section-label{font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--accent);margin-bottom:1rem;display:block}
+.section-title{font-family:'Bebas Neue',cursive;font-size:clamp(2.5rem,5vw,4rem);color:var(--text);line-height:1;margin-bottom:2rem;letter-spacing:0.02em}
+.subsection-title{font-family:'Bebas Neue',cursive;font-size:clamp(1.5rem,3vw,2.2rem);color:var(--text);margin:2.5rem 0 1rem;letter-spacing:0.02em}
+
+.card{background:var(--surface);border:1px solid var(--border);padding:2rem;margin-bottom:1.5rem}
+.card-accent-left{border-left:3px solid var(--accent)}
+.callout-accent{background:var(--accent-dim);border:1px solid var(--accent-border);border-left:4px solid var(--accent);padding:1.5rem 2rem;margin:1.5rem 0}
+.callout-green{background:rgba(77,110,54,0.08);border:1px solid var(--green);border-left:4px solid var(--green);padding:1.5rem 2rem;margin:1.5rem 0}
+.callout-warn{background:rgba(223,140,18,0.07);border:1px solid rgba(223,140,18,0.25);border-left:4px solid var(--gold);padding:1.5rem 2rem;margin:1.5rem 0}
+
+.principle-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1.5rem 0}
+.principle{background:var(--surface2);border-top:2px solid var(--accent);padding:1.5rem;transition:transform 0.2s}
+.principle:hover{transform:translateY(-2px)}
+.principle h4{font-family:'Bebas Neue',cursive;font-size:1.4rem;color:var(--accent);margin-bottom:0.5rem;letter-spacing:0.05em}
+.principle p{font-size:0.82rem;color:var(--muted);line-height:1.5}
+
+.protocol-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin:1.5rem 0}
+.protocol-card{background:var(--surface2);border:1px solid var(--border);padding:1.5rem}
+.protocol-card.hero-cat{border-color:var(--accent);background:var(--accent-dim)}
+.protocol-label{font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);margin-bottom:0.5rem;display:block}
+.protocol-name{font-family:'Bebas Neue',cursive;font-size:1.5rem;letter-spacing:0.04em;color:var(--text);margin-bottom:0.4rem}
+.protocol-card.hero-cat .protocol-name{color:var(--accent)}
+
+.content-pillars{display:flex;flex-direction:column;gap:1rem;margin:1.5rem 0}
+.pillar{display:flex;gap:1.25rem;align-items:flex-start;padding:1.25rem;border:1px solid var(--border);background:var(--surface)}
+.pillar-num{font-family:'Bebas Neue',cursive;font-size:2.2rem;color:var(--accent);line-height:1;min-width:2rem}
+.pillar-body h4{font-size:0.9rem;color:var(--text);font-weight:600;margin-bottom:0.4rem}
+.pillar-body p{font-size:0.82rem;color:var(--muted);line-height:1.6}
+
+.activation-box{border:1px solid var(--accent);background:var(--accent-dim);padding:2.5rem;margin:1.5rem 0}
+.activation-label{font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--accent);margin-bottom:1rem;display:block}
+.activation-name{font-family:'Bebas Neue',cursive;font-size:clamp(2rem,5vw,3.5rem);color:var(--text);letter-spacing:0.04em;margin-bottom:1rem;line-height:1}
+.activation-desc{font-size:0.9rem;color:var(--muted);line-height:1.8;max-width:700px}
+
+.timeline-steps{display:flex;flex-direction:column;gap:0;margin:1.5rem 0}
+.timeline-step{display:flex;gap:1.5rem;align-items:flex-start;padding:1.25rem 1.5rem;border:1px solid var(--border);border-top:none}
+.timeline-step:first-child{border-top:1px solid var(--border)}
+.step-day{font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--accent);min-width:60px;padding-top:0.15rem}
+.step-body h4{font-size:0.88rem;color:var(--text);font-weight:600;margin-bottom:0.25rem}
+.step-body p{font-size:0.8rem;color:var(--muted);line-height:1.5}
+
+.compliance-list{list-style:none;display:flex;flex-direction:column;gap:0.5rem;margin:1rem 0}
+.compliance-list li{font-size:0.85rem;color:var(--text);padding:0.75rem 1rem;border:1px solid var(--border);background:var(--surface);display:flex;gap:0.75rem;align-items:flex-start;line-height:1.5}
+.compliance-list li::before{content:'→';color:var(--accent);font-family:'Space Mono',monospace;font-size:0.7rem;flex-shrink:0;margin-top:0.1rem}
+
+.equity-row{display:flex;gap:2rem;flex-wrap:wrap;margin:1.5rem 0}
+.equity-item{flex:1;min-width:200px;background:var(--surface2);padding:1.5rem;border-top:2px solid var(--accent)}
+.equity-label{font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);display:block;margin-bottom:0.5rem}
+.equity-val{font-family:'Bebas Neue',cursive;font-size:2rem;color:var(--accent);line-height:1;display:block;margin-bottom:0.4rem}
+.equity-desc{font-size:0.8rem;color:var(--muted);line-height:1.5}
+
+table{width:100%;border-collapse:collapse;font-size:0.85rem;margin:1.5rem 0}
+thead tr{background:var(--surface2)}
+thead th{font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);padding:0.85rem 1rem;text-align:left;border-bottom:1px solid var(--accent-border)}
+tbody tr{border-bottom:1px solid var(--border)}
+tbody tr:hover{background:rgba(255,255,255,0.02)}
+td{padding:0.85rem 1rem;vertical-align:top;color:var(--text);line-height:1.5}
+td strong{color:var(--accent)}
+
+.lang-badge{display:inline-block;font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.1em;padding:0.15rem 0.5rem;border-radius:2px;background:rgba(194,69,88,0.15);color:var(--accent);border:1px solid var(--accent-border);margin-right:0.4rem}
+
+footer{padding:3rem 4rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-brand{font-family:'Space Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted)}
+.footer-parent{font-family:'Space Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--parent)}
+
+@media(max-width:768px){
+  section,#hero{padding:3rem 1.5rem}
+  nav{padding:0 1.5rem}
+  footer{padding:2rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div>
+    <div class="nav-parent">COMMONGROUND™ / Sub-Brand</div>
+    <div class="nav-brand">CARDI CARE™</div>
+  </div>
+  <a class="nav-back" href="index.html">← Back to GTM</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-overline">COMMONGROUND™ Sub-Brand · Cardi B · Est. 2026</div>
+  <div class="hero-headline">CARDI<br>CARE<span class="hero-tm">™</span></div>
+  <p class="hero-tagline">"Real talk. Real doctors. In your language."</p>
+  <div class="hero-meta">
+    <div class="meta-item">
+      <span class="meta-label">Equity Stake</span>
+      <span class="meta-val">6%</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Launch Sequence</span>
+      <span class="meta-val">Day 41</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Monthly Price</span>
+      <span class="meta-val">$52</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Languages</span>
+      <span class="meta-val">EN + ES</span>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND IDENTITY -->
+<section id="identity">
+  <span class="section-label">Brand Identity</span>
+  <h2 class="section-title">The Brand</h2>
+
+  <div class="card card-accent-left">
+    <p style="font-size:1rem;line-height:1.8;margin-bottom:1rem"><strong style="color:var(--accent)">Brand Positioning:</strong> CARDI CARE is radical-authenticity healthcare — built for the Latina and Black woman who navigates institutions that were not designed for her and has been doing it alone. The lowest-priced tier in the portfolio is not an accident: this is where COMMONGROUND's access mandate is most concentrated. CARDI CARE is the SPEAK Act in action.</p>
+    <p style="font-size:0.9rem;color:var(--muted);line-height:1.7">Cardi B has spoken publicly about postpartum depression, about navigating healthcare while working-class and uninsured, about the exhaustion of being a Latina woman trying to get heard in a system that defaults to dismissal. She does not need a content strategy — she needs a compliance guardrail and a clinician she trusts. That is CARDI CARE's formula. Unscripted. Bilingual. Unfiltered within FTC/FDA limits.</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0">
+    <div>
+      <h3 class="subsection-title">Voice & Tone</h3>
+      <div class="callout-accent">
+        <p style="font-size:0.9rem;line-height:1.7"><strong style="color:var(--accent)">Voice archetype:</strong> Your cousin who worked her way through nursing school and tells it exactly as it is. Zero clinical condescension. Zero respectability politics. She code-switches fluently between Bronx English and South Bronx Spanish — and she does not need to pick one to be taken seriously.</p>
+      </div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;margin-top:1rem">
+        <li style="font-size:0.85rem;color:var(--text);padding:0.6rem 0;border-bottom:1px solid var(--border)">✓ <strong>Say:</strong> "No judgment. No jargon. Just your health."</li>
+        <li style="font-size:0.85rem;color:var(--text);padding:0.6rem 0;border-bottom:1px solid var(--border)">✗ <strong>Never:</strong> Respectability-coded health advice. "Proper" health language.</li>
+        <li style="font-size:0.85rem;color:var(--text);padding:0.6rem 0;border-bottom:1px solid var(--border)">✓ <strong>Say:</strong> "Real doctors. Real talk. In the language you think in."</li>
+        <li style="font-size:0.85rem;color:var(--text);padding:0.6rem 0">✗ <strong>Never:</strong> Stigmatizing mental health language. Poverty-narratives. Deficit framing.</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="subsection-title">Brand Personality</h3>
+      <div class="principle-grid" style="grid-template-columns:1fr 1fr">
+        <div class="principle">
+          <h4>Unfiltered</h4>
+          <p>Cardi talks about her health the way she talks about everything — raw, real, zero pretense. The brand takes that energy and puts compliance guardrails around it.</p>
+        </div>
+        <div class="principle">
+          <h4>Bilingual</h4>
+          <p>Spanish is a primary language — not a translated afterthought. Every touchpoint exists simultaneously in English and Spanish.</p>
+        </div>
+        <div class="principle">
+          <h4>Accessible</h4>
+          <p>The most affordable sub-brand. 55% community-tier patients. SPEAK Act alignment. This is where access is most structurally important.</p>
+        </div>
+        <div class="principle">
+          <h4>Fearless</h4>
+          <p>Cardi publicly discussed postpartum depression before it was mainstream. CARDI CARE destigmatizes every conversation she has already opened.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout-green">
+    <div style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--green);margin-bottom:0.5rem">SPEAK Act Alignment — February 2026</div>
+    <p style="font-size:0.88rem;line-height:1.8">The SPEAK Act mandates language access in telehealth for Limited English Proficiency (LEP) patients. CARDI CARE is the most SPEAK Act-aligned sub-brand in the portfolio by design. Spanish as a primary (not translated) content and care language. All patient intake materials, consent forms, and clinical communications in English and Spanish simultaneously. Target: <strong style="color:var(--text)">30% of CARDI CARE patients are LEP patients</strong> at Day 90. This unlocks a payer pool that most telehealth brands have not touched.</p>
+  </div>
+</section>
+
+<!-- AUDIENCE -->
+<section id="audience">
+  <span class="section-label">Target Audience</span>
+  <h2 class="section-title">Who This Is For</h2>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin:1.5rem 0">
+    <div style="background:var(--surface);border:1px solid var(--border);padding:1.75rem">
+      <span style="font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);margin-bottom:0.75rem;display:block">Primary</span>
+      <h3 style="font-family:'Bebas Neue',cursive;font-size:1.6rem;color:var(--text);margin-bottom:0.75rem">Latina Women 18–40</h3>
+      <p style="font-size:0.85rem;color:var(--muted);line-height:1.7">The Bronx, Houston, Miami demographics where Cardi's cultural signal is strongest. Working class to middle class. Cardi's audience is the most linguistically diverse in the portfolio — bilingual is the baseline expectation, not a feature. Women who have navigated healthcare in a language that is not their first, or for whom healthcare access has always felt like a bureaucratic obstacle course.</p>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);padding:1.75rem">
+      <span style="font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);margin-bottom:0.75rem;display:block">Secondary</span>
+      <h3 style="font-family:'Bebas Neue',cursive;font-size:1.6rem;color:var(--text);margin-bottom:0.75rem">Black Women 18–40</h3>
+      <p style="font-size:0.85rem;color:var(--muted);line-height:1.7">Cardi's audience is not monocultural — her core is multiracial and multiethnic. Black women in the same working-class, urban, young demographic. The CARDI CARE positioning (radical authenticity, zero condescension, accessible pricing) resonates identically across Black and Latina women in this cohort.</p>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);padding:1.75rem">
+      <span style="font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);margin-bottom:0.75rem;display:block">Tertiary</span>
+      <h3 style="font-family:'Bebas Neue',cursive;font-size:1.6rem;color:var(--text);margin-bottom:0.75rem">LEP Patients (SPEAK Act)</h3>
+      <p style="font-size:0.85rem;color:var(--muted);line-height:1.7">Limited English Proficiency patients who have been structurally excluded from telehealth due to language barriers. CARDI CARE's Spanish-primary care model is a legal mandate and a market opportunity simultaneously. The SPEAK Act enforcement wave in 2026 creates a payer incentive for LEP-first platforms — CARDI CARE is positioned to capture that incentive ahead of any competitor.</p>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:2rem">
+    <div style="border:1px solid var(--border);padding:1.5rem">
+      <div style="font-family:'Bebas Neue',cursive;font-size:2.5rem;color:var(--accent);line-height:1;margin-bottom:0.4rem">65M</div>
+      <div style="font-size:0.8rem;color:var(--muted);line-height:1.5">Cardi B's combined social reach — the most TikTok-dominant audience in the portfolio</div>
+    </div>
+    <div style="border:1px solid var(--border);padding:1.5rem">
+      <div style="font-family:'Bebas Neue',cursive;font-size:2.5rem;color:var(--accent);line-height:1;margin-bottom:0.4rem">$52</div>
+      <div style="font-size:0.8rem;color:var(--muted);line-height:1.5">Lowest Care Tier price in portfolio — deliberate access positioning, not margin compromise</div>
+    </div>
+    <div style="border:1px solid var(--border);padding:1.5rem">
+      <div style="font-family:'Bebas Neue',cursive;font-size:2.5rem;color:var(--accent);line-height:1;margin-bottom:0.4rem">55%</div>
+      <div style="font-size:0.8rem;color:var(--muted);line-height:1.5">Community-tier patients — highest free-tier allocation in portfolio, building the largest patient database</div>
+    </div>
+    <div style="border:1px solid var(--border);padding:1.5rem">
+      <div style="font-family:'Bebas Neue',cursive;font-size:2.5rem;color:var(--accent);line-height:1;margin-bottom:0.4rem">20+</div>
+      <div style="font-size:0.8rem;color:var(--muted);line-height:1.5">OpenLoop clinical protocols at launch — behavioral health, reproductive health, and primary care</div>
+    </div>
+  </div>
+</section>
+
+<!-- CLINICAL -->
+<section id="clinical">
+  <span class="section-label">Clinical Architecture</span>
+  <h2 class="section-title">Health Categories</h2>
+
+  <div class="protocol-grid">
+    <div class="protocol-card hero-cat">
+      <span class="protocol-label">Hero Category</span>
+      <div class="protocol-name">Behavioral / Mental Health</div>
+      <p style="font-size:0.82rem;color:var(--muted);line-height:1.5">Cardi's public discussion of postpartum depression has already opened the door. Behavioral health as primary care — not specialty psychiatry as entry point. Anxiety, depression, postpartum, stress management. Destigmatization through Cardi's authentic voice is the clinical conversion mechanism.</p>
+    </div>
+    <div class="protocol-card hero-cat">
+      <span class="protocol-label">Hero Category</span>
+      <div class="protocol-name">Reproductive Health</div>
+      <p style="font-size:0.82rem;color:var(--muted);line-height:1.5">Contraception, STI screening, cervical cancer screening, family planning. The highest-access-gap reproductive health category for Latina and Black women under 40. Telehealth removes geographic and cultural barriers to reproductive care access.</p>
+    </div>
+    <div class="protocol-card">
+      <span class="protocol-label">Secondary Category</span>
+      <div class="protocol-name">Women's Primary Care</div>
+      <p style="font-size:0.82rem;color:var(--muted);line-height:1.5">Annual exams, preventive screenings, chronic condition management (diabetes, hypertension — disproportionate in Latina women). Bilingual intake is the core differentiator. A Latina woman should never again have to describe her symptoms in a language she doesn't think in.</p>
+    </div>
+    <div class="protocol-card">
+      <span class="protocol-label">Secondary Category</span>
+      <div class="protocol-name">Pediatric Telehealth</div>
+      <p style="font-size:0.82rem;color:var(--muted);line-height:1.5">Cardi's maternal identity (three children, public postpartum experience) extends naturally to pediatric access. Bilingual pediatric intake. Parents who are LEP patients need pediatric care in their primary language too. Minor acute care, developmental screening, vaccine consultations.</p>
+    </div>
+    <div class="protocol-card">
+      <span class="protocol-label">SPEAK Act Category</span>
+      <div class="protocol-name">Spanish-Primary Care</div>
+      <p style="font-size:0.82rem;color:var(--muted);line-height:1.5"><span class="lang-badge">EN</span><span class="lang-badge">ES</span>All clinical documentation, consent forms, and patient-facing materials exist simultaneously in English and Spanish. Clinician roster includes native Spanish-speaking providers. SPEAK Act compliance as business advantage — LEP payer pool unlocked ahead of competitors.</p>
+    </div>
+    <div class="protocol-card">
+      <span class="protocol-label">Tertiary Category</span>
+      <div class="protocol-name">Postpartum Care</div>
+      <p style="font-size:0.82rem;color:var(--muted);line-height:1.5">The specific gap Cardi has named publicly. Postpartum depression screening, lactation support, postpartum physical health. The most personal health credential in the portfolio: Cardi went through it, she is talking about it, and CARDI CARE is the infrastructure that helps the next woman get through it faster.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section id="content">
+  <span class="section-label">Content & Trust Strategy</span>
+  <h2 class="section-title">The Content System</h2>
+
+  <p style="font-size:0.95rem;color:var(--muted);line-height:1.8;max-width:760px;margin-bottom:2.5rem">Cardi B does not need a content strategy. She needs a <strong style="color:var(--text)">compliance framework</strong> and a clinician she trusts. The content system is built around one insight: Cardi's most viral health moments — postpartum depression, her healthcare system frustrations, her advocacy for accessible care — happened without any brand attached. CARDI CARE is the brand that finally matches her voice.</p>
+
+  <div class="content-pillars">
+    <div class="pillar">
+      <div class="pillar-num">01</div>
+      <div class="pillar-body">
+        <h4>Cardi Checks In — Live Unscripted Consult Series</h4>
+        <p>Cardi goes live on TikTok and Instagram with a CARDI CARE clinician, unscripted. Real health question. Real clinical response. Real conversation in both English and Spanish simultaneously. The first episode: postpartum health check, 18 months after her third child. No script. The clinician is briefed; the conversation is not. This is the format that will generate the most authentic, shareable content in the portfolio.</p>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">02</div>
+      <div class="pillar-body">
+        <h4>Real Patients, Real Talk — Bilingual Community Series</h4>
+        <p>Patient community stories featuring Latina and Black women from the Bronx, Houston, and Miami. HIPAA-compliant. Narrative-focused: the experience of finally being heard in their own language, by a clinician who knew their community's specific health history. Distributed bilingually — English and Spanish cuts released simultaneously. Not separate — the same story, the same person, in both languages.</p>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">03</div>
+      <div class="pillar-body">
+        <h4>48-Hour Clinician Q&A — "Ask CARDI CARE"</h4>
+        <p>48-hour open Q&A with a CARDI CARE clinician answering Cardi's community's health questions in real time — on TikTok, Instagram, and CARDI CARE's own platform. Questions submitted by Cardi's audience. Answers by clinical team. Moderated by compliance. This is the highest-engagement health education format in social media and nobody in healthcare has done it at Cardi's scale.</p>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">04</div>
+      <div class="pillar-body">
+        <h4>Postpartum & Mental Health Destigmatization Series</h4>
+        <p>A recurring content series that continues the conversation Cardi has already started. Short-form: "5 signs of postpartum depression that aren't sadness." "What a telehealth mental health intake actually looks like." "Why Latinas underreport depression — and what we're doing about it." Clinical accuracy, Cardi's voice, compliance-cleared. This content does not need to be linked to her directly to drive CARDI CARE signups — the alignment is organic.</p>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">05</div>
+      <div class="pillar-body">
+        <h4>Bronx + Houston + Miami Community Activation</h4>
+        <p>One in-person community health event per quarter in Cardi's home communities. Free bilingual health screenings, postpartum resources, behavioral health intake, CARDI CARE onboarding. Partnerships with local Latina-serving health organizations (promotoras, community health workers). The street-level trust-building that digital-only healthcare cannot replicate.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="subsection-title">Distribution Channels</h3>
+  <table>
+    <thead>
+      <tr><th>Channel</th><th>Format</th><th>Language</th><th>Cadence</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Cardi B TikTok</strong></td><td>"Cardi Checks In" live, short-form health clips, Q&A prompts</td><td><span class="lang-badge">EN</span><span class="lang-badge">ES</span></td><td>3–4x/week at launch</td></tr>
+      <tr><td><strong>Cardi B Instagram</strong></td><td>Patient stories, clinician features, bilingual health facts</td><td><span class="lang-badge">EN</span><span class="lang-badge">ES</span></td><td>Daily during launch</td></tr>
+      <tr><td><strong>People en Español</strong></td><td>Feature story: "Cardi B wants to fix how Latinas get healthcare"</td><td><span class="lang-badge">ES</span><span class="lang-badge">EN</span></td><td>Launch week press</td></tr>
+      <tr><td><strong>CARDI CARE Platform</strong></td><td>48-hour clinician Q&A, patient community forum (bilingual)</td><td><span class="lang-badge">EN</span><span class="lang-badge">ES</span></td><td>Weekly</td></tr>
+      <tr><td><strong>Community Events</strong></td><td>Bronx / Houston / Miami in-person health activations</td><td><span class="lang-badge">EN</span><span class="lang-badge">ES</span></td><td>1×/quarter</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- LAUNCH ACTIVATION -->
+<section id="activation">
+  <span class="section-label">Launch Activation</span>
+  <h2 class="section-title">Cardi Checks In</h2>
+
+  <div class="activation-box">
+    <span class="activation-label">Hero Launch Event · Day 41</span>
+    <div class="activation-name">CARDI CHECKS IN</div>
+    <p class="activation-desc">Multi-part TikTok and Instagram series. Cardi B documents getting her annual health panel and has a telehealth consult for a real health concern (not scripted). The series concludes with a 48-hour open Q&A with a CARDI CARE clinician answering her community's health questions in real time. <span class="lang-badge">EN</span><span class="lang-badge">ES</span> Fully bilingual: English and Spanish released simultaneously — not dubbed, <strong style="color:var(--text)">recorded in both languages by native speakers.</strong></p>
+  </div>
+
+  <div class="timeline-steps">
+    <div class="timeline-step">
+      <div class="step-day">Day 38</div>
+      <div class="step-body">
+        <h4>Teaser — "Something real is coming"</h4>
+        <p>Cardi posts a 30-second bilingual teaser. No brand reveal. Just Cardi talking directly to camera about the last time she felt dismissed at a doctor's office. Waitlist opens (bilingual landing page).</p>
+      </div>
+    </div>
+    <div class="timeline-step">
+      <div class="step-day">Day 39–40</div>
+      <div class="step-body">
+        <h4>Clinician introductions — bilingual</h4>
+        <p>3 clinicians: Black Latina OB-GYN, bilingual Latina psychiatrist, Latina primary care physician. "Meet who will see you." Distributed in English and Spanish simultaneously.</p>
+      </div>
+    </div>
+    <div class="timeline-step">
+      <div class="step-day">Day 41</div>
+      <div class="step-body">
+        <h4>CARDI CARE goes live — "Cardi Checks In" Part 1</h4>
+        <p>Patient intake opens. "Cardi Checks In" Episode 1 drops: Cardi's annual health panel on camera, unscripted. People en Español feature publishes simultaneously.</p>
+      </div>
+    </div>
+    <div class="timeline-step">
+      <div class="step-day">Day 42</div>
+      <div class="step-body">
+        <h4>"Cardi Checks In" Part 2 — Live Q&A</h4>
+        <p>48-hour bilingual Q&A on TikTok Live and Instagram Live. CARDI CARE clinician answers Cardi's community's questions in real time. Compliance liaison present throughout. Most shareable health content format in the portfolio.</p>
+      </div>
+    </div>
+    <div class="timeline-step">
+      <div class="step-day">Day 44</div>
+      <div class="step-body">
+        <h4>Community health event — Bronx</h4>
+        <p>In-person bilingual health activation in the South Bronx. Free screenings, behavioral health intake, CARDI CARE onboarding. Cardi presence (in-person or live video). Partnerships with local Latina-serving community health organizations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPLIANCE -->
+<section id="compliance">
+  <span class="section-label">FTC / FDA Compliance</span>
+  <h2 class="section-title">Legal Architecture</h2>
+
+  <div class="card card-accent-left">
+    <div style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);margin-bottom:0.5rem">Mandatory FTC Disclosure — All Commercial Content</div>
+    <p style="font-family:'Space Mono',monospace;font-size:0.82rem;color:var(--text);line-height:1.8;">"Cardi B is a co-owner of CARDI CARE and receives equity compensation. This content reflects her genuine experience and does not constitute medical advice."<br><br><em style="color:var(--muted)">[Spanish]</em> "Cardi B es copropietaria de CARDI CARE y recibe compensación en acciones. Este contenido refleja su experiencia genuina y no constituye consejo médico."</p>
+  </div>
+
+  <ul class="compliance-list">
+    <li>Trained compliance liaison on Cardi's team — authority to flag content before it is retweeted or reposted by CARDI CARE accounts. This is the single most important structural protection given Cardi's posting volume and spontaneity.</li>
+    <li>Behavioral health content: destigmatization framing approved. "Support," "talk to someone," "you don't have to handle this alone." Not "treats depression" or "cures anxiety."</li>
+    <li>Live content protocol: clinical staff monitors all live sessions with authority to privately message a stop-flag to the clinician if a claim emerges that requires real-time correction</li>
+    <li>Spanish-language content: certified medical interpreters translate all clinical materials — not automated translation. Liability exposure from a mistranslated consent form is existential.</li>
+    <li>All CARDI CARE bilingual content: reviewed by both English and Spanish compliance leads before publication</li>
+    <li>Postpartum content: reviewed by Board-certified psychiatrist before publication. Any mention of medication (including postpartum antidepressants) requires standard disclaimer language.</li>
+    <li>SPEAK Act compliance documentation: maintain LEP patient records per federal guidelines; language access plan filed with clinical compliance officer</li>
+  </ul>
+
+  <div class="callout-warn">
+    <div style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--gold);margin-bottom:0.5rem">Risk: Spontaneous Off-Platform Claims</div>
+    <p style="font-size:0.88rem;line-height:1.8">Cardi B posts at volume and spontaneity that no other celebrity in this portfolio matches. The compliance risk is not a single launch event — it is the ongoing liability of a high-volume, authentic poster who owns equity in a healthcare company. Mitigation: dedicated compliance liaison with a retainer structure, clear escalation protocol, and explicit contractual language that Cardi's team will run CARDI CARE brand amplification through compliance before repost. This is the most operationally complex compliance relationship in the JV.</p>
+  </div>
+</section>
+
+<!-- EQUITY -->
+<section id="equity">
+  <span class="section-label">JV Structure</span>
+  <h2 class="section-title">Equity & Commitment</h2>
+
+  <div class="equity-row">
+    <div class="equity-item">
+      <span class="equity-label">Equity Stake</span>
+      <span class="equity-val">6%</span>
+      <div class="equity-desc">In COMMONGROUND parent entity. Vesting contingent on content output and compliance protocol adherence.</div>
+    </div>
+    <div class="equity-item">
+      <span class="equity-label">Content Commitment</span>
+      <span class="equity-val">2×/qtr</span>
+      <div class="equity-desc">Minimum 2 CARDI CARE content pieces per quarter (includes "Cardi Checks In" episodes). Bilingual required.</div>
+    </div>
+    <div class="equity-item">
+      <span class="equity-label">Q&A Sessions</span>
+      <span class="equity-val">1×/qtr</span>
+      <div class="equity-desc">1 live bilingual clinician Q&A per quarter, distributed across Cardi's platforms. Compliance liaison required for all live sessions.</div>
+    </div>
+    <div class="equity-item">
+      <span class="equity-label">Community Events</span>
+      <span class="equity-val">1×/yr</span>
+      <div class="equity-desc">1 community health event per year in Bronx, Houston, or Miami. Bilingual. Cardi presence required.</div>
+    </div>
+  </div>
+
+  <div class="callout-accent">
+    <p style="font-size:0.9rem;line-height:1.8"><strong style="color:var(--accent)">The Access Thesis:</strong> CARDI CARE is the most structurally important sub-brand in the COMMONGROUND portfolio from a mission standpoint. The $52/month price point and 55% community-tier allocation mean this is where COMMONGROUND's access mandate is most concentrated. The financial model works because CARDI CARE's patient database is the largest and youngest — highest lifetime value, lowest acquisition cost per patient (Cardi's organic reach is enormous), and a SPEAK Act compliance advantage that will attract payer partnerships competitors cannot match.</p>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div class="footer-brand">CARDI CARE™ — Brand Identity Document</div>
+    <div style="font-family:'Space Mono',monospace;font-size:0.55rem;color:var(--muted);margin-top:0.25rem">Confidential · COMMONGROUND JV · May 2026</div>
+  </div>
+  <div class="footer-parent">A COMMONGROUND™ Sub-Brand</div>
+</footer>
+
+</body>
+</html>

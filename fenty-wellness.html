@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FENTY WELLNESS™ — Brand Identity & Strategy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#13121E;
+  --surface:#1C1A2C;
+  --surface2:#221F33;
+  --accent:#E91E8C;
+  --accent-dim:rgba(233,30,140,0.06);
+  --accent-border:rgba(233,30,140,0.22);
+  --gold:#DF8C12;
+  --red:#C24558;
+  --green:#4D6E36;
+  --text:#F2EAD8;
+  --muted:#8890A8;
+  --border:#2A2840;
+  --parent:#DF8C12;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(19,18,30,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-parent{font-family:'Space Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--parent)}
+.nav-brand{font-family:'Bebas Neue',cursive;font-size:1.5rem;color:var(--accent);letter-spacing:0.05em}
+.nav-back{font-family:'Space Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);text-decoration:none;transition:color 0.2s}
+.nav-back:hover{color:var(--accent)}
+
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:6rem 4rem 4rem;background:radial-gradient(ellipse at 80% 20%, rgba(233,30,140,0.07) 0%, transparent 55%),radial-gradient(ellipse at 10% 80%, rgba(233,30,140,0.03) 0%, transparent 50%),var(--bg);position:relative;overflow:hidden}
+#hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(255,255,255,0.008) 79px,rgba(255,255,255,0.008) 80px);pointer-events:none}
+.hero-overline{font-family:'Space Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--accent);margin-bottom:1.5rem}
+.hero-headline{font-family:'Bebas Neue',cursive;font-size:clamp(5rem,12vw,10rem);line-height:0.88;color:var(--text);letter-spacing:0.02em;margin-bottom:0.5rem}
+.hero-tm{font-family:'Bebas Neue',cursive;font-size:clamp(1.5rem,3vw,2.5rem);color:var(--accent);vertical-align:super;letter-spacing:0.04em}
+.hero-tagline{font-size:clamp(1rem,2vw,1.4rem);color:var(--muted);font-weight:300;margin:1.5rem 0 3rem;max-width:600px;line-height:1.4;font-style:italic}
+.hero-meta{display:flex;gap:2rem;flex-wrap:wrap}
+.meta-item{border-left:2px solid var(--accent);padding-left:1rem}
+.meta-label{font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);display:block;margin-bottom:0.25rem}
+.meta-val{font-family:'Bebas Neue',cursive;font-size:1.6rem;color:var(--accent);line-height:1}
+
+section{padding:5rem 4rem;border-bottom:1px solid var(--border);scroll-margin-top:56px}
+.section-label{font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--accent);margin-bottom:1rem;display:block}
+.section-title{font-family:'Bebas Neue',cursive;font-size:clamp(2.5rem,5vw,4rem);color:var(--text);line-height:1;margin-bottom:2rem;letter-spacing:0.02em}
+.subsection-title{font-family:'Bebas Neue',cursive;font-size:clamp(1.5rem,3vw,2.2rem);color:var(--text);margin:2.5rem 0 1rem;letter-spacing:0.02em}
+
+.card{background:var(--surface);border:1px solid var(--border);padding:2rem;margin-bottom:1.5rem}
+.card-accent-left{border-left:3px solid var(--accent)}
+.callout-accent{background:var(--accent-dim);border:1px solid var(--accent-border);border-left:4px solid var(--accent);padding:1.5rem 2rem;margin:1.5rem 0}
+.callout-red{background:rgba(194,69,88,0.08);border:1px solid var(--red);border-left:4px solid var(--red);padding:1.5rem 2rem;margin:1.5rem 0}
+.callout-green{background:rgba(77,110,54,0.08);border:1px solid var(--green);border-left:4px solid var(--green);padding:1.5rem 2rem;margin:1.5rem 0}
+
+.principle-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1.5rem 0}
+.principle{background:var(--surface2);border-top:2px solid var(--accent);padding:1.5rem;transition:transform 0.2s}
+.principle:hover{transform:translateY(-2px)}
+.principle h4{font-family:'Bebas Neue',cursive;font-size:1.4rem;color:var(--accent);margin-bottom:0.5rem;letter-spacing:0.05em}
+.principle p{font-size:0.82rem;color:var(--muted);line-height:1.5}
+
+.protocol-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin:1.5rem 0}
+.protocol-card{background:var(--surface2);border:1px solid var(--border);padding:1.5rem}
+.protocol-card.hero-cat{border-color:var(--accent);background:var(--accent-dim)}
+.protocol-label{font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);margin-bottom:0.5rem;display:block}
+.protocol-name{font-family:'Bebas Neue',cursive;font-size:1.5rem;letter-spacing:0.04em;color:var(--text);margin-bottom:0.4rem}
+.protocol-card.hero-cat .protocol-name{color:var(--accent)}
+
+.content-pillars{display:flex;flex-direction:column;gap:1rem;margin:1.5rem 0}
+.pillar{display:flex;gap:1.25rem;align-items:flex-start;padding:1.25rem;border:1px solid var(--border);background:var(--surface)}
+.pillar-num{font-family:'Bebas Neue',cursive;font-size:2.2rem;color:var(--accent);line-height:1;min-width:2rem}
+.pillar-body h4{font-size:0.9rem;color:var(--text);font-weight:600;margin-bottom:0.4rem}
+.pillar-body p{font-size:0.82rem;color:var(--muted);line-height:1.6}
+
+.activation-box{border:1px solid var(--accent);background:var(--accent-dim);padding:2.5rem;margin:1.5rem 0}
+.activation-label{font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--accent);margin-bottom:1rem;display:block}
+.activation-name{font-family:'Bebas Neue',cursive;font-size:clamp(2rem,5vw,3.5rem);color:var(--text);letter-spacing:0.04em;margin-bottom:1rem;line-height:1}
+.activation-desc{font-size:0.9rem;color:var(--muted);line-height:1.8;max-width:700px}
+
+.timeline-steps{display:flex;flex-direction:column;gap:0;margin:1.5rem 0}
+.timeline-step{display:flex;gap:1.5rem;align-items:flex-start;padding:1.25rem 1.5rem;border:1px solid var(--border);border-top:none}
+.timeline-step:first-child{border-top:1px solid var(--border)}
+.step-day{font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--accent);min-width:60px;padding-top:0.15rem}
+.step-body h4{font-size:0.88rem;color:var(--text);font-weight:600;margin-bottom:0.25rem}
+.step-body p{font-size:0.8rem;color:var(--muted);line-height:1.5}
+
+.compliance-list{list-style:none;display:flex;flex-direction:column;gap:0.5rem;margin:1rem 0}
+.compliance-list li{font-size:0.85rem;color:var(--text);padding:0.75rem 1rem;border:1px solid var(--border);background:var(--surface);display:flex;gap:0.75rem;align-items:flex-start;line-height:1.5}
+.compliance-list li::before{content:'→';color:var(--accent);font-family:'Space Mono',monospace;font-size:0.7rem;flex-shrink:0;margin-top:0.1rem}
+
+.equity-row{display:flex;gap:2rem;flex-wrap:wrap;margin:1.5rem 0}
+.equity-item{flex:1;min-width:200px;background:var(--surface2);padding:1.5rem;border-top:2px solid var(--accent)}
+.equity-label{font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);display:block;margin-bottom:0.5rem}
+.equity-val{font-family:'Bebas Neue',cursive;font-size:2rem;color:var(--accent);line-height:1;display:block;margin-bottom:0.4rem}
+.equity-desc{font-size:0.8rem;color:var(--muted);line-height:1.5}
+
+table{width:100%;border-collapse:collapse;font-size:0.85rem;margin:1.5rem 0}
+thead tr{background:var(--surface2)}
+thead th{font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);padding:0.85rem 1rem;text-align:left;border-bottom:1px solid var(--accent-border)}
+tbody tr{border-bottom:1px solid var(--border)}
+tbody tr:hover{background:rgba(255,255,255,0.02)}
+td{padding:0.85rem 1rem;vertical-align:top;color:var(--text);line-height:1.5}
+td strong{color:var(--accent)}
+
+footer{padding:3rem 4rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-brand{font-family:'Space Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted)}
+.footer-parent{font-family:'Space Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--parent)}
+
+@media(max-width:768px){
+  section,#hero{padding:3rem 1.5rem}
+  nav{padding:0 1.5rem}
+  footer{padding:2rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div>
+    <div class="nav-parent">COMMONGROUND™ / Sub-Brand</div>
+    <div class="nav-brand">FENTY WELLNESS™</div>
+  </div>
+  <a class="nav-back" href="index.html">← Back to GTM</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-overline">COMMONGROUND™ Sub-Brand · Rihanna · Est. 2026</div>
+  <div class="hero-headline">FENTY<br>WELLNESS<span class="hero-tm">™</span></div>
+  <p class="hero-tagline">"Your checkup is not a chore. It is the ritual."</p>
+  <div class="hero-meta">
+    <div class="meta-item">
+      <span class="meta-label">Equity Stake</span>
+      <span class="meta-val">6%</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Launch Sequence</span>
+      <span class="meta-val">Day 36</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Monthly Price</span>
+      <span class="meta-val">$105</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Hero Category</span>
+      <span class="meta-val">Women's Health</span>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND IDENTITY -->
+<section id="identity">
+  <span class="section-label">Brand Identity</span>
+  <h2 class="section-title">The Brand</h2>
+
+  <div class="card card-accent-left">
+    <p style="font-size:1rem;line-height:1.8;margin-bottom:1rem"><strong style="color:var(--accent)">Brand Positioning:</strong> FENTY WELLNESS is luxury-accessible women's health — healthcare reframed as a ritual of self-ownership rather than a clinical obligation. The brand sits at the intersection of the Fenty Beauty ethos (radical inclusivity, editorial quality, culture-shifting) and the reality that Black women and women of the diaspora are systematically underdiagnosed, underheard, and undertreated by mainstream healthcare.</p>
+    <p style="font-size:0.9rem;color:var(--muted);line-height:1.7">Rihanna has built three global brand empires — Fenty Beauty, Savage X Fenty, Fenty Maison — each time redefining inclusivity in a category that excluded most of the world. FENTY WELLNESS applies the same logic to healthcare: if healthcare brands were designed for women who look like us, sound like us, and have our health history, what would they look like?</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0">
+    <div>
+      <h3 class="subsection-title">Voice & Tone</h3>
+      <div class="callout-accent">
+        <p style="font-size:0.9rem;line-height:1.7"><strong style="color:var(--accent)">Voice archetype:</strong> Your brilliant best friend who happens to be an OB-GYN. Warm but precise. Unapologetically Black and Caribbean. Never clinical, never condescending. She's been in the room when the system failed you — and she is done with it.</p>
+      </div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;margin-top:1rem">
+        <li style="font-size:0.85rem;color:var(--text);padding:0.6rem 0;border-bottom:1px solid var(--border)">✓ <strong>Say:</strong> "This is your health. Own it."</li>
+        <li style="font-size:0.85rem;color:var(--text);padding:0.6rem 0;border-bottom:1px solid var(--border)">✗ <strong>Never:</strong> Condescension. "For women just like you." Infantilizing health education.</li>
+        <li style="font-size:0.85rem;color:var(--text);padding:0.6rem 0;border-bottom:1px solid var(--border)">✓ <strong>Say:</strong> "Healthcare as editorial. The ritual of being well."</li>
+        <li style="font-size:0.85rem;color:var(--text);padding:0.6rem 0">✗ <strong>Never:</strong> Before/after imagery. Weight-loss framing. Anxiety-based health marketing.</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="subsection-title">Brand Personality</h3>
+      <div class="principle-grid" style="grid-template-columns:1fr 1fr">
+        <div class="principle">
+          <h4>Luxurious</h4>
+          <p>Editorial quality in every touchpoint. Healthcare that looks like a Fenty campaign.</p>
+        </div>
+        <div class="principle">
+          <h4>Inclusive</h4>
+          <p>Designed for every skin tone, every body, every cultural background of womanhood.</p>
+        </div>
+        <div class="principle">
+          <h4>Precise</h4>
+          <p>Clinical accuracy is non-negotiable. Beautiful does not mean vague.</p>
+        </div>
+        <div class="principle">
+          <h4>Sovereign</h4>
+          <p>The patient is the authority on her own body. The clinician is the expert advisor.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="subsection-title">The Fenty Brand Extension Thesis</h3>
+  <div class="callout-accent">
+    <p style="font-size:0.88rem;line-height:1.8">The risk and the opportunity are the same thing. <strong>Fenty is already a global brand trust signal.</strong> The risk is brand overextension — healthcare is a significant pivot from beauty and fashion, and a clinical underperformance reflects on the masterbrand. The opportunity is that Fenty's brand thesis (radical inclusivity, unapologetic quality for everyone the industry ignored) is <em>exactly</em> the thesis that women's healthcare is missing. The deal: FENTY WELLNESS must be clinically excellent to protect the brand. The return: if it is, Rihanna becomes the only celebrity who has redefined three industries — music, beauty, and healthcare.</p>
+  </div>
+</section>
+
+<!-- AUDIENCE -->
+<section id="audience">
+  <span class="section-label">Target Audience</span>
+  <h2 class="section-title">Who This Is For</h2>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin:1.5rem 0">
+    <div style="background:var(--surface);border:1px solid var(--border);padding:1.75rem">
+      <span style="font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);margin-bottom:0.75rem;display:block">Primary</span>
+      <h3 style="font-family:'Bebas Neue',cursive;font-size:1.6rem;color:var(--text);margin-bottom:0.75rem">Black Women 22–45</h3>
+      <p style="font-size:0.85rem;color:var(--muted);line-height:1.7">Rihanna's core audience. Professional class to working class. Women who are Fenty Beauty customers — who have already proved they trust Rihanna's curation. The crossover from beauty consumer to healthcare patient is the core conversion hypothesis.</p>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);padding:1.75rem">
+      <span style="font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);margin-bottom:0.75rem;display:block">Secondary</span>
+      <h3 style="font-family:'Bebas Neue',cursive;font-size:1.6rem;color:var(--text);margin-bottom:0.75rem">Caribbean Diaspora Women</h3>
+      <p style="font-size:0.85rem;color:var(--muted);line-height:1.7">Rihanna is Barbadian — her Caribbean identity is a primary cultural signal to diaspora communities in the US, UK, and Canada. This audience has high healthcare access gaps and strong affinity. Caribbean Creole language support is a differentiator in this segment.</p>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);padding:1.75rem">
+      <span style="font-family:'Space Mono',monospace;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);margin-bottom:0.75rem;display:block">Tertiary</span>
+      <h3 style="font-family:'Bebas Neue',cursive;font-size:1.6rem;color:var(--text);margin-bottom:0.75rem">Maternal Health Seekers</h3>
+      <p style="font-size:0.85rem;color:var(--muted);line-height:1.7">Rihanna's public pregnancy journey (documented, discussed, celebrated without apology) creates a specific permission structure for maternal and reproductive health content. Prenatal care access gap for Black women is well-documented — 3x higher maternal mortality rate — and this audience has a specific clinical need that FENTY WELLNESS can directly serve.</p>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:2rem">
+    <div style="border:1px solid var(--border);padding:1.5rem">
+      <div style="font-family:'Bebas Neue',cursive;font-size:2.5rem;color:var(--accent);line-height:1;margin-bottom:0.4rem">3×</div>
+      <div style="font-size:0.8rem;color:var(--muted);line-height:1.5">Higher maternal mortality for Black women vs. white women — the most urgent clinical gap in this portfolio</div>
+    </div>
+    <div style="border:1px solid var(--border);padding:1.5rem">
+      <div style="font-family:'Bebas Neue',cursive;font-size:2.5rem;color:var(--accent);line-height:1;margin-bottom:0.4rem">78%</div>
+      <div style="font-size:0.8rem;color:var(--muted);line-height:1.5">of Black women report being dismissed or disbelieved by their physician at least once — the trust gap this brand addresses directly</div>
+    </div>
+    <div style="border:1px solid var(--border);padding:1.5rem">
+      <div style="font-family:'Bebas Neue',cursive;font-size:2.5rem;color:var(--accent);line-height:1;margin-bottom:0.4rem">150M</div>
+      <div style="font-size:0.8rem;color:var(--muted);line-height:1.5">Rihanna's combined social reach — the largest female audience in this portfolio</div>
+    </div>
+    <div style="border:1px solid var(--border);padding:1.5rem">
+      <div style="font-family:'Bebas Neue',cursive;font-size:2.5rem;color:var(--accent);line-height:1;margin-bottom:0.4rem">22+</div>
+      <div style="font-size:0.8rem;color:var(--muted);line-height:1.5">OpenLoop clinical protocols activated for FENTY WELLNESS at launch — the largest protocol suite in the portfolio</div>
+    </div>
+  </div>
+</section>
+
+<!-- CLINICAL -->
+<section id="clinical">
+  <span class="section-label">Clinical Architecture</span>
+  <h2 class="section-title">Health Categories</h2>
+
+  <div class="protocol-grid">
+    <div class="protocol-card hero-cat">
+      <span class="protocol-label">Hero Category</span>
+      <div class="protocol-name">Women's Health / Hormone</div>
+      <p style="font-size:0.82rem;color:var(--muted);line-height:1.5">Hormonal health, menstrual health, PCOS, perimenopause, thyroid. The most underfunded, underresearched area of women's healthcare — and the one Rihanna's audience is most vocal about needing access to. Black women are disproportionately diagnosed late with fibroid disease and PCOS.</p>
+    </div>
+    <div class="protocol-card hero-cat">
+      <span class="protocol-label">Hero Category</span>
+      <div class="protocol-name">Maternal Health</div>
+      <p style="font-size:0.82rem;color:var(--muted);line-height:1.5">Prenatal, postnatal, and interconception care. Black maternal mortality crisis is the primary clinical imperative. Clinician roster: Black and Caribbean-heritage OB-GYNs and maternal health specialists. Telehealth prenatal visits dramatically increase access for Black women in maternal health deserts.</p>
+    </div>
+    <div class="protocol-card">
+      <span class="protocol-label">Secondary Category</span>
+      <div class="protocol-name">Dermatology</div>
+      <p style="font-size:0.82rem;color:var(--muted);line-height:1.5">Skin health for darker skin tones — historically undertreated in dermatology, which was founded and largely practiced without reference to melanated skin. Hyperpigmentation, chronic skin conditions, melanoma screening (rising in Black populations). Fenty Beauty audience crossover is direct.</p>
+    </div>
+    <div class="protocol-card">
+      <span class="protocol-label">Secondary Category</span>
+      <div class="protocol-name">Nutrition & Weight (GLP-1)</div>
+      <p style="font-size:0.82rem;color:var(--muted);line-height:1.5">Via OpenLoop's Season Health partnership. Framed as metabolic health and nutrition optimization — not weight loss clinic positioning. GLP-1 access for women with hormonal weight factors. FENTY WELLNESS is explicitly not a diet brand; this protocol is tucked behind a full metabolic health workup.</p>
+    </div>
+    <div class="protocol-card">
+      <span class="protocol-label">Tertiary Category</span>
+      <div class="protocol-name">Mental Health / Anxiety</div>
+      <p style="font-size:0.82rem;color:var(--muted);line-height:1.5">Women's mental health with intersectional framing — racial stress, caregiving burden, postpartum depression. Not positioned as psychiatry but as emotional health and support. Feed into YZY HEALTH referral pipeline for complex psychiatric needs.</p>
+    </div>
+    <div class="protocol-card">
+      <span class="protocol-label">Language Access</span>
+      <div class="protocol-name">Caribbean Creole + Spanish</div>
+      <p style="font-size:0.82rem;color:var(--muted);line-height:1.5">Caribbean Creole support (Haitian Creole priority) for diaspora patients. SPEAK Act compliance. Partnership with community health translators in Caribbean and Haitian diaspora communities in Miami, New York, Boston. Target: 15% of FENTY WELLNESS patients as LEP patients by Day 90.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section id="content">
+  <span class="section-label">Content & Trust Strategy</span>
+  <h2 class="section-title">The Content System</h2>
+
+  <p style="font-size:0.95rem;color:var(--muted);line-height:1.8;max-width:760px;margin-bottom:2.5rem">The FENTY WELLNESS content strategy applies Fenty Beauty's most important insight: <strong style="color:var(--text)">the category had been designed for someone else, and that someone else was tired of it.</strong> Healthcare content for Black women has been either clinical and alienating, or wellness-adjacent and vague. FENTY WELLNESS occupies neither lane. It is editorial. It is precise. It is made for the person who has been dismissed in a doctor's office and decided to be her own advocate.</p>
+
+  <div class="content-pillars">
+    <div class="pillar">
+      <div class="pillar-num">01</div>
+      <div class="pillar-body">
+        <h4>The Fenty Check — Launch Campaign</h4>
+        <p>Rihanna documents her first FENTY WELLNESS telehealth consultation — annual exam, hormone panel, full intake. Shot to Fenty Beauty editorial standards: cinematic, intimate, zero clinical sterility. The message: your checkup is not a chore. It is a ritual of ownership. Campaign visual language is immediately recognizable as Fenty — the healthcare category has never seen content that looks like this.</p>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">02</div>
+      <div class="pillar-body">
+        <h4>Black & Caribbean Women Clinician Series</h4>
+        <p>FENTY WELLNESS clinicians — Black women OB-GYNs, endocrinologists, maternal health specialists — appear in editorial-quality short-form content talking about what they see every week, what the research says about Black women's health gaps, and what a patient should expect when she shows up to a FENTY WELLNESS visit. Trust through visibility: these clinicians are the brand.</p>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">03</div>
+      <div class="pillar-body">
+        <h4>Patient Story Series — "She Showed Up"</h4>
+        <p>HIPAA-compliant patient stories featuring real women — ages 22 to 55, Black, Caribbean, Latina — who used FENTY WELLNESS to address a health concern the mainstream system had dismissed or delayed. Not outcomes-focused testimonials. Narrative-focused: the decision to show up, the experience, the feeling of being heard. Distributed via Rihanna's Instagram and Fenty social channels.</p>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">04</div>
+      <div class="pillar-body">
+        <h4>Maternal Health Awareness Partnership</h4>
+        <p>Launch in partnership with the Black Women's Health Imperative (BWHI) or Black Mamas Matter Alliance — aligning FENTY WELLNESS with established maternal health advocacy infrastructure. Press event, joint content, community health activation. This positions FENTY WELLNESS as structurally committed to maternal health equity, not just marketing to it.</p>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">05</div>
+      <div class="pillar-body">
+        <h4>Fenty Beauty Cross-Audience Activation</h4>
+        <p>The Fenty Beauty database is the most valuable customer overlap in this portfolio. Fenty Beauty customers are pre-qualified: they trust Rihanna's product curation, they are already spending on self-care, and they skew toward the exact demographic FENTY WELLNESS serves. Email and social cross-promotion from Fenty Beauty to FENTY WELLNESS — with explicit messaging: "Rihanna's wellness brand." Subject line: "You take care of your skin. What about everything else?"</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="subsection-title">Distribution Channels</h3>
+  <table>
+    <thead>
+      <tr><th>Channel</th><th>Format</th><th>Cadence</th><th>Primary Audience</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Rihanna Instagram</strong></td><td>"The Fenty Check" editorial content, patient stories, clinician features</td><td>2–3x/week at launch</td><td>150M+ followers</td></tr>
+      <tr><td><strong>Fenty Beauty Channels</strong></td><td>Email cross-promotion, social tie-in, "beauty is health" framing</td><td>Monthly newsletter, bi-weekly social</td><td>Fenty customer database</td></tr>
+      <tr><td><strong>Essence / Vogue Black</strong></td><td>Paid editorial, launch feature story, "The Fenty Check" exclusive</td><td>Launch week press</td><td>Black women 25–45 media audience</td></tr>
+      <tr><td><strong>TikTok</strong></td><td>30-second health facts, clinician clips, "did you know" series for younger audience</td><td>Daily during launch</td><td>18–30 expansion</td></tr>
+      <tr><td><strong>People en Español</strong></td><td>Caribbean/Latina health coverage, bilingual content</td><td>Monthly</td><td>Latina diaspora audience</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- LAUNCH ACTIVATION -->
+<section id="activation">
+  <span class="section-label">Launch Activation</span>
+  <h2 class="section-title">The Fenty Check</h2>
+
+  <div class="activation-box">
+    <span class="activation-label">Hero Launch Campaign · Day 36</span>
+    <div class="activation-name">THE FENTY CHECK</div>
+    <p class="activation-desc">Rihanna documents her first FENTY WELLNESS telehealth consultation. Shot to Fenty Beauty editorial standards — cinematic, intimate, lit like a campaign. Real intake. Real clinician. Real results. Campaign visual language asks one question: <strong style="color:var(--text)">"When did you last check?"</strong> Launch in partnership with a Black Women's Health Imperative affiliate event.</p>
+  </div>
+
+  <div class="timeline-steps">
+    <div class="timeline-step">
+      <div class="step-day">Day 33</div>
+      <div class="step-body">
+        <h4>Teaser drop across Rihanna + Fenty channels</h4>
+        <p>Cinematic 15-second teaser. No brand name. The visual: a woman's hand on a phone screen booking an appointment. "Something is coming." Waitlist opens.</p>
+      </div>
+    </div>
+    <div class="timeline-step">
+      <div class="step-day">Day 34–35</div>
+      <div class="step-body">
+        <h4>Clinician series drops — 3 parts</h4>
+        <p>Three Black women clinicians (OB-GYN, hormone specialist, maternal health) featured in editorial short-form. "Here's who will see you." Trust-building before first patient interaction.</p>
+      </div>
+    </div>
+    <div class="timeline-step">
+      <div class="step-day">Day 36</div>
+      <div class="step-body">
+        <h4>FENTY WELLNESS goes live — "The Fenty Check" drops simultaneously</h4>
+        <p>Patient intake opens. Rihanna's consultation content releases across all Fenty channels. Essence + Vogue Black press embargo lifts. BWHI partnership announcement.</p>
+      </div>
+    </div>
+    <div class="timeline-step">
+      <div class="step-day">Day 38</div>
+      <div class="step-body">
+        <h4>"She Showed Up" patient story #1 releases</h4>
+        <p>First HIPAA-compliant patient story. Shot in the same editorial style as "The Fenty Check." Distributed via Rihanna's Instagram. Amplified by Black women's health advocacy accounts.</p>
+      </div>
+    </div>
+    <div class="timeline-step">
+      <div class="step-day">Day 40</div>
+      <div class="step-body">
+        <h4>Maternal health event — BWHI affiliate partnership</h4>
+        <p>Community health activation with Black Women's Health Imperative affiliate. Free maternal health screenings, FENTY WELLNESS onboarding. Target communities: Atlanta, New York, Houston.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPLIANCE -->
+<section id="compliance">
+  <span class="section-label">FTC / FDA Compliance</span>
+  <h2 class="section-title">Legal Architecture</h2>
+
+  <div class="card card-accent-left">
+    <div style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);margin-bottom:0.5rem">Mandatory FTC Disclosure — All Commercial Content</div>
+    <p style="font-family:'Space Mono',monospace;font-size:0.82rem;color:var(--text);line-height:1.8;">"Rihanna is a co-owner of FENTY WELLNESS and receives equity compensation. This content reflects her genuine experience and does not constitute medical advice."</p>
+  </div>
+
+  <ul class="compliance-list">
+    <li>Maternal health content: highest clinical review threshold. All prenatal claims reviewed by Board-certified OB-GYN before publication. Zero implied outcomes for pregnancy or fetal health.</li>
+    <li>Hormone health content: no claims of treating PCOS, endometriosis, or other diagnosed conditions without substantiation. "Support" and "manage" — not "cure" or "treat."</li>
+    <li>Fenty Brand Extension: formal brand protection protocol between FENTY WELLNESS and Fenty Beauty LLC to prevent consumer confusion, set quality standards, and protect Fenty masterbrand in event of adverse clinical outcome.</li>
+    <li>GLP-1 protocols: zero compounding claims. No before/after imagery. Metabolic framing only — not diet or weight-loss marketing.</li>
+    <li>All Rihanna content: 48-hour Medical Review Committee clearance before publication on any commercial channel</li>
+    <li>Patient testimonials: HIPAA-compliant consent, narrative focus (not outcomes), reviewed by legal and clinical compliance before release</li>
+    <li>Caribbean Creole / Spanish content: translated by certified medical interpreters, not automated translation</li>
+  </ul>
+
+  <div class="callout-red">
+    <div style="font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--red);margin-bottom:0.5rem">Critical Risk: Brand Overextension</div>
+    <p style="font-size:0.88rem;line-height:1.8">Fenty is the most established masterbrand in this portfolio. A clinical failure or FTC action does not only harm FENTY WELLNESS — it harms Fenty Beauty and Savage X Fenty. This is the highest-stakes compliance scenario in the JV. Mitigation: FENTY WELLNESS must have the most rigorous Medical Review Committee in the portfolio, and Rihanna's team must have explicit veto authority over any clinical content that has not been cleared by that committee.</p>
+  </div>
+</section>
+
+<!-- EQUITY -->
+<section id="equity">
+  <span class="section-label">JV Structure</span>
+  <h2 class="section-title">Equity & Commitment</h2>
+
+  <div class="equity-row">
+    <div class="equity-item">
+      <span class="equity-label">Equity Stake</span>
+      <span class="equity-val">6%</span>
+      <div class="equity-desc">In COMMONGROUND parent entity. Vesting contingent on content and activation commitments.</div>
+    </div>
+    <div class="equity-item">
+      <span class="equity-label">Content Commitment</span>
+      <span class="equity-val">2×/qtr</span>
+      <div class="equity-desc">2 health content pieces per quarter across Rihanna and Fenty channels. Equity vesting contingent.</div>
+    </div>
+    <div class="equity-item">
+      <span class="equity-label">Fenty Cross-Promo</span>
+      <span class="equity-val">1×/qtr</span>
+      <div class="equity-desc">1 Fenty Beauty database activation per quarter. The highest-value distribution asset in the portfolio.</div>
+    </div>
+    <div class="equity-item">
+      <span class="equity-label">Advocacy Partnership</span>
+      <span class="equity-val">1×/yr</span>
+      <div class="equity-desc">1 Black women's health advocacy partnership event per year, tied to maternal health awareness calendar.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div class="footer-brand">FENTY WELLNESS™ — Brand Identity Document</div>
+    <div style="font-family:'Space Mono',monospace;font-size:0.55rem;color:var(--muted);margin-top:0.25rem">Confidential · COMMONGROUND JV · May 2026</div>
+  </div>
+  <div class="footer-parent">A COMMONGROUND™ Sub-Brand</div>
+</footer>
+
+</body>
+</html>
